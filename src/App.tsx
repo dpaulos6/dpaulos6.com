@@ -4,11 +4,11 @@ import Home from '@/pages/home'
 // import Works from '@/pages/works'
 // import Contacts from '@/pages/contacts'
 
-import { Analytics } from "@vercel/analytics/react"
+import { Analytics } from '@vercel/analytics/react'
 
 import BackgroundAudio from '@/components/BackgroundAudio'
 
-export default function App() { 
+export default function App() {
   return (
     <>
       <Analytics />

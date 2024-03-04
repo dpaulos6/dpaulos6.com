@@ -5,7 +5,7 @@ export default function Navbar() {
     { label: 'Home', href: '/home' },
     { label: 'About', href: '/about' },
     { label: 'Works', href: '/works' },
-    { label: 'Contacts', href: '/contacts' },
+    { label: 'Contacts', href: '/contacts' }
   ]
 
   /* 
@@ -28,16 +28,19 @@ export default function Navbar() {
     <nav className="fixed top-0 left-0 w-full flex flex-row justify-between xl:px-[10%] px-8 py-4">
       <div>
         <a href="/">
-          <img src="/dpaulos6-logo.svg" alt="dpaulos6" className="w-10"/>
+          <img src="/dpaulos6-logo.svg" alt="dpaulos6" className="w-10" />
         </a>
       </div>
       <div className="flex items-center px-4">
         <ul className="flex flex-row gap-10 lowercase">
-          {items.map((item, index) => 
-            <li key={index} className={`navbar-link ${item.label == "Home" ? "active" : ""}`}>
+          {items.map((item, index) => (
+            <li
+              key={index}
+              className={`navbar-link ${item.label == 'Home' ? 'active' : ''}`}
+            >
               <a href="/">{item.label}</a>
             </li>
-          )}
+          ))}
         </ul>
       </div>
     </nav>

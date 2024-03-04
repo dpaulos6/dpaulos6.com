@@ -18,7 +18,7 @@ const BackgroundAudio: React.FC = () => {
   return (
     <div className='fixed flex flex-col gap-2 bottom-4 right-4'>
       <span className='text-sm text-center'>Click <button className='font-bold text-primary' onClick={playMusic}>play</button> for an amazing experience</span>
-      <audio id="bgMusic" controls autoPlay loop>
+      <audio id="bgMusic" controls loop>
         <source src="bgmusic.mp3" type="audio/ogg" />
         Your browser does not support the audio element.
       </audio>

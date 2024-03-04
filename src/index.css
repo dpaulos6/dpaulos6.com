@@ -32,7 +32,7 @@
 }
 .dark {
   --text: #fffbf5;
-  --background: #140c00;
+  --background: #0E0B07;
   --primary: #ec8004;
   --secondary: #028331;
   --accent: #03b0a7;
@@ -50,7 +50,7 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --text: #fffbf5;
-    --background: #140c00;
+    --background: #0E0B07;
     --primary: #ec8004;
     --secondary: #028331;
     --accent: #03b0a7;

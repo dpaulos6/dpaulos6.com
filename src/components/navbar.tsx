@@ -48,7 +48,6 @@ export default function Navbar() {
     <nav className="fixed top-0 left-0 w-full flex flex-row justify-between xl:px-[10%] px-8 py-4">
       <div>
         <a href="/" className="group">
-          {/* <img src="/dpaulos6-logo.svg" alt="dpaulos6" className="w-10" /> */}
           <LogoSvg className="w-10 h-fit fill-text"/>
         </a>
       </div>

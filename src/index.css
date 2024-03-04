@@ -19,27 +19,29 @@
 
 .light {
   --text: #0a0600;
-  --text-hover: #0a0600bf;
+  --text-hover: #050300;
   --background: #fff7eb;
-  --background-hover: #fff7ebbf;
+  --background-hover: #ebe6df;
   --primary: #fb8f13;
-  --primary-hover: #fb8f13bf;
+  --primary-hover: #d47a12;
   --secondary: #7cfdac;
-  --secondary-hover: #7cfdacbf;
+  --secondary-hover: #69d491;
   --accent: #4ffcf4;
-  --accent-hover: #4ffcf4bf;
+  --accent-hover: #42cfc8;
+  --hover: #0a06001f;
 }
 .dark {
   --text: #fffbf5;
-  --text-hover: #fffbf5bf;
+  --text-hover: #fdf8f0;
   --background: #0e0b07;
-  --background-hover: #0e0b07bf;
+  --background-hover: #1d170d;
   --primary: #ec8004;
-  --primary-hover: #ec8004bf;
+  --primary-hover: #e08721;
   --secondary: #028331;
-  --secondary-hover: #028331bf;
+  --secondary-hover: #0e9941;
   --accent: #03b0a7;
-  --accent-hover: #03b0a7bf;
+  --accent-hover: #0db8af;
+  --hover: #fffbf51f;
 }
 
 @media (prefers-color-scheme: light) {
@@ -185,7 +187,7 @@ audio::-webkit-media-controls-panel:focus {
   outline: none;
 }
 
-audio::-webkit-media-controls-current-time-display, 
+audio::-webkit-media-controls-current-time-display,
 audio::-webkit-media-controls-time-remaining-display {
   display: none;
 }

@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <div className="w-screen h-screen flex flex-col gap-2 items-center justify-center">
+      <div className="w-screen h-screen flex flex-col gap-2 items-center justify-center text-text">
         <span className="text-5xl">This is still being built</span>
         <span className="text-lg">
           You can join my{' '}

@@ -118,6 +118,7 @@ blockquote {
 .navbar-link {
   position: relative;
   cursor: pointer;
+  color: var(--text);
 }
 
 .navbar-link::after {
@@ -131,10 +132,11 @@ blockquote {
   border-radius: 50%;
   background-color: transparent;
   transition: all 0.3s ease;
+  color: var(--text);
 }
 
 .navbar-link:hover::after {
-  background-color: #0a0600;
+  background-color: var(--text);
 }
 
 .navbar-link.active {
@@ -152,5 +154,5 @@ blockquote {
   border-radius: 50%;
   background-color: transparent;
   transition: all 0.3s ease;
-  background-color: #0a0600;
+  background-color: var(--text);
 }

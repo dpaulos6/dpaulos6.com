@@ -4,7 +4,7 @@ const BackgroundAudio: React.FC = () => {
   useEffect(() => {
     const audio = document.getElementById('bgMusic') as HTMLAudioElement
     if (audio) {
-      audio.volume = 0.15
+      audio.volume = 0.1
     }
   }, [])
 

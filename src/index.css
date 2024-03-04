@@ -62,8 +62,21 @@ html, body{
   padding: 0;
   overflow: hidden;
   background-color: var(--background);
-  max-height: 100vh;
+  max-height: 100lvh;
   height: 100%;
+}
+
+.customBg {
+  width: 100lvw;
+  height: 100lvh;
+  background-image: url(/abstract-bg.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -10;
 }
 
 .font-poppins {

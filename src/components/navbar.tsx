@@ -23,7 +23,7 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className="w-full flex flex-row justify-between px-8 py-4">
+    <nav className="w-full flex flex-row justify-between xl:px-[10%] px-8 py-4">
       <div>
         <a href="/">
           <img src="/dpaulos6-logo.svg" alt="dpaulos6" className="w-10"/>

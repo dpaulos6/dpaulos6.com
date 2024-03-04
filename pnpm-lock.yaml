@@ -20,6 +20,9 @@ dependencies:
   react-dom:
     specifier: ^18.2.0
     version: 18.2.0(react@18.2.0)
+  react-h5-audio-player:
+    specifier: ^3.9.1
+    version: 3.9.1(react-dom@18.2.0)(react@18.2.0)
   react-router-dom:
     specifier: ^6.22.1
     version: 6.22.1(react-dom@18.2.0)(react@18.2.0)
@@ -645,6 +648,19 @@ packages:
   /@humanwhocodes/object-schema@2.0.2:
     resolution: {integrity: sha512-6EwiSjwWYP7pTckG6I5eyFANjPhmPjUX9JRLUSfNPC7FX7zK9gyZAfUEaECL6ALTpGX5AjnBq3C9XmVWPitNpw==}
     dev: true
+
+  /@iconify/react@4.1.1(react@18.2.0):
+    resolution: {integrity: sha512-jed14EjvKjee8mc0eoscGxlg7mSQRkwQG3iX3cPBCO7UlOjz0DtlvTqxqEcHUJGh+z1VJ31Yhu5B9PxfO0zbdg==}
+    peerDependencies:
+      react: '>=16'
+    dependencies:
+      '@iconify/types': 2.0.0
+      react: 18.2.0
+    dev: false
+
+  /@iconify/types@2.0.0:
+    resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
+    dev: false
 
   /@isaacs/cliui@8.0.2:
     resolution: {integrity: sha512-O8jcjabXaleOG9DQ0+ARXWZBTfnP4WNAqzuiJK7ll44AmxGKv/J2M4TPjxjY3znBCfvBXFzucm1twdyFybFqEA==}
@@ -2551,6 +2567,18 @@ packages:
       loose-envify: 1.4.0
       react: 18.2.0
       scheduler: 0.23.0
+    dev: false
+
+  /react-h5-audio-player@3.9.1(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-ILJdTXZgHEfv7WsvYPoN7afJncroYyg5Cxvs2qqrsnTzhtBdEuzlM0ETkhUhjqXOsAkbwAdHF9YgnEwgBJ8dCQ==}
+    peerDependencies:
+      react: ^16.3.0 || ^17.0.0 || ^18.0.0
+      react-dom: ^16.3.0 || ^17.0.0 || ^18.0.0
+    dependencies:
+      '@babel/runtime': 7.23.9
+      '@iconify/react': 4.1.1(react@18.2.0)
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
     dev: false
 
   /react-refresh@0.14.0:

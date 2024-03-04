@@ -2,6 +2,7 @@
 
 import { DarkModeIcon } from "@/icons/DarkModeIcon"
 import { LightModeIcon } from "@/icons/LightModeIcon"
+import { LogoSvg } from "@/icons/LogoSvg"
 import { useState } from "react"
 
 export default function Navbar() {
@@ -46,8 +47,9 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 left-0 w-full flex flex-row justify-between xl:px-[10%] px-8 py-4">
       <div>
-        <a href="/">
-          <img src="/dpaulos6-logo.svg" alt="dpaulos6" className="w-10" />
+        <a href="/" className="group">
+          {/* <img src="/dpaulos6-logo.svg" alt="dpaulos6" className="w-10" /> */}
+          <LogoSvg className="w-10 h-fit fill-text"/>
         </a>
       </div>
       <div className="flex items-center px-4 gap-10">

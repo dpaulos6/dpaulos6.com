@@ -175,3 +175,17 @@ blockquote {
   color: var(--text);
   background-color: var(--primary-hover);
 }
+
+audio {
+  width: 100%;
+}
+
+audio::-webkit-media-controls-panel:focus {
+  border: none;
+  outline: none;
+}
+
+audio::-webkit-media-controls-current-time-display, 
+audio::-webkit-media-controls-time-remaining-display {
+  display: none;
+}

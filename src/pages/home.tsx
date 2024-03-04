@@ -1,16 +1,40 @@
+import { useState, useEffect } from 'react'
 import '@/index.css'
 
 export default function Home() {
+  const things = [
+    'Fronted developer',
+    'Passionate music producer',
+    'Kind human being',
+    'Gamer on free time'
+  ]
+  const [currentThingIndex, setCurrentThingIndex] = useState(0)
+
+  // Use useEffect to automatically switch to the next thing every 3 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentThingIndex((prevIndex) => (prevIndex + 1) % things.length)
+    }, 5000)
+
+    return () => clearInterval(interval)
+  }, [])
+
   return (
     <>
-      <div className="w-screen h-screen flex flex-col gap-2 items-center justify-center text-text">
-        <span className="text-5xl">This is still being built</span>
-        <span className="text-lg">
-          You can join my{' '}
-          <a href="https://discord.gg/Y7ujpKmmma" className="text-primary">
-            discord
-          </a>{' '}
-          if you wanna see its progress
+      <div className="w-screen h-screen flex flex-col gap-2 items-center justify-center text-text relative cursor-default">
+        <span className="text-5xl px-4 py-2 lowercase">
+          Hi, I'm <b className="font-medium">Diogo Paulos</b>
+        </span>
+        <span className="fade-in-out w-max relative">
+          {things.map((thing, index) => (
+            <span
+              key={index}
+              className={`transition-opacity w-max text-3xl text-primary lowercase duration-500 absolute left-1/2 transform -translate-x-1/2 ${index === currentThingIndex ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+              style={{ zIndex: index === currentThingIndex ? 1 : 0 }}
+            >
+              {thing}
+            </span>
+          ))}
         </span>
       </div>
     </>

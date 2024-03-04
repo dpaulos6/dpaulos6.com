@@ -10,13 +10,7 @@
   font-family: 'Poppins';
   line-height: 1.5;
   font-weight: 400;
-
   color-scheme: light dark;
-  /* color: rgba(255, 255, 255, 0.87);
-  background-color: #242424; */
-  color: black;
-  background-color: white;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -25,35 +19,55 @@
 
 .light {
   --text: #0a0600;
+  --text-hover: #0a0600bf;
   --background: #fff7eb;
+  --background-hover: #fff7ebbf;
   --primary: #fb8f13;
+  --primary-hover: #fb8f13bf;
   --secondary: #7cfdac;
+  --secondary-hover: #7cfdacbf;
   --accent: #4ffcf4;
+  --accent-hover: #4ffcf4bf;
 }
 .dark {
   --text: #fffbf5;
-  --background: #0E0B07;
+  --text-hover: #fffbf5bf;
+  --background: #0e0b07;
+  --background-hover: #0e0b07bf;
   --primary: #ec8004;
+  --primary-hover: #ec8004bf;
   --secondary: #028331;
+  --secondary-hover: #028331bf;
   --accent: #03b0a7;
+  --accent-hover: #03b0a7bf;
 }
 
 @media (prefers-color-scheme: light) {
   :root {
     --text: #0a0600;
+    --text-hover: #0a0600bf;
     --background: #fff7eb;
+    --background-hover: #fff7ebbf;
     --primary: #fb8f13;
+    --primary-hover: #fb8f13bf;
     --secondary: #7cfdac;
+    --secondary-hover: #7cfdacbf;
     --accent: #4ffcf4;
+    --accent-hover: #4ffcf4bf;
   }
 }
 @media (prefers-color-scheme: dark) {
   :root {
     --text: #fffbf5;
-    --background: #0E0B07;
+    --text-hover: #fffbf5bf;
+    --background: #0e0b07;
+    --background-hover: #0e0b07bf;
     --primary: #ec8004;
+    --primary-hover: #ec8004bf;
     --secondary: #028331;
+    --secondary-hover: #028331bf;
     --accent: #03b0a7;
+    --accent-hover: #03b0a7bf;
   }
 }
 
@@ -155,4 +169,9 @@ blockquote {
   background-color: transparent;
   transition: all 0.3s ease;
   background-color: var(--text);
+}
+
+::selection {
+  color: var(--text);
+  background-color: var(--primary-hover);
 }

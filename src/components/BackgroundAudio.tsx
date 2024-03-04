@@ -17,7 +17,7 @@ const BackgroundAudio: React.FC = () => {
 
   return (
     <div className="fixed flex flex-col gap-2 bottom-4 right-4 text-text">
-      <span className="text-sm text-center">
+      <span className="text-base text-center">
         Click{' '}
         <button className="font-bold text-primary" onClick={playMusic}>
           play

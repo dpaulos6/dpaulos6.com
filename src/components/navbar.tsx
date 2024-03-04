@@ -8,6 +8,7 @@ export default function Navbar() {
     { label: 'Contacts', href: '/contacts' },
   ]
 
+  /* 
   const [activeUrl, setActiveUrl] = useState(window.location.pathname);
 
   useEffect(() => {
@@ -20,7 +21,8 @@ export default function Navbar() {
     return () => {
       window.removeEventListener('popstate', handleRouteChange);
     };
-  }, []);
+  }, []); 
+  */
 
   return (
     <nav className="fixed top-0 left-0 w-full flex flex-row justify-between xl:px-[10%] px-8 py-4">

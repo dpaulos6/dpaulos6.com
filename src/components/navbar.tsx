@@ -1,9 +1,7 @@
-// import { useState, useEffect } from 'react';
-
+import { useState, useEffect } from 'react';
 import { DarkModeIcon } from "@/icons/DarkModeIcon"
 import { LightModeIcon } from "@/icons/LightModeIcon"
 import { LogoSvg } from "@/icons/LogoSvg"
-import { useState } from "react"
 
 export default function Navbar() {
   const items = [
@@ -13,7 +11,6 @@ export default function Navbar() {
     { label: 'Contacts', href: '/contacts' }
   ]
 
-  /* 
   const [activeUrl, setActiveUrl] = useState(window.location.pathname);
 
   useEffect(() => {
@@ -26,8 +23,7 @@ export default function Navbar() {
     return () => {
       window.removeEventListener('popstate', handleRouteChange);
     };
-  }, []); 
-  */
+  }, []);
 
   const [colorMode, setColorMode] = useState('light')
 
@@ -56,9 +52,9 @@ export default function Navbar() {
           {items.map((item, index) => (
             <li
               key={index}
-              className={`navbar-link ${item.label == 'Home' ? 'active' : ''}`}
+              className={`navbar-link ${activeUrl == item.href ? 'active' : ''}`}
             >
-              <a href="/">{item.label}</a>
+              <a href={item.href}>{item.label}</a>
             </li>
           ))}
         </ul>

@@ -28,7 +28,7 @@ export default function Home() {
           {things.map((thing, index) => (
             <span
               key={index}
-              className={`transition-opacity w-max h-fit leading-tight -mt-4 md:-mt-2 lg:-mt-1 text-sm xs:text-lg md:text-2xl lg:text-4xl bg-gradient-to-r bg-clip-text from-primary to-pink-400 text-transparent lowercase duration-500 absolute left-1/2 transform -translate-x-1/2 ${index === currentThingIndex ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+              className={`transition-all w-max h-fit leading-tight -mt-4 md:-mt-2 lg:-mt-1 text-sm xs:text-lg md:text-2xl lg:text-4xl bg-gradient-to-r bg-clip-text from-primary to-pink-400 text-transparent lowercase duration-500 absolute left-1/2 transform -translate-x-1/2 ${index === currentThingIndex ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
               style={{ zIndex: index === currentThingIndex ? 1 : 0 }}
             >
               {thing}

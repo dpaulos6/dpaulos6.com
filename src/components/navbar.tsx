@@ -32,7 +32,7 @@ export default function Navbar() {
       <div className="flex items-center px-4">
         <ul className="flex flex-row gap-10 lowercase">
           {items.map((item, index) => 
-            <li key={index} className={`navbar-link ${activeUrl == item.href ? "active" : ""}`}>
+            <li key={index} className={`navbar-link ${item.label == "Home" ? "active" : ""}`}>
               <a href="/">{item.label}</a>
             </li>
           )}

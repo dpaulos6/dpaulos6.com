@@ -43,8 +43,9 @@ export default function Navbar() {
             <NavLink
               key={index}
               to={item.href}
-              activeClassName="active"
-              className="navbar-link text-lg"
+              className={({ isActive }) =>
+                isActive ? "navbar-link text-lg active" : "navbar-link text-lg"
+              }
             >
               {item.label}
             </NavLink>

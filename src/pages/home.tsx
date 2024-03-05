@@ -21,14 +21,14 @@ export default function Home() {
   return (
     <>
       <div className="w-screen h-screen flex flex-col gap-2 items-center justify-center text-text relative cursor-default">
-        <span className="text-lg xs:text-2xl md:text-4xl lg:text-5xl px-4 py-2 lowercase transition-[font] duration-500">
+        <span className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl px-4 py-2 lowercase transition-[font] duration-500">
           Hi, I'm <b className="font-medium">Diogo Paulos</b>
         </span>
         <span className="fade-in-out w-max relative">
           {things.map((thing, index) => (
             <span
               key={index}
-              className={`transition-all duration-500 w-max h-fit leading-tight -mt-4 md:-mt-2 lg:-mt-1 text-sm xs:text-lg md:text-2xl lg:text-4xl bg-gradient-to-r bg-clip-text from-primary to-pink-400 text-transparent lowercase absolute left-1/2 transform -translate-x-1/2 ${index === currentThingIndex ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+              className={`transition-all duration-500 w-max h-fit !leading-[3rem] -mt-7 sm:-mt-5 md:-mt-4 lg:-mt-2 text-lg sm:text-2xl md:text-3xl lg:text-4xl bg-gradient-to-r bg-clip-text from-primary to-pink-400 text-transparent lowercase absolute left-1/2 transform -translate-x-1/2 ${index === currentThingIndex ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
               style={{ zIndex: index === currentThingIndex ? 1 : 0 }}
             >
               {thing}

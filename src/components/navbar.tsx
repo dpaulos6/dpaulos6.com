@@ -25,7 +25,6 @@ export default function Navbar() {
     setColorMode(newMode)
   }
 
-  // UseEffect hook to update data-theme attribute of HTML element when colorMode changes
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', colorMode)
   }, [colorMode])
@@ -44,7 +43,7 @@ export default function Navbar() {
               key={index}
               to={item.href}
               className={({ isActive }) =>
-                isActive ? "navbar-link text-lg active" : "navbar-link text-lg"
+                isActive ? 'navbar-link text-lg active' : 'navbar-link text-lg'
               }
             >
               {item.label}

@@ -13,22 +13,22 @@ export default function Navbar() {
     { label: 'About', href: '/about' },
     { label: 'Works', href: '/works' },
     { label: 'Contacts', href: '/contacts' }
-  ];
+  ]
 
   const [colorMode, setColorMode] = useState<ColorMode>(
     (localStorage.getItem('theme') as ColorMode | null) ?? 'light'
-  );
+  )
 
   function changeColorMode() {
-    const newMode = colorMode === 'light' ? 'dark' : 'light';
-    localStorage.setItem('theme', newMode);
-    setColorMode(newMode);
+    const newMode = colorMode === 'light' ? 'dark' : 'light'
+    localStorage.setItem('theme', newMode)
+    setColorMode(newMode)
   }
 
   // UseEffect hook to update data-theme attribute of HTML element when colorMode changes
   useEffect(() => {
-    document.documentElement.setAttribute('data-theme', colorMode);
-  }, [colorMode]);
+    document.documentElement.setAttribute('data-theme', colorMode)
+  }, [colorMode])
 
   return (
     <nav className="fixed top-0 left-0 w-full flex flex-row justify-between xl:px-[10%] px-8 py-4 z-50">

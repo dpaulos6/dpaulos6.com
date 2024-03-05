@@ -28,7 +28,7 @@
   --accent-hover: #4ffcf4bf;
 }
 
-[data-theme="light"] {
+[data-theme='light'] {
   --text: #0a0600;
   --text-hover: #050300;
   --background: #fff7eb;
@@ -42,7 +42,7 @@
   --hover: #0a06001f;
 }
 
-[data-theme="dark"] {
+[data-theme='dark'] {
   --text: #fffbf5;
   --text-hover: #fdf8f0;
   --background: #0e0b07;

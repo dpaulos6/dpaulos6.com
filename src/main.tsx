@@ -23,7 +23,6 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
 
       <App />
       <ThemeSwitcher />
-
     </BrowserRouter>
     <Analytics />
   </React.StrictMode>

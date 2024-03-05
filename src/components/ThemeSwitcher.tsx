@@ -1,19 +1,19 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react'
 
 const ThemeSwitcher = () => {
-  const storedTheme = localStorage.getItem('theme');
-  const initialTheme = storedTheme !== null ? storedTheme : null;
+  const storedTheme = localStorage.getItem('theme')
+  const initialTheme = storedTheme !== null ? storedTheme : null
 
-  const [theme, setTheme] = useState(initialTheme);
+  const [theme, setTheme] = useState(initialTheme)
 
   useEffect(() => {
     if (theme !== null) {
-      document.documentElement.setAttribute('data-theme', theme);
-      localStorage.setItem('theme', theme);
+      document.documentElement.setAttribute('data-theme', theme)
+      localStorage.setItem('theme', theme)
     }
-  }, [theme]);
+  }, [theme])
 
-  return null;
-};
+  return null
+}
 
-export default ThemeSwitcher;
+export default ThemeSwitcher

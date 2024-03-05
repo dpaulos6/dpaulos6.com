@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { DarkModeIcon } from '@/icons/DarkModeIcon'
 import { LightModeIcon } from '@/icons/LightModeIcon'
 import { LogoSvg } from '@/icons/LogoSvg'
-import { MenuIcon } from 'lucide-react'
+import { MenuIcon } from '@/icons/MenuIcon'
 
 export default function Navbar() {
   const items = [

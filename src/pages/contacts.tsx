@@ -1,4 +1,5 @@
 import '@/index.css'
+import { Link } from 'react-router-dom'
 
 export default function Contacts() {
   return (
@@ -7,9 +8,9 @@ export default function Contacts() {
         <span className="text-5xl">This is still being built</span>
         <span className="text-lg">
           You can join my{' '}
-          <a href="https://discord.gg/Y7ujpKmmma" className="text-primary">
+          <Link to="https://discord.gg/Y7ujpKmmma" className="text-primary">
             discord
-          </a>{' '}
+          </Link>{' '}
           if you wanna see its progress
         </span>
       </div>

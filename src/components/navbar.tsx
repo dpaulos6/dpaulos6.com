@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { DarkModeIcon } from '@/icons/DarkModeIcon'
 import { LightModeIcon } from '@/icons/LightModeIcon'
 import { LogoSvg } from '@/icons/LogoSvg'
-import { MenuIcon } from 'lucide-react'
+import { MenuIcon } from '@/icons/MenuIcon'
 import { Link, NavLink } from 'react-router-dom'
 
 type ColorMode = 'light' | 'dark'

@@ -28,10 +28,39 @@ specifiers:
   vite: ^5.1.5
 
 dependencies:
+  '@vercel/analytics':
+    specifier: ^1.2.2
+    version: 1.2.2(react@18.2.0)
+  clsx:
+    specifier: ^2.1.0
+    version: 2.1.0
+  npm-check:
+    specifier: ^6.0.1
+    version: 6.0.1
+  prettier:
+    specifier: ^3.2.5
+    version: 3.2.5
+  react:
+    specifier: ^18.2.0
+    version: 18.2.0
+  react-dom:
+    specifier: ^18.2.0
+    version: 18.2.0(react@18.2.0)
+  react-router-dom:
+    specifier: ^6.22.1
+    version: 6.22.2(react-dom@18.2.0)(react@18.2.0)
+  shadcn-ui:
+    specifier: ^0.8.0
+    version: 0.8.0(typescript@5.3.3)
+  tailwind-merge:
+    specifier: ^2.2.1
+    version: 2.2.1
+  tailwindcss-animate:
+    specifier: ^1.0.7
+    version: 1.0.7(tailwindcss@3.4.1)
   '@types/react-router-dom': 5.3.3
   '@vercel/analytics': 1.2.2_react@18.2.0
   clsx: 2.1.0
-  lucide-react: 0.344.0_react@18.2.0
   npm-check: 6.0.1
   prettier: 3.2.5
   react: 18.2.0
@@ -3556,23 +3585,17 @@ packages:
     dependencies:
       yallist: 4.0.0
 
-  /lucide-react/0.344.0_react@18.2.0:
-    resolution:
-      {
-        integrity: sha512-6YyBnn91GB45VuVT96bYCOKElbJzUHqp65vX8cDcu55MQL9T969v4dhGClpljamuI/+KMO9P6w9Acq1CVQGvIQ==
-      }
-    peerDependencies:
-      react: ^16.5.1 || ^17.0.0 || ^18.0.0
-    dependencies:
-      react: 18.2.0
-    dev: false
-
+  /magic-string@0.30.8:
+    resolution: {integrity: sha512-ISQTe55T2ao7XtlAStud6qwYPZjE4GK1S/BeVPus4jrq6JuOnQ00YKQC581RWhR122W7msZV263KzVeLoqidyQ==}
+    engines: {node: '>=12'}
+    
   /magic-string/0.30.8:
     resolution:
       {
         integrity: sha512-ISQTe55T2ao7XtlAStud6qwYPZjE4GK1S/BeVPus4jrq6JuOnQ00YKQC581RWhR122W7msZV263KzVeLoqidyQ==
       }
     engines: { node: '>=12' }
+    
     dependencies:
       '@jridgewell/sourcemap-codec': 1.4.15
     dev: false

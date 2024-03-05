@@ -16,19 +16,24 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
+  --audio-hover: #df8116;
+
   --text: #0a0600;
-  --text-hover: #0a0600bf;
+  --text-hover: #050300;
   --background: #fff7eb;
-  --background-hover: #fff7ebbf;
+  --background-hover: #ebe6df;
   --primary: #fb8f13;
-  --primary-hover: #fb8f13bf;
+  --primary-hover: #d47a12;
   --secondary: #7cfdac;
-  --secondary-hover: #7cfdacbf;
+  --secondary-hover: #69d491;
   --accent: #4ffcf4;
-  --accent-hover: #4ffcf4bf;
+  --accent-hover: #42cfc8;
+  --hover: #00000019;
 }
 
 [data-theme='light'] {
+  --audio-hover: #df8116;
+
   --text: #0a0600;
   --text-hover: #050300;
   --background: #fff7eb;
@@ -43,6 +48,8 @@
 }
 
 [data-theme='dark'] {
+  --audio-hover: #c06f12;
+
   --text: #fffbf5;
   --text-hover: #fdf8f0;
   --background: #0e0b07;
@@ -159,18 +166,4 @@ blockquote {
 ::selection {
   color: var(--text);
   background-color: var(--primary-hover);
-}
-
-audio {
-  width: 100%;
-}
-
-audio::-webkit-media-controls-panel:focus {
-  border: none;
-  outline: none;
-}
-
-audio::-webkit-media-controls-current-time-display,
-audio::-webkit-media-controls-time-remaining-display {
-  display: none;
 }

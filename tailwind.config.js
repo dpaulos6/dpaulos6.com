@@ -11,7 +11,7 @@ module.exports = {
   theme: {
     container: {
       center: true,
-      padding: '2rem',
+      padding: '2rem'
     },
     extend: {
       colors: {
@@ -25,11 +25,11 @@ module.exports = {
         'background-hover': 'var(--background-hover)',
         text: 'var(--text)',
         'text-hover': 'var(--text-hover)',
-        'hover': 'var(--hover)'
+        hover: 'var(--hover)'
       },
       screens: {
-        'limit': '320px',
-        'xs': '480px',
+        limit: '320px',
+        xs: '480px'
       },
       keyframes: {
         'accordion-down': {

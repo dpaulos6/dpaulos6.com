@@ -1,4 +1,49 @@
+
 lockfileVersion: '6.0'
+
+specifiers:
+  '@types/node': ^20.11.24
+  '@types/react': ^18.2.63
+  '@types/react-dom': ^18.2.20
+  '@types/react-router-dom': ^5.3.3
+  '@typescript-eslint/eslint-plugin': ^7.1.1
+  '@typescript-eslint/parser': ^7.1.1
+  '@vercel/analytics': ^1.2.2
+  '@vitejs/plugin-react': ^4.2.1
+  autoprefixer: ^10.4.18
+  clsx: ^2.1.0
+  eslint: ^8.57.0
+  eslint-plugin-react-hooks: ^4.6.0
+  eslint-plugin-react-refresh: ^0.4.5
+  lucide-react: ^0.344.0
+  npm-check: ^6.0.1
+  postcss: ^8.4.35
+  prettier: ^3.2.5
+  react: ^18.2.0
+  react-dom: ^18.2.0
+  react-icons: ^5.0.1
+  react-player: ^2.15.1
+  react-router-dom: ^6.22.2
+  tailwind-merge: ^2.2.1
+  tailwindcss: ^3.4.1
+  tailwindcss-animate: ^1.0.7
+  typescript: ^5.3.3
+  vite: ^5.1.5
+
+dependencies:
+  '@types/react-router-dom': 5.3.3
+  '@vercel/analytics': 1.2.2_react@18.2.0
+  clsx: 2.1.0
+  lucide-react: 0.344.0_react@18.2.0
+  npm-check: 6.0.1
+  prettier: 3.2.5
+  react: 18.2.0
+  react-dom: 18.2.0_react@18.2.0
+  react-icons: 5.0.1_react@18.2.0
+  react-player: 2.15.1_react@18.2.0
+  react-router-dom: 6.22.2_biqbaboplfbrettd7655fr4n2y
+  tailwind-merge: 2.2.1
+  tailwindcss-animate: 1.0.7_tailwindcss@3.4.1
 
 settings:
   autoInstallPeers: true
@@ -2114,7 +2159,15 @@ packages:
       }
     dev: true
 
-  /defaults@1.0.4:
+  /deepmerge/4.3.1:
+    resolution:
+      {
+        integrity: sha512-3sUqbMEc77XqpdNO7FRyRog+eW3ph+GYCbj+rK+uYyRMuwsVy0rMiVtPn+QJlKFvWP/1PYpapqYn0Me2knFn+A==
+      }
+    engines: { node: '>=0.10.0' }
+    dev: false
+
+  /defaults/1.0.4:
     resolution:
       {
         integrity: sha512-eFuaLoy/Rxalv2kr+lqMlUnrDWV+3j4pljOIJgLIhI058IQfWJ7vXhyEIHu+HtC738klGALYxOKDO0bQP3tg8A==
@@ -3472,7 +3525,14 @@ packages:
         integrity: sha512-7ylylesZQ/PV29jhEDl3Ufjo6ZX7gCqJr5F7PKrqc93v7fzSymt1BpwEU8nAUXs8qzzvqhbjhK5QZg6Mt/HkBg==
       }
 
-  /load-yaml-file@0.2.0:
+  /load-script/1.0.0:
+    resolution:
+      {
+        integrity: sha512-kPEjMFtZvwL9TaZo0uZ2ml+Ye9HUMmPwbYRJ324qF9tqMejwykJ5ggTyvzmrbBeapCAbk98BSbTeovHEEP1uCA==
+      }
+    dev: false
+
+  /load-yaml-file/0.2.0:
     resolution:
       {
         integrity: sha512-OfCBkGEw4nN6JLtgRidPX6QxjBQGQf72q3si2uvqyFEMbycSFFHwAZeXx6cJgFM9wmLrf9zBwCP3Ivqa+LLZPw==
@@ -3616,7 +3676,14 @@ packages:
     engines: { node: '>=8' }
     dev: false
 
-  /meow@9.0.0:
+  /memoize-one/5.2.1:
+    resolution:
+      {
+        integrity: sha512-zYiwtZUcYyXKo/np96AGZAckk+FWWsUdJ3cHGGmld7+AhvcWmQyGCYUh1hc4Q/pkOhb65dQR/pqCyK0cOaHz4Q==
+      }
+    dev: false
+
+  /meow/9.0.0:
     resolution:
       {
         integrity: sha512-+obSblOQmRhcyBt62furQqRAQpNyWXo8BuQ5bN7dG8wmwQ+vwHKp/rCFD4CrTP8CsDQD1sjoZ94K417XEUk8IQ==
@@ -4322,7 +4389,18 @@ packages:
     hasBin: true
     dev: false
 
-  /pump@3.0.0:
+  /prop-types/15.8.1:
+    resolution:
+      {
+        integrity: sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==
+      }
+    dependencies:
+      loose-envify: 1.4.0
+      object-assign: 4.1.1
+      react-is: 16.13.1
+    dev: false
+
+  /pump/3.0.0:
     resolution:
       {
         integrity: sha512-LwZy+p3SFs1Pytd/jYct4wpv49HiYCqd9Rlc5ZVdk0V+8Yzv6jR5Blk3TRmPL1ft69TxP0IMZGJ+WPFU2BFhww==
@@ -4404,7 +4482,48 @@ packages:
       scheduler: 0.23.0
     dev: false
 
-  /react-refresh@0.14.0:
+  /react-fast-compare/3.2.2:
+    resolution:
+      {
+        integrity: sha512-nsO+KSNgo1SbJqJEYRE9ERzo7YtYbou/OqjSQKxV7jcKox7+usiUVZOAC+XnDOABXggQTno0Y1CpVnuWEc1boQ==
+      }
+    dev: false
+
+  /react-icons/5.0.1_react@18.2.0:
+    resolution:
+      {
+        integrity: sha512-WqLZJ4bLzlhmsvme6iFdgO8gfZP17rfjYEJ2m9RsZjZ+cc4k1hTzknEz63YS1MeT50kVzoa1Nz36f4BEx+Wigw==
+      }
+    peerDependencies:
+      react: '*'
+    dependencies:
+      react: 18.2.0
+    dev: false
+
+  /react-is/16.13.1:
+    resolution:
+      {
+        integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
+      }
+    dev: false
+
+  /react-player/2.15.1_react@18.2.0:
+    resolution:
+      {
+        integrity: sha512-ni1XFuYZuhIKKdeFII+KRLmIPcvCYlyXvtSMhNOgssdfnSovmakBtBTW2bxowPvmpKy5BTR4jC4CF79ucgHT+g==
+      }
+    peerDependencies:
+      react: '>=16.6.0'
+    dependencies:
+      deepmerge: 4.3.1
+      load-script: 1.0.0
+      memoize-one: 5.2.1
+      prop-types: 15.8.1
+      react: 18.2.0
+      react-fast-compare: 3.2.2
+    dev: false
+
+  /react-refresh/0.14.0:
     resolution:
       {
         integrity: sha512-wViHqhAd8OHeLS/IRMJjTSDHF3U9eWi62F/MledQGPdJGDhodXJ9PBLNGr6WWL7qlH12Mt3TyTpbS+hGXMjCzQ==

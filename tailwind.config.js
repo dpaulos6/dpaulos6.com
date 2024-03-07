@@ -25,7 +25,8 @@ module.exports = {
         'background-hover': 'var(--background-hover)',
         text: 'var(--text)',
         'text-hover': 'var(--text-hover)',
-        'audio-hover': 'var(--audio-hover)'
+        'audio-hover': 'var(--audio-hover)',
+        'hover': 'var(--hover)',
       },
       screens: {
         limit: '320px',

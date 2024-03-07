@@ -30,7 +30,7 @@ export default function Navbar() {
   }, [colorMode])
 
   return (
-    <nav className="fixed top-0 left-0 w-full flex flex-row justify-between xl:px-[10%] px-8 py-4 z-50">
+    <nav className="fixed top-0 left-0 w-full h-fit flex flex-row justify-between xl:px-[10%] px-8 py-4 z-50">
       <div>
         <Link to="/" className="group">
           <LogoSvg className="w-10 h-fit fill-text" />

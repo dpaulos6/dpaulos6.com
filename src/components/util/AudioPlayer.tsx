@@ -68,7 +68,7 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ src }) => {
         </button>
         <button
           id="volumeButton"
-          className="flex text-white text-3xl justify-center items-center p-2 rounded-xl hover:bg-audio-hover transition-[background-color] z-20"
+          className="flex text-white text-3xl justify-center items-center p-2 rounded-xl hover:bg-audio-hover transition-[background-color]"
           onClick={toggleMute}
         >
           {isMuted ? <MutedIcon /> : <VolumeIcon />}

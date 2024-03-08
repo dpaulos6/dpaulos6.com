@@ -60,7 +60,10 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ src }) => {
     <div className="flex-1 bg-primary py-3 px-4 rounded-xl z-10">
       <audio src={src}></audio>
       <div className="flex items-center text-white controls">
-        <button onClick={togglePlay} className="flex text-white text-3xl justify-center items-center p-2 rounded-xl hover:bg-audio-hover transition-[background-color]">
+        <button
+          onClick={togglePlay}
+          className="flex text-white text-3xl justify-center items-center p-2 rounded-xl hover:bg-audio-hover transition-[background-color]"
+        >
           {!isPlaying ? <PlayIcon /> : <PauseIcon />}
         </button>
         <button

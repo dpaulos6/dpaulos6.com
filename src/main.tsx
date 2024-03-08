@@ -9,7 +9,6 @@ import About from '@/pages/about'
 import Works from '@/pages/works'
 import Contacts from '@/pages/contacts'
 import ThemeSwitcher from '@/components/ThemeSwitcher.tsx'
-import {NextUIProvider} from "@nextui-org/react";
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
@@ -22,9 +21,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
           <Route path="/works" element={<Works />} />
           <Route path="/contacts" element={<Contacts />} />
         </Routes>
-        <NextUIProvider>
-          <App />
-        </NextUIProvider>
+        <App />
         <ThemeSwitcher />
       </BrowserRouter>
     </div>

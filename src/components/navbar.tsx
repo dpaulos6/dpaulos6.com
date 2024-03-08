@@ -52,7 +52,7 @@ export default function Navbar() {
         </ul>
         <div>
           <button
-            className="flex justify-center items-center w-10 h-10 text-3xl rounded-full p-1 hover:bg-hover transition-all"
+            className="flex justify-center items-center w-10 h-10 text-3xl rounded-xl p-1 hover:bg-hover transition-all"
             onClick={changeColorMode}
           >
             {colorMode === 'light' ? (

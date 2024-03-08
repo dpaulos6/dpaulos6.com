@@ -16,7 +16,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  --audio-hover: #df8116;
+  --audio-hover: #ee8712;
 
   --text: #0a0600;
   --text-hover: #050300;
@@ -32,7 +32,7 @@
 }
 
 [data-theme='light'] {
-  --audio-hover: #df8116;
+  --audio-hover: #ee8712;
 
   --text: #0a0600;
   --text-hover: #050300;
@@ -48,7 +48,7 @@
 }
 
 [data-theme='dark'] {
-  --audio-hover: #e27a04;
+  --audio-hover: #dd7804;
 
   --text: #fffbf5;
   --text-hover: #fdf8f0;

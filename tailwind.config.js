@@ -11,7 +11,10 @@ module.exports = {
   theme: {
     container: {
       center: true,
-      padding: '2rem'
+      padding: '2rem',
+      screens: {
+        '2xl': '1400px'
+      }
     },
     extend: {
       colors: {
@@ -23,10 +26,12 @@ module.exports = {
         'accent-hover': 'var(--accent-hover)',
         background: 'var(--background)',
         'background-hover': 'var(--background-hover)',
+        'background-menu': 'var(--background-menu)',
+        'background-border': 'var(--background-border)',
         text: 'var(--text)',
         'text-hover': 'var(--text-hover)',
         'audio-hover': 'var(--audio-hover)',
-        'hover': 'var(--hover)',
+        hover: 'var(--hover)'
       },
       screens: {
         limit: '320px',

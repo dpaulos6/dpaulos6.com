@@ -16,12 +16,14 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  --audio-hover: #ee8712;
+  --audio-hover: #eb8612;
 
   --text: #0a0600;
   --text-hover: #050300;
   --background: #fff7eb;
   --background-hover: #ebe6df;
+  --background-menu: #bdb4a9;
+  --background-border: #dbd8d2;
   --primary: #fb8f13;
   --primary-hover: #d47a12;
   --secondary: #7cfdac;
@@ -32,12 +34,14 @@
 }
 
 [data-theme='light'] {
-  --audio-hover: #ee8712;
+  --audio-hover: #eb8612;
 
   --text: #0a0600;
   --text-hover: #050300;
   --background: #fff7eb;
   --background-hover: #ebe6df;
+  --background-menu: #fffcf8;
+  --background-border: #dbd8d2;
   --primary: #fb8f13;
   --primary-hover: #d47a12;
   --secondary: #7cfdac;
@@ -48,12 +52,15 @@
 }
 
 [data-theme='dark'] {
-  --audio-hover: #dd7804;
+  --audio-hover: #d67506;
 
   --text: #fffbf5;
   --text-hover: #fdf8f0;
-  --background: #0e0b07;
-  --background-hover: #1d170d;
+  --background: #0F0E0E;
+  --background-hover: #242323;
+  --background-menu: #1B1A1A;
+  --background-border: #333231;
+
   --primary: #ec8004;
   --primary-hover: #e08721;
   --secondary: #028331;

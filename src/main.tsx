@@ -21,7 +21,6 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
           <Route path="/works" element={<Works />} />
           <Route path="/contacts" element={<Contacts />} />
         </Routes>
-
         <App />
         <ThemeSwitcher />
       </BrowserRouter>

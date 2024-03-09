@@ -61,14 +61,14 @@ export default function Navbar() {
           <LogoSvg className="w-12 h-fit p-1 fill-text hover:fill-primary transition-colors duration-200" />
         </Link>
       </div>
-      <div className="flex items-center gap-6 md:gap-10">
-        <ul className="hidden md:flex flex-row gap-10 lowercase">
+      <div className="flex items-center gap-6 md:gap-6">
+        <ul className="hidden md:flex flex-row gap-6 lowercase">
           {items.map((item, index) => (
             <NavLink
               key={index}
               to={item.href}
               className={({ isActive }) =>
-                isActive ? 'navbar-link text-lg active' : 'navbar-link text-lg'
+                `flex ${isActive ? 'font-bold' : ''} text-text items-center px-2 h-[40px] rounded-xl border border-transparent hover:bg-hover hover:border-background-border transition-all`
               }
             >
               {item.label}

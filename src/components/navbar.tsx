@@ -55,7 +55,7 @@ export default function Navbar() {
   }, [colorMode])
 
   return (
-    <nav className="fixed top-0 left-0 w-full h-fit flex flex-row justify-between xl:px-[10%] px-8 py-2 z-50">
+    <nav className="fixed top-0 left-0 w-full h-fit flex flex-row justify-between xl:px-[10%] px-8 py-2 z-50 select-none">
       <div>
         <Link to="/" className="group">
           <LogoSvg className="w-12 h-fit p-1 fill-text hover:fill-primary transition-colors duration-200" />
@@ -102,15 +102,15 @@ export default function Navbar() {
                 </div>
               </DropdownMenuTrigger>
               <DropdownMenuContent className='bg-background-menu rounded-lg border-background-border'>
-                <DropdownMenuItem className='hover:!bg-background-hover !text-text text-md rounded-md gap-2' onClick={setLightMode}>
+                <DropdownMenuItem className='hover:!bg-background-hover !text-text text-md rounded-md gap-2 cursor-pointer' onClick={setLightMode}>
                   <LightModeIcon />
                   Light
                 </DropdownMenuItem>
-                <DropdownMenuItem className='hover:!bg-background-hover !text-text text-md rounded-md gap-2' onClick={setDarkMode}>
+                <DropdownMenuItem className='hover:!bg-background-hover !text-text text-md rounded-md gap-2 cursor-pointer' onClick={setDarkMode}>
                   <DarkModeIcon />
                   Dark
                 </DropdownMenuItem>
-                <DropdownMenuItem className='hover:!bg-background-hover !text-text text-md rounded-md gap-2' onClick={setSystemMode}>
+                <DropdownMenuItem className='hover:!bg-background-hover !text-text text-md rounded-md gap-2 cursor-pointer' onClick={setSystemMode}>
                   <MonitorIcon />
                   System
                 </DropdownMenuItem>

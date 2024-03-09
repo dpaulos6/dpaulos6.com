@@ -78,7 +78,7 @@ export default function Navbar() {
         <div>
           <div className="flex md:hidden">
             <button
-              className="flex justify-center items-center w-10 h-10 text-3xl rounded-xl p-1 text-text hover:bg-hover transition-all"
+              className="flex justify-center items-center w-10 h-10 text-3xl rounded-xl p-1 text-text border border-transparent hover:bg-hover hover:border-background-border transition-all"
               onClick={changeColorMode}
             >
               {colorMode === 'light' ? (
@@ -90,16 +90,16 @@ export default function Navbar() {
           </div>
           <div className="hidden md:flex">
             <DropdownMenu>
-              <DropdownMenuTrigger className='ring-0 outline-none border-0'>
-                <button
-                  className="flex justify-center items-center w-10 h-10 text-3xl rounded-xl p-1 text-text hover:bg-hover transition-all"
+              <DropdownMenuTrigger className='ring-0 outline-none border-0 rounded-xl data-[state=open]:bg-hover data-[state=open]:border data-[state=open]:border-background-border'>
+                <div
+                  className="flex justify-center items-center w-10 h-10 text-3xl rounded-xl p-1 text-text border border-transparent hover:bg-hover hover:border-background-border transition-all"
                 >
                   {colorMode !== 'light' ? (
                     <DarkModeIcon />
                   ) : (
                     <LightModeIcon />
                   )}
-                </button>
+                </div>
               </DropdownMenuTrigger>
               <DropdownMenuContent className='bg-background-menu rounded-lg border-background-border'>
                 <DropdownMenuItem className='hover:!bg-background-hover !text-text text-md rounded-md gap-2' onClick={setLightMode}>
@@ -120,7 +120,7 @@ export default function Navbar() {
         </div>
         <div className="flex md:hidden">
           <button className="flex justify-center items-center">
-            <MenuIcon className="text-text w-10 h-10 rounded-xl p-2 hover:bg-hover transition-all" />
+            <MenuIcon className="text-text w-10 h-10 rounded-xl p-2 border border-transparent hover:bg-hover hover:border-background-border transition-all" />
           </button>
         </div>
       </div>

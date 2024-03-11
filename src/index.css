@@ -18,10 +18,7 @@
 }
 
 [data-theme='light'] {
-  code {
-    background-color: #0000001a;
-  }
-
+  --code: #0000001a;
   --audio-hover: #eb8612;
   --text: #0a0600;
   --text-hover: #050300;
@@ -39,10 +36,7 @@
 }
 
 [data-theme='dark'] {
-  code {
-    background-color: #ffffff0a;
-  }
-
+  --code: #ffffff0a;
   --audio-hover: #d67506;
   --text: #fffbf5;
   --text-hover: #fdf8f0;
@@ -100,13 +94,13 @@ blockquote,
 
 code {
   padding: 0.25rem 0.5rem;
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: var(--code);
   border-radius: 0.5rem;
 }
 
 blockquote {
   padding: 0.5rem 0.5rem 0.5rem 1.5rem;
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: var(--code);
   border-radius: 0.5rem;
 }
 

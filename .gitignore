@@ -30,5 +30,3 @@ dist-ssr
 package-lock.json
 pnpm-lock.yaml
 yarn.lock
-
-react-email-starter

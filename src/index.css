@@ -18,16 +18,18 @@
 }
 
 [data-theme='light'] {
+  --hireme-hover: rgba(255, 255, 255, 0.85);
+  --text-placeholder: #888787;
   --code: #0000001a;
   --audio-hover: #eb8612;
   --text: #0a0600;
   --text-hover: #050300;
-  --background: #FFFFFF;
+  --background: #ffffff;
   --background-hover: #ebebeb;
-  --background-menu: #F7F7F7;
-  --background-border: #DDDDDD;
+  --background-menu: #f7f7f7;
+  --background-border: #dddddd;
   --primary: #fb8f13;
-  --primary-hover: #d47a12;
+  --primary-hover: #f38910;
   --secondary: #94d2d4;
   --secondary-hover: #77b8ba;
   --accent: #6dd271;
@@ -36,13 +38,15 @@
 }
 
 [data-theme='dark'] {
+  --hireme-hover: rgba(0, 0, 0, 0.75);
+  --text-placeholder: #888787;
   --code: #ffffff0a;
   --audio-hover: #d67506;
   --text: #fffbf5;
   --text-hover: #fdf8f0;
-  --background: #0F0E0E;
+  --background: #0f0e0e;
   --background-hover: #242323;
-  --background-menu: #1B1A1A;
+  --background-menu: #1b1a1a;
   --background-border: #333231;
   --primary: #ec8004;
   --primary-hover: #e08721;
@@ -95,13 +99,13 @@ blockquote,
 code {
   padding: 0.25rem 0.5rem;
   background-color: var(--code);
-  border-radius: 0.5rem;
+  border-radius: 1rem;
 }
 
 blockquote {
   padding: 0.5rem 0.5rem 0.5rem 1.5rem;
   background-color: var(--code);
-  border-radius: 0.5rem;
+  border-radius: 1rem;
 }
 
 .logo:hover {

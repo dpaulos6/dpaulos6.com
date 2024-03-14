@@ -9,6 +9,7 @@ import About from '@/pages/about'
 import Works from '@/pages/works'
 import Contacts from '@/pages/contacts'
 import ThemeSwitcher from '@/components/ThemeSwitcher.tsx'
+import Hire from './pages/hire.js'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
@@ -20,6 +21,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
           <Route path="/about" element={<About />} />
           <Route path="/works" element={<Works />} />
           <Route path="/contacts" element={<Contacts />} />
+          <Route path="/hire" element={<Hire />} />
         </Routes>
         <App />
         <ThemeSwitcher />

@@ -31,7 +31,9 @@ module.exports = {
         text: 'var(--text)',
         'text-hover': 'var(--text-hover)',
         'audio-hover': 'var(--audio-hover)',
-        hover: 'var(--hover)'
+        hover: 'var(--hover)',
+        'hireme-hover': 'var(--hireme-hover)',
+        'text-placeholder': 'var(--text-placeholder)'
       },
       screens: {
         limit: '320px',

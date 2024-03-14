@@ -8,10 +8,9 @@ import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
+  DropdownMenuTrigger
+} from '@/components/ui/dropdown-menu'
 import { MonitorIcon } from '@/icons/MonitorIcon'
-
 
 type ColorMode = 'light' | 'dark'
 
@@ -20,6 +19,7 @@ export default function Navbar() {
     { label: 'Home', href: '/home' },
     { label: 'About', href: '/about' },
     { label: 'Works', href: '/works' },
+    { label: 'Hire', href: '/hire' },
     { label: 'Contacts', href: '/contacts' }
   ]
 
@@ -44,10 +44,12 @@ export default function Navbar() {
   }
 
   const setSystemMode = () => {
-    const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const newMode = prefersDarkMode ? 'dark' : 'light';
-    localStorage.setItem('theme', newMode);
-    setColorMode(newMode);
+    const prefersDarkMode = window.matchMedia(
+      '(prefers-color-scheme: dark)'
+    ).matches
+    const newMode = prefersDarkMode ? 'dark' : 'light'
+    localStorage.setItem('theme', newMode)
+    setColorMode(newMode)
   }
 
   useEffect(() => {
@@ -81,36 +83,35 @@ export default function Navbar() {
               className="flex justify-center items-center w-10 h-10 text-3xl rounded-xl p-1 text-text border border-transparent hover:bg-hover hover:border-background-border transition-all"
               onClick={changeColorMode}
             >
-              {colorMode === 'light' ? (
-                <DarkModeIcon />
-              ) : (
-                <LightModeIcon />
-              )}
+              {colorMode === 'light' ? <DarkModeIcon /> : <LightModeIcon />}
             </button>
           </div>
           <div className="hidden md:flex">
             <DropdownMenu>
-              <DropdownMenuTrigger className='ring-0 outline-none border-0 rounded-xl data-[state=open]:bg-hover data-[state=open]:border data-[state=open]:border-background-border'>
-                <div
-                  className="flex justify-center items-center w-10 h-10 text-3xl rounded-xl p-1 text-text border border-transparent hover:bg-hover hover:border-background-border transition-all"
-                >
-                  {colorMode !== 'light' ? (
-                    <DarkModeIcon />
-                  ) : (
-                    <LightModeIcon />
-                  )}
+              <DropdownMenuTrigger className="ring-0 outline-none border-0 rounded-xl data-[state=open]:bg-hover data-[state=open]:border data-[state=open]:border-background-border">
+                <div className="flex justify-center items-center w-10 h-10 text-3xl rounded-xl p-1 text-text border border-transparent hover:bg-hover hover:border-background-border transition-all">
+                  {colorMode !== 'light' ? <DarkModeIcon /> : <LightModeIcon />}
                 </div>
               </DropdownMenuTrigger>
-              <DropdownMenuContent className='bg-background-menu rounded-lg border-background-border'>
-                <DropdownMenuItem className='hover:!bg-background-hover !text-text text-md rounded-md gap-2 cursor-pointer' onClick={setLightMode}>
+              <DropdownMenuContent className="bg-background-menu rounded-lg border-background-border">
+                <DropdownMenuItem
+                  className="hover:!bg-background-hover !text-text text-md rounded-md gap-2 cursor-pointer"
+                  onClick={setLightMode}
+                >
                   <LightModeIcon />
                   Light
                 </DropdownMenuItem>
-                <DropdownMenuItem className='hover:!bg-background-hover !text-text text-md rounded-md gap-2 cursor-pointer' onClick={setDarkMode}>
+                <DropdownMenuItem
+                  className="hover:!bg-background-hover !text-text text-md rounded-md gap-2 cursor-pointer"
+                  onClick={setDarkMode}
+                >
                   <DarkModeIcon />
                   Dark
                 </DropdownMenuItem>
-                <DropdownMenuItem className='hover:!bg-background-hover !text-text text-md rounded-md gap-2 cursor-pointer' onClick={setSystemMode}>
+                <DropdownMenuItem
+                  className="hover:!bg-background-hover !text-text text-md rounded-md gap-2 cursor-pointer"
+                  onClick={setSystemMode}
+                >
                   <MonitorIcon />
                   System
                 </DropdownMenuItem>

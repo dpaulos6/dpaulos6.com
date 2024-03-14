@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 export default function Works() {
   return (
-    <>
+    <section id="works_page">
       <div className="w-screen h-screen flex flex-col gap-2 items-center justify-center text-text">
         <span className="text-5xl">This is still being built</span>
         <span className="text-lg">
@@ -14,6 +14,6 @@ export default function Works() {
           if you wanna see its progress
         </span>
       </div>
-    </>
+    </section>
   )
 }

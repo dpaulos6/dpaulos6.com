@@ -88,10 +88,12 @@ export default function Navbar() {
           </div>
           <div className="hidden md:flex">
             <DropdownMenu>
-              <DropdownMenuTrigger className="ring-0 outline-none border-0 rounded-xl data-[state=open]:bg-hover data-[state=open]:border data-[state=open]:border-background-border">
-                <div className="flex justify-center items-center w-10 h-10 text-3xl rounded-xl p-1 text-text border border-transparent hover:bg-hover hover:border-background-border transition-all">
-                  {colorMode !== 'light' ? <DarkModeIcon /> : <LightModeIcon />}
-                </div>
+              <DropdownMenuTrigger className='flex justify-center items-center w-10 h-10 text-3xl rounded-xl p-1 text-text transition-all ring-0 outline-none border border-transparent hover:bg-hover hover:border-background-border data-[state=open]:bg-hover data-[state=open]:border data-[state=open]:border-background-border'>
+                {colorMode !== 'light' ? (
+                  <DarkModeIcon />
+                ) : (
+                  <LightModeIcon />
+                )}
               </DropdownMenuTrigger>
               <DropdownMenuContent className="bg-background-menu rounded-lg border-background-border">
                 <DropdownMenuItem

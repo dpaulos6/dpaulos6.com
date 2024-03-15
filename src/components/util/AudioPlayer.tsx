@@ -10,38 +10,48 @@ interface AudioPlayerProps {
 
 const AudioPlayer: React.FC<AudioPlayerProps> = ({ src }) => {
   const defaultVolume = 0.15
-  const [audio] = useState(new Audio(src))
+  const [audio, setAudio] = useState<HTMLAudioElement | null>(null)
   const [isPlaying, setIsPlaying] = useState(false)
   const [volume, setVolume] = useState(defaultVolume)
   const [lastVolume, setLastVolume] = useState(volume)
   const [isMuted, setIsMuted] = useState(false)
 
   useEffect(() => {
-    audio.volume = volume
-  }, [volume])
+    setAudio(new Audio(src))
+  }, [])
 
   useEffect(() => {
-    if (isMuted) {
+    if (audio) {
+      audio.volume = volume
+    }
+  }, [volume, audio])
+
+  useEffect(() => {
+    if (isMuted && audio) {
       if (lastVolume === 0) setLastVolume(defaultVolume)
-      setVolume(0)
-    } else {
-      setVolume(lastVolume)
+      audio.volume = 0
+    } else if (audio) {
+      audio.volume = lastVolume
     }
   }, [isMuted])
 
   useEffect(() => {
     return () => {
-      audio.pause()
+      if (audio) {
+        audio.pause()
+      }
     }
   }, [audio])
 
   const togglePlay = () => {
-    if (audio.paused) {
-      audio.play()
-      setIsPlaying(true)
-    } else {
-      audio.pause()
-      setIsPlaying(false)
+    if (audio) {
+      if (audio.paused) {
+        audio.play()
+        setIsPlaying(true)
+      } else {
+        audio.pause()
+        setIsPlaying(false)
+      }
     }
   }
 
@@ -58,7 +68,7 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ src }) => {
 
   return (
     <div className="flex-1 bg-primary py-3 px-4 rounded-xl z-10">
-      <audio src={src}></audio>
+      {audio && <audio src={src}></audio>}
       <div className="flex items-center text-white controls">
         <button
           onClick={togglePlay}

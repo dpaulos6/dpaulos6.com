@@ -1,31 +1,40 @@
+"use client"
 import { useEffect, useState } from 'react'
-import { DarkModeIcon } from '@/icons/DarkModeIcon'
-import { LightModeIcon } from '@/icons/LightModeIcon'
-import { LogoSvg } from '@/icons/LogoSvg'
-import { MenuIcon } from '@/icons/MenuIcon'
-import { Link, NavLink } from 'react-router-dom'
+import { DarkModeIcon } from '@//icons/DarkModeIcon'
+import { LightModeIcon } from '@//icons/LightModeIcon'
+import { LogoSvg } from '@//icons/LogoSvg'
+import { MenuIcon } from '@//icons/MenuIcon'
+import Link from 'next/link'
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-import { MonitorIcon } from '@/icons/MonitorIcon'
+import { MonitorIcon } from '@//icons/MonitorIcon'
+import { useRouter } from 'next/router'
+import NavLink from '@/components/NavLink'
 
 
 type ColorMode = 'light' | 'dark'
 
 export default function Navbar() {
   const items = [
-    { label: 'Home', href: '/home' },
+    { label: 'Home', href: '/' },
     { label: 'About', href: '/about' },
     { label: 'Works', href: '/works' },
     { label: 'Contacts', href: '/contacts' }
   ]
 
-  const [colorMode, setColorMode] = useState<ColorMode>(
-    (localStorage.getItem('theme') as ColorMode | null) ?? 'light'
-  )
+  const [colorMode, setColorMode] = useState<ColorMode>('light');
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const storedTheme = localStorage.getItem('theme');
+      const initialColorMode: ColorMode = storedTheme === 'light' || storedTheme === 'dark' ? storedTheme : 'light';
+      setColorMode(initialColorMode);
+    }
+  }, []);
 
   function changeColorMode() {
     const newMode = colorMode === 'light' ? 'dark' : 'light'
@@ -57,20 +66,14 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 left-0 w-full h-fit flex flex-row justify-between xl:px-[10%] px-8 py-2 z-50 select-none">
       <div>
-        <Link to="/" className="group">
+        <Link href="/" className="group">
           <LogoSvg className="w-12 h-fit p-1 fill-text hover:fill-primary transition-colors duration-200" />
         </Link>
       </div>
       <div className="flex items-center gap-6 md:gap-6">
         <ul className="hidden md:flex flex-row gap-6 lowercase">
           {items.map((item, index) => (
-            <NavLink
-              key={index}
-              to={item.href}
-              className={({ isActive }) =>
-                `flex ${isActive ? 'font-bold' : ''} text-text items-center px-2 h-[40px] rounded-xl border border-transparent hover:bg-hover hover:border-background-border transition-all`
-              }
-            >
+            <NavLink key={index} href={item.href}>
               {item.label}
             </NavLink>
           ))}

@@ -1,4 +1,4 @@
-"use client"
+'use client'
 import { useEffect, useState } from 'react'
 import { DarkModeIcon } from '@//icons/DarkModeIcon'
 import { LightModeIcon } from '@//icons/LightModeIcon'
@@ -9,12 +9,11 @@ import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
+  DropdownMenuTrigger
+} from '@/components/ui/dropdown-menu'
 import { MonitorIcon } from '@//icons/MonitorIcon'
 import { useRouter } from 'next/router'
 import NavLink from '@/components/NavLink'
-
 
 type ColorMode = 'light' | 'dark'
 
@@ -26,15 +25,18 @@ export default function Navbar() {
     { label: 'Contacts', href: '/contacts' }
   ]
 
-  const [colorMode, setColorMode] = useState<ColorMode>('light');
+  const [colorMode, setColorMode] = useState<ColorMode>('light')
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      const storedTheme = localStorage.getItem('theme');
-      const initialColorMode: ColorMode = storedTheme === 'light' || storedTheme === 'dark' ? storedTheme : 'light';
-      setColorMode(initialColorMode);
+      const storedTheme = localStorage.getItem('theme')
+      const initialColorMode: ColorMode =
+        storedTheme === 'light' || storedTheme === 'dark'
+          ? storedTheme
+          : 'light'
+      setColorMode(initialColorMode)
     }
-  }, []);
+  }, [])
 
   function changeColorMode() {
     const newMode = colorMode === 'light' ? 'dark' : 'light'
@@ -53,10 +55,12 @@ export default function Navbar() {
   }
 
   const setSystemMode = () => {
-    const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const newMode = prefersDarkMode ? 'dark' : 'light';
-    localStorage.setItem('theme', newMode);
-    setColorMode(newMode);
+    const prefersDarkMode = window.matchMedia(
+      '(prefers-color-scheme: dark)'
+    ).matches
+    const newMode = prefersDarkMode ? 'dark' : 'light'
+    localStorage.setItem('theme', newMode)
+    setColorMode(newMode)
   }
 
   useEffect(() => {
@@ -84,32 +88,35 @@ export default function Navbar() {
               className="flex justify-center items-center w-10 h-10 text-3xl rounded-xl p-1 text-text border border-transparent hover:bg-hover hover:border-background-border transition-all"
               onClick={changeColorMode}
             >
-              {colorMode === 'light' ? (
-                <DarkModeIcon />
-              ) : (
-                <LightModeIcon />
-              )}
+              {colorMode === 'light' ? <DarkModeIcon /> : <LightModeIcon />}
             </button>
           </div>
           <div className="hidden md:flex">
             <DropdownMenu>
-              <DropdownMenuTrigger className='flex justify-center items-center w-10 h-10 text-3xl rounded-xl p-1 text-text transition-all ring-0 outline-none border border-transparent hover:bg-hover hover:border-background-border data-[state=open]:bg-hover data-[state=open]:border data-[state=open]:border-background-border'>
-                {colorMode !== 'light' ? (
-                  <DarkModeIcon />
-                ) : (
-                  <LightModeIcon />
-                )}
+              <DropdownMenuTrigger className="ring-0 outline-none border-0 rounded-xl data-[state=open]:bg-hover data-[state=open]:border data-[state=open]:border-background-border">
+                <div className="flex justify-center items-center w-10 h-10 text-3xl rounded-xl p-1 text-text border border-transparent hover:bg-hover hover:border-background-border transition-all">
+                  {colorMode !== 'light' ? <DarkModeIcon /> : <LightModeIcon />}
+                </div>
               </DropdownMenuTrigger>
-              <DropdownMenuContent className='bg-background-menu rounded-lg border-background-border'>
-                <DropdownMenuItem className='hover:!bg-background-hover !text-text text-md rounded-md gap-2 cursor-pointer' onClick={setLightMode}>
+              <DropdownMenuContent className="bg-background-menu rounded-lg border-background-border">
+                <DropdownMenuItem
+                  className="hover:!bg-background-hover !text-text text-md rounded-md gap-2 cursor-pointer"
+                  onClick={setLightMode}
+                >
                   <LightModeIcon />
                   Light
                 </DropdownMenuItem>
-                <DropdownMenuItem className='hover:!bg-background-hover !text-text text-md rounded-md gap-2 cursor-pointer' onClick={setDarkMode}>
+                <DropdownMenuItem
+                  className="hover:!bg-background-hover !text-text text-md rounded-md gap-2 cursor-pointer"
+                  onClick={setDarkMode}
+                >
                   <DarkModeIcon />
                   Dark
                 </DropdownMenuItem>
-                <DropdownMenuItem className='hover:!bg-background-hover !text-text text-md rounded-md gap-2 cursor-pointer' onClick={setSystemMode}>
+                <DropdownMenuItem
+                  className="hover:!bg-background-hover !text-text text-md rounded-md gap-2 cursor-pointer"
+                  onClick={setSystemMode}
+                >
                   <MonitorIcon />
                   System
                 </DropdownMenuItem>

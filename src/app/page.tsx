@@ -1,4 +1,4 @@
-"use client"
+'use client'
 import { useState, useEffect } from 'react'
 import './globals.css'
 
@@ -23,7 +23,10 @@ export default function Home() {
     <>
       <div className="w-screen h-screen flex flex-col gap-2 items-center justify-center text-text relative cursor-default">
         <span className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl px-4 py-2 lowercase transition-[font] duration-500">
-          Hi, I&apos;m <b className="font-medium"><code>Diogo Paulos</code></b>
+          Hi, I&apos;m{' '}
+          <b className="font-medium">
+            <code>Diogo Paulos</code>
+          </b>
         </span>
         <span className="fade-in-out w-max relative">
           {things.map((thing, index) => (

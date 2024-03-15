@@ -1,4 +1,4 @@
-"use client"
+'use client'
 import React, { useEffect } from 'react'
 import AudioPlayer from './util/AudioPlayer'
 

@@ -1,14 +1,15 @@
-import { useEffect } from 'react'
+"use client";
+import { useEffect } from "react";
 
 const ThemeSwitcher = () => {
   useEffect(() => {
-    const storedTheme = localStorage.getItem('theme')
+    const storedTheme = localStorage.getItem("theme");
     if (storedTheme !== null) {
-      document.documentElement.setAttribute('data-theme', storedTheme)
+      document.documentElement.setAttribute("data-theme", storedTheme);
     }
-  }, [])
+  }, []);
 
-  return null
-}
+  return null;
+};
 
-export default ThemeSwitcher
+export default ThemeSwitcher;

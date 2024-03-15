@@ -1,13 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  font-family: 'Poppins';
+  font-family: "Poppins";
   line-height: 1.5;
   font-weight: 400;
   color-scheme: light dark;
@@ -17,9 +17,7 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-[data-theme='light'] {
-  --hireme-hover: rgba(255, 255, 255, 0.85);
-  --text-placeholder: #888787;
+[data-theme="light"] {
   --code: #0000001a;
   --audio-hover: #eb8612;
   --text: #0a0600;
@@ -29,7 +27,7 @@
   --background-menu: #f7f7f7;
   --background-border: #dddddd;
   --primary: #fb8f13;
-  --primary-hover: #f38910;
+  --primary-hover: #d47a12;
   --secondary: #94d2d4;
   --secondary-hover: #77b8ba;
   --accent: #6dd271;
@@ -37,9 +35,7 @@
   --hover: #00000019;
 }
 
-[data-theme='dark'] {
-  --hireme-hover: rgba(0, 0, 0, 0.75);
-  --text-placeholder: #888787;
+[data-theme="dark"] {
   --code: #ffffff0a;
   --audio-hover: #d67506;
   --text: #fffbf5;
@@ -81,17 +77,17 @@ body {
 }
 
 .font-poppins {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .font-righteous {
-  font-family: 'Righteous', cursive;
+  font-family: "Righteous", cursive;
 }
 
 code,
 blockquote,
 .monospace {
-  font-family: 'Fira Code', monospace;
+  font-family: "Fira Code", monospace;
   font-optical-sizing: auto;
   font-style: normal;
 }
@@ -99,18 +95,19 @@ blockquote,
 code {
   padding: 0.25rem 0.5rem;
   background-color: var(--code);
-  border-radius: 1rem;
+  border-radius: 0.5rem;
 }
 
 blockquote {
   padding: 0.5rem 0.5rem 0.5rem 1.5rem;
   background-color: var(--code);
-  border-radius: 1rem;
+  border-radius: 0.5rem;
 }
 
 .logo:hover {
   filter: drop-shadow(0 0 1em #646cffaa);
 }
+
 .logo.react:hover {
   filter: drop-shadow(0 0 1em #61dafbaa);
 }
@@ -122,7 +119,7 @@ blockquote {
 }
 
 .navbar-link::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -15px;
   left: 50%;
@@ -144,7 +141,7 @@ blockquote {
 }
 
 .navbar-link.active::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -15px;
   left: 50%;

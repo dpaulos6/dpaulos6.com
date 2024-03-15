@@ -1,13 +1,11 @@
-/** @type {import('tailwindcss').Config} */
-module.exports = {
-  darkMode: ['class'],
+import type { Config } from "tailwindcss";
+
+const config: Config = {
   content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}'
+    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  prefix: '',
   theme: {
     container: {
       center: true,
@@ -18,24 +16,24 @@ module.exports = {
     },
     extend: {
       colors: {
-        primary: 'var(--primary)',
+        'primary': 'var(--primary)',
         'primary-hover': 'var(--primary-hover)',
-        secondary: 'var(--secondary)',
+        'secondary': 'var(--secondary)',
         'secondary-hover': 'var(--secondary-hover)',
-        accent: 'var(--accent)',
+        'accent': 'var(--accent)',
         'accent-hover': 'var(--accent-hover)',
-        background: 'var(--background)',
+        'background': 'var(--background)',
         'background-hover': 'var(--background-hover)',
         'background-menu': 'var(--background-menu)',
         'background-border': 'var(--background-border)',
-        text: 'var(--text)',
+        'text': 'var(--text)',
         'text-hover': 'var(--text-hover)',
         'audio-hover': 'var(--audio-hover)',
-        hover: 'var(--hover)'
+        'hover': 'var(--hover)'
       },
       screens: {
-        limit: '320px',
-        xs: '480px'
+        'limit': '320px',
+        'xs': '480px'
       },
       keyframes: {
         'accordion-down': {
@@ -53,5 +51,6 @@ module.exports = {
       }
     }
   },
-  plugins: [require('tailwindcss-animate')]
-}
+  plugins: [require('tailwindcss-animate')],
+};
+export default config;

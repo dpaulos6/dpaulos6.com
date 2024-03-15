@@ -1,56 +1,36 @@
-# Portfolio
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-This is a repo where I store the source code of my personal portfolio, so I can then deploy to [Vercel](https://vercel.com/) and make it publicly available, using my custom domain - [https://dpaulos6.xyz/](https://dpaulos6.xyz).
+## Getting Started
 
-## Inspiration / Meaning
-
-This website is an attempt to describe who I am as a person, using a color palette I truly find relaxing. All of the content included and design of the website is as much unique as my creativity allows, trying to reflect my style and vibe.
-
-<!-- The works included were made by me, some of them were projects of my own ideas, some of them were internship or real client projects. -->
-
-## Development
-
-This project was built using Vite and React + TypeScript, and below are the steps to run it locally on your system.
-
-### Warn: Install the package manager, if not already
-
-This project uses a package managere called `pnpm`, which will require it to be installed on your OS to correctly setup the project.
-
-If you don't have it installed, I wont guide you through the installation of `pnpm`, but you can follow their [documentation](https://pnpm.io/installation).
-
-### Install dependencies
-
-This step is mandatory because the modules folder is not included in the repository, and this command will install every module locally on your project's root folder.
+First, run the development server:
 
 ```bash
-pnpm install
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-### Run the development server
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-This command will allow you to preview the website and all changes you make in real time.
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-```bash
-pnpm run dev
-```
+This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-### Errors during setup
+## Learn More
 
-If any errors occur to you during the setup of the process, please research about the errors or refer to [Pnpm](https://pnpm.io/) or [Vite](https://vitejs.dev/).
+To learn more about Next.js, take a look at the following resources:
 
-If you've researched about the errors and, in extreme case, had to contact support, and you're still encountering errors, create an issue on this repository and I will do my best to help you.
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-## Contributing
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-This is a special project, as it will reflect my person on a website, but if you have a suggestion or can help me improve something about the website, please see my contacts and talk directly with me before attempting pull requests.
+## Deploy on Vercel
 
-Alternatively, you can create an issue and include `Contributing:` at the start of the title.
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-## Contacts
-
-In general, my @ is always **dpaulos6** on all social medias, but you can check the list below of the ways to contact me:
-
-- [Instagram](https://www.instagram.com/dpaulos6/)
-- [LinkedIn](https://www.linkedin.com/in/dpaulos6/)
-- [GitHub](https://www.github.com/dpaulos6/)
-- [Discord Server](https://discord.gg/Y7ujpKmmma)
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.

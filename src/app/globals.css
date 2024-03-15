@@ -1,13 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  font-family: 'Poppins';
+  font-family: "Poppins";
   line-height: 1.5;
   font-weight: 400;
   color-scheme: light dark;
@@ -17,15 +17,15 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-[data-theme='light'] {
+[data-theme="light"] {
   --code: #0000001a;
   --audio-hover: #eb8612;
   --text: #0a0600;
   --text-hover: #050300;
-  --background: #FFFFFF;
+  --background: #ffffff;
   --background-hover: #ebebeb;
-  --background-menu: #F7F7F7;
-  --background-border: #DDDDDD;
+  --background-menu: #f7f7f7;
+  --background-border: #dddddd;
   --primary: #fb8f13;
   --primary-hover: #d47a12;
   --secondary: #94d2d4;
@@ -35,14 +35,14 @@
   --hover: #00000019;
 }
 
-[data-theme='dark'] {
+[data-theme="dark"] {
   --code: #ffffff0a;
   --audio-hover: #d67506;
   --text: #fffbf5;
   --text-hover: #fdf8f0;
-  --background: #0F0E0E;
+  --background: #0f0e0e;
   --background-hover: #242323;
-  --background-menu: #1B1A1A;
+  --background-menu: #1b1a1a;
   --background-border: #333231;
   --primary: #ec8004;
   --primary-hover: #e08721;
@@ -77,17 +77,17 @@ body {
 }
 
 .font-poppins {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .font-righteous {
-  font-family: 'Righteous', cursive;
+  font-family: "Righteous", cursive;
 }
 
 code,
 blockquote,
 .monospace {
-  font-family: 'Fira Code', monospace;
+  font-family: "Fira Code", monospace;
   font-optical-sizing: auto;
   font-style: normal;
 }
@@ -119,7 +119,7 @@ blockquote {
 }
 
 .navbar-link::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -15px;
   left: 50%;
@@ -141,7 +141,7 @@ blockquote {
 }
 
 .navbar-link.active::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -15px;
   left: 50%;

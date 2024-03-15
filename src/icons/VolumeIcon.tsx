@@ -1,4 +1,4 @@
-import type { SVGProps } from 'react'
+import type { SVGProps } from "react";
 
 export function VolumeIcon(props: SVGProps<SVGSVGElement>) {
   return (
@@ -16,5 +16,5 @@ export function VolumeIcon(props: SVGProps<SVGSVGElement>) {
         clipRule="evenodd"
       ></path>
     </svg>
-  )
+  );
 }

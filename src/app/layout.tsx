@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
-import { Analytics } from '@vercel/analytics/react'
+import { Analytics } from "@vercel/analytics/react";
 import ThemeSwitcher from "@/components/ThemeSwitcher";
 import Navbar from "@/components/navbar";
 import BackgroundAudio from "@/components/BackgroundAudio";
@@ -23,9 +23,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <Navbar />
-        <div className="hidden limit:flex">
-          {children}  
-        </div>
+        <div className="hidden limit:flex">{children}</div>
         <div className="w-screen h-screen flex justify-center items-center limit:hidden">
           <span className="flex text-text text-base text-center px-4">
             Your device&apos;s screen is too small to render this website.

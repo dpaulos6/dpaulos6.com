@@ -10,19 +10,30 @@ import {
   Text
 } from '@react-email/components'
 
-const email = 'dycjh@example.com'
-const title = 'Portfolio'
-const message =
-  'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+interface HireMeEmailProps {
+  email: string
+  title: string
+  message: string
+}
 
-export const HireMeEmail = () => (
+export const HireMeEmail: React.FC<HireMeEmailProps> = ({
+  email,
+  title,
+  message
+}) => (
   <Html>
     <Head />
     <Preview>You're now ready to make live transactions with Stripe!</Preview>
     <Body style={main}>
       <Container style={container}>
         <Section style={box}>
-          <Img src="/static/logo.png" alt="dpaulos6" width="50" height="auto" style={{ display: 'flex', margin: '0 auto'}}/>
+          <Img
+            src="/static/logo.png"
+            alt="dpaulos6"
+            width="50"
+            height="auto"
+            style={{ display: 'flex', margin: '0 auto' }}
+          />
           <Hr style={hr} />
           <Text style={h1}>{title}</Text>
           <Text style={paragraph}>{message}</Text>

@@ -1,4 +1,4 @@
-import type { SVGProps } from "react";
+import type { SVGProps } from 'react'
 
 export function MonitorIcon(props: SVGProps<SVGSVGElement>) {
   return (
@@ -20,5 +20,5 @@ export function MonitorIcon(props: SVGProps<SVGSVGElement>) {
         <path d="M8 21h8m-4-4v4"></path>
       </g>
     </svg>
-  );
+  )
 }

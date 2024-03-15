@@ -1,4 +1,4 @@
-import type { SVGProps } from "react";
+import type { SVGProps } from 'react'
 
 export function PlayIcon(props: SVGProps<SVGSVGElement>) {
   return (
@@ -14,5 +14,5 @@ export function PlayIcon(props: SVGProps<SVGSVGElement>) {
         d="M3 3.732a1.5 1.5 0 0 1 2.305-1.265l6.706 4.267a1.5 1.5 0 0 1 0 2.531l-6.706 4.268A1.5 1.5 0 0 1 3 12.267z"
       ></path>
     </svg>
-  );
+  )
 }

@@ -1,5 +1,5 @@
-import '@/index.css'
-
+"use client"
+import '@/app/globals.css'
 import { Button } from '@/components/ui/button'
 import {
   Form,
@@ -40,10 +40,14 @@ export default function Hire() {
   return (
     <section id="hire_page">
       <div className="w-screen h-screen flex flex-col gap-2 items-center justify-center text-text">
-        <span className='text-4xl text-primary'>Hire me</span>
-        <div className='flex flex-col text-center mb-4'>
-          <span className='text-lg'>If you want to send me a job offer, please fill the fields below.</span>
-          <span className='text-base text-text-placeholder'>If the project falls out of my skillset, I will not reply to it.</span>
+        <span className="text-4xl text-primary">Hire me</span>
+        <div className="flex flex-col text-center mb-4">
+          <span className="text-lg">
+            If you want to send me a job offer, please fill the fields below.
+          </span>
+          <span className="text-base text-text-subtitle">
+            If the project falls out of my skill-set, I will not reply to it.
+          </span>
         </div>
         <Form {...form}>
           <form
@@ -106,7 +110,7 @@ export default function Hire() {
                 </FormItem>
               )}
             />
-            <Button className="flex mx-auto" type="submit">
+            <Button className="flex mx-auto bg-primary" type="submit">
               Submit
             </Button>
           </form>

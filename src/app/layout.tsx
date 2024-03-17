@@ -6,6 +6,7 @@ import { Analytics } from "@vercel/analytics/react";
 import ThemeSwitcher from "@/components/ThemeSwitcher";
 import Navbar from "@/components/navbar";
 import BackgroundAudio from "@/components/BackgroundAudio";
+import { BackgroundBeams } from "@/components/ui/background-beams";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,6 +24,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <div className="hidden limit:flex">
+          <BackgroundBeams />
           <Navbar />
           {children}
           <BackgroundAudio />

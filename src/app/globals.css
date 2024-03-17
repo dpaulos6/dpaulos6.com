@@ -155,8 +155,8 @@ blockquote {
 }
 
 ::selection {
-  color: var(--text);
-  background-color: var(--primary-hover);
+  color: rgb(var(--text));
+  background-color: rgb(var(--primary-hover));
 }
 
 #volumeSlider {

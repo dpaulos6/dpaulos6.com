@@ -22,14 +22,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Navbar />
-        <div className="hidden limit:flex">{children}</div>
+        <div className="hidden limit:flex">
+          <Navbar />
+          {children}
+          <BackgroundAudio />
+        </div>
         <div className="w-screen h-screen flex justify-center items-center limit:hidden">
           <span className="flex text-text text-base text-center px-4">
             Your device&apos;s screen is too small to render this website.
           </span>
         </div>
-        <BackgroundAudio />
         <ThemeSwitcher />
         <Analytics />
       </body>

@@ -1,4 +1,4 @@
-"use client"
+'use client'
 import '@/app/globals.css'
 import { Button } from '@/components/ui/button'
 import {
@@ -33,8 +33,21 @@ export default function Hire() {
     }
   })
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values)
+  async function onSubmit(values: any) {
+    try {
+      const res = await fetch('/api/sendHireEmail', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(values)
+      })
+
+      const data = await res.json()
+      console.log(data)
+    } catch (error) {
+      console.error(error)
+    }
   }
 
   return (
@@ -110,7 +123,7 @@ export default function Hire() {
                 </FormItem>
               )}
             />
-            <Button className="flex mx-auto bg-primary" type="submit">
+            <Button className="flex w-1/2 mx-auto bg-primary" type="submit">
               Submit
             </Button>
           </form>

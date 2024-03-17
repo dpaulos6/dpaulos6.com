@@ -9,31 +9,21 @@ import {
   Section,
   Text
 } from '@react-email/components'
+import * as React from 'react'
 
-interface HireMeEmailProps {
-  email: string
-  title: string
-  message: string
-}
-
-export const HireMeEmail: React.FC<HireMeEmailProps> = ({
-  email,
-  title,
-  message
-}) => (
+export const HireMeEmail = ({ title, message, email }: { title: string, message: string, email: string }) => (
   <Html>
     <Head />
-    <Preview>You're now ready to make live transactions with Stripe!</Preview>
+    <Preview>
+      You&apos;re now ready to make live transactions with Stripe!
+    </Preview>
     <Body style={main}>
       <Container style={container}>
         <Section style={box}>
-          <Img
-            src="/static/logo.png"
-            alt="dpaulos6"
-            width="50"
-            height="auto"
-            style={{ display: 'flex', margin: '0 auto' }}
-          />
+          <div style={logoContainer}>
+            <Text style={logoText}>dpaulos</Text>
+            <Text style={logoNumber}>6</Text>
+          </div>
           <Hr style={hr} />
           <Text style={h1}>{title}</Text>
           <Text style={paragraph}>{message}</Text>
@@ -44,10 +34,33 @@ export const HireMeEmail: React.FC<HireMeEmailProps> = ({
   </Html>
 )
 
+export default HireMeEmail
+
 const main = {
   backgroundColor: '#f6f9fc',
   fontFamily:
     '-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Ubuntu,sans-serif'
+}
+
+const logoContainer = {
+  display: 'flex',
+  alignItems: 'center',
+  margin: '0 auto',
+  width: 'fit-content'
+}
+
+const logoText = {
+  color: '#0a0600',
+  fontSize: '32px',
+  fontWeight: '700',
+  textAlign: 'center' as const
+}
+
+const logoNumber = {
+  color: '#40A2E3',
+  fontSize: '32px',
+  fontWeight: '700',
+  textAlign: 'center' as const
 }
 
 const container = {
@@ -67,7 +80,7 @@ const hr = {
 }
 
 const h1 = {
-  color: '#fb8f13',
+  color: '#40A2E3',
   fontSize: '20px',
   fontWeight: '700',
   textAlign: 'left' as const

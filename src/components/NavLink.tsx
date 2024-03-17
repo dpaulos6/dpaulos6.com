@@ -11,10 +11,12 @@ function NavLink({ href, children }: NavLinkProps) {
   const path = usePathname()
   const isActive = path === href
 
+  console.log(isActive ? "text-primary" : "text-text")
+
   return (
     <Link
       href={href}
-      className={`flex items-center px-2 h-[40px] rounded-xl border border-transparent hover:text-primary hover:bg-hover hover:border-background-border transition-all duration-300 ${isActive ? 'text-primary' : 'text-text'}`}
+      className={`flex items-center px-2 hover:text-primary transition-all ${isActive ? "text-primary" : "text-text"}`}
     >
       {children}
     </Link>

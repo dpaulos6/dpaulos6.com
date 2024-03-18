@@ -6,6 +6,7 @@ import ThemeSwitcher from '@/components/ThemeSwitcher'
 import Navbar from '@/components/navbar'
 import BackgroundAudio from '@/components/BackgroundAudio'
 import { BackgroundBeams } from '@/components/ui/background-beams'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -32,6 +33,7 @@ export default function RootLayout({
           </span>
         </div>
         <ThemeSwitcher />
+        <SpeedInsights />
         <Analytics />
       </body>
     </html>

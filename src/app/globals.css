@@ -1,13 +1,13 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  font-family: "Poppins";
+  font-family: 'Poppins';
   line-height: 1.5;
   font-weight: 400;
   color-scheme: light dark;
@@ -129,17 +129,17 @@ body {
 }
 
 .font-poppins {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 .font-righteous {
-  font-family: "Righteous", cursive;
+  font-family: 'Righteous', cursive;
 }
 
 code,
 blockquote,
 .monospace {
-  font-family: "Fira Code", monospace;
+  font-family: 'Fira Code', monospace;
   font-optical-sizing: auto;
   font-style: normal;
 }
@@ -158,7 +158,7 @@ blockquote {
 
 ::selection {
   color: rgb(var(--text));
-  background-color: rgb(var(--primary-hover));
+  background-color: rgb(var(--primary));
 }
 
 #volumeSlider {

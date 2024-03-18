@@ -1,4 +1,4 @@
-import type { SVGProps } from "react";
+import type { SVGProps } from 'react'
 
 export function OptionsIcon(props: SVGProps<SVGSVGElement>) {
   return (
@@ -14,5 +14,5 @@ export function OptionsIcon(props: SVGProps<SVGSVGElement>) {
         d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0-4 0m0-6a2 2 0 1 0 4 0a2 2 0 0 0-4 0m0 12a2 2 0 1 0 4 0a2 2 0 0 0-4 0"
       ></path>
     </svg>
-  );
+  )
 }

@@ -27,7 +27,7 @@ export default function RootLayout({
         <div className="hidden limit:flex">
           <BackgroundBeams />
           <Navbar />
-          {children}
+          <div className='z-10'>{children}</div>
           <BackgroundAudio />
         </div>
         <div className="w-screen h-screen flex justify-center items-center limit:hidden">

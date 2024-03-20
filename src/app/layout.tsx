@@ -10,7 +10,7 @@ import { SpeedInsights } from '@vercel/speed-insights/next'
 
 export const metadata: Metadata = {
   title: 'dpaulos6',
-  description: "dpaulos6's Personal Portfolio"
+  description: "dpaulos6' Personal Portfolio"
 }
 
 export default function RootLayout({

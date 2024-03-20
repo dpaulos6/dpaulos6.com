@@ -93,11 +93,13 @@ export const BackgroundBeams = React.memo(
             {paths.map((path, index) => (
               <motion.linearGradient
                 id={`linearGradient-${index}`}
-                x1="100%"
-                x2="100%"
-                y1="100%"
-                y2="100%"
                 key={`gradient-${index}`}
+                initial={{
+                  x1: "0%",
+                  x2: "0%",
+                  y1: "0%",
+                  y2: "0%",
+                }} 
                 animate={{
                   x1: ['0%', '100%'],
                   x2: ['0%', '95%'],

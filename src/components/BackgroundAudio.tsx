@@ -60,8 +60,41 @@ const BackgroundAudio: React.FC = () => {
         setLabelSwipeStyles('top-4 opacity-0')
       }
     },
+    onTap: () => {
+      if (containerSwipeStyles === 'bottom-0 pt-0' && labelSwipeStyles === '-top-8 opacity-100') {
+        if (audioContainer.current) {
+          setContainerSwipeStyles('-bottom-[4.5rem] group pointer-events-none')
+        }
+        if (audioLabel.current) {
+          setLabelSwipeStyles('top-4 opacity-0')
+        }
+      }
+    },
     ...config,
   });
+
+  useEffect(() => {
+    const onTouchStart = (event: TouchEvent) => {
+      const target = event.target as HTMLElement;
+      if (!audioContainer.current?.contains(target)) {
+        // Touch event originated outside the audio player container
+        if (containerSwipeStyles === 'bottom-0 pt-0' && labelSwipeStyles === '-top-8 opacity-100') {
+          if (audioContainer.current) {
+            setContainerSwipeStyles('-bottom-[4.5rem] group pointer-events-none')
+          }
+          if (audioLabel.current) {
+            setLabelSwipeStyles('top-4 opacity-0')
+          }
+        }
+      }
+    }
+
+    document.addEventListener('touchstart', onTouchStart)
+
+    return () => {
+      document.removeEventListener('touchstart', onTouchStart)
+    }
+  }, [containerSwipeStyles, labelSwipeStyles])
 
   return (
     <>

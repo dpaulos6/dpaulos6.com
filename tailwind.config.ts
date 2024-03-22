@@ -1,9 +1,9 @@
 import type { Config } from 'tailwindcss'
 
-const colors = require("tailwindcss/colors");
+const colors = require('tailwindcss/colors')
 const {
-  default: flattenColorPalette,
-} = require("tailwindcss/lib/util/flattenColorPalette");
+  default: flattenColorPalette
+} = require('tailwindcss/lib/util/flattenColorPalette')
 
 const config: Config = {
   content: [
@@ -21,23 +21,23 @@ const config: Config = {
     },
     extend: {
       colors: {
-        'primary': 'rgb(var(--primary))',
+        primary: 'rgb(var(--primary))',
         'primary-hover': 'rgb(var(--primary-hover))',
-        'secondary': 'rgb(var(--secondary))',
+        secondary: 'rgb(var(--secondary))',
         'secondary-hover': 'rgb(var(--secondary-hover))',
-        'accent': 'rgb(var(--accent))',
+        accent: 'rgb(var(--accent))',
         'accent-hover': 'rgb(var(--accent-hover))',
-        'background': 'rgb(var(--background))',
+        background: 'rgb(var(--background))',
         'background-hover': 'rgb(var(--background-hover))',
         'background-menu': 'rgb(var(--background-menu))',
         'background-border': 'rgb(var(--background-border))',
-        'text': 'rgb(var(--text))',
+        text: 'rgb(var(--text))',
         'text-hover': 'rgb(var(--text-hover))',
         'text-placeholder': 'rgb(var(--text-placeholder))',
         'text-subtitle': 'rgb(var(--text-subtitle))',
         'audio-hover': 'rgb(var(--audio-hover))',
 
-        'hover': 'var(--hover)',
+        hover: 'var(--hover)',
         'hire-hover': 'var(--hire-hover)'
       },
       screens: {
@@ -60,20 +60,17 @@ const config: Config = {
       }
     }
   },
-  plugins: [
-    require('tailwindcss-animate'),
-    addVariablesForColors,
-  ]
+  plugins: [require('tailwindcss-animate'), addVariablesForColors]
 }
 export default config
 
 function addVariablesForColors({ addBase, theme }: any) {
-  let allColors = flattenColorPalette(theme("colors"));
+  let allColors = flattenColorPalette(theme('colors'))
   let newVars = Object.fromEntries(
     Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
-  );
+  )
 
   addBase({
-    ":root": newVars,
-  });
+    ':root': newVars
+  })  
 }

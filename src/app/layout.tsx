@@ -24,11 +24,11 @@ export default function RootLayout({
         <title>dpaulos6</title>
       </head>
       <body>
-        <div className="hidden limit:flex">
+        <div className="hidden limit:flex z-10">
           <BackgroundBeams />
           <Navbar />
-          <div className='z-10'>{children}</div>
-          <BackgroundAudio />
+          {children}
+          {/* <BackgroundAudio /> */}
         </div>
         <div className="w-screen h-screen flex justify-center items-center limit:hidden">
           <span className="flex text-text text-base text-center px-4">

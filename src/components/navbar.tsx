@@ -1,5 +1,5 @@
 'use client'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { DarkModeIcon } from '@//icons/DarkModeIcon'
 import { LightModeIcon } from '@//icons/LightModeIcon'
 import { MenuIcon } from '@//icons/MenuIcon'
@@ -12,7 +12,6 @@ import {
 } from '@/components/ui/dropdown-menu'
 import { MonitorIcon } from '@//icons/MonitorIcon'
 import NavLink from '@/components/NavLink'
-import styled from 'styled-components'
 
 type ColorMode = 'light' | 'dark'
 
@@ -24,44 +23,6 @@ const items = [
 ]
 
 export default function Navbar() {
-  const [tabBoundingBox, setTabBoundingBox] = useState<DOMRect | null>(null)
-  const [wrapperBoundingBox, setWrapperBoundingBox] = useState<DOMRect | null>(
-    null
-  )
-  const [highlightedTab, setHighlightedTab] = useState<string | null>(null)
-  const [isHoveredFromNull, setIsHoveredFromNull] = useState<boolean>(true)
-
-  const highlightRef = useRef<HTMLDivElement>(null)
-  const wrapperRef = useRef<HTMLDivElement>(null)
-
-  const repositionHighlight = (
-    e: React.MouseEvent<HTMLAnchorElement>,
-    tab: { label: string; href: string; value: string }
-  ) => {
-    const target = e.currentTarget
-    setTabBoundingBox(target.getBoundingClientRect())
-
-    if (wrapperRef.current) {
-      setWrapperBoundingBox(wrapperRef.current.getBoundingClientRect())
-    }
-
-    setIsHoveredFromNull(!highlightedTab)
-    setHighlightedTab(tab.value)
-  }
-
-  const resetHighlight = () => setHighlightedTab(null)
-
-  const highlightStyles: React.CSSProperties = {}
-
-  if (tabBoundingBox && wrapperBoundingBox) {
-    highlightStyles.transitionDuration = isHoveredFromNull ? '0ms' : '300ms'
-    highlightStyles.opacity = highlightedTab ? 1 : 0
-    highlightStyles.width = `${tabBoundingBox.width}px`
-    highlightStyles.transform = `translate(${
-      tabBoundingBox.left - wrapperBoundingBox.left
-    }px)`
-  }
-
   const [colorMode, setColorMode] = useState<ColorMode>('light')
 
   useEffect(() => {

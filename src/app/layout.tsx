@@ -25,7 +25,7 @@ export default function RootLayout({
       </head>
       <body>
         <div className="hidden limit:flex z-10">
-          <BackgroundBeams />
+          {/* <BackgroundBeams /> */}
           <Navbar />
           {children}
           {/* <BackgroundAudio /> */}

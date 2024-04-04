@@ -1,7 +1,7 @@
-import { MutedIcon } from '@/icons/MutedIcon'
-import { PauseIcon } from '@/icons/PauseIcon'
-import { PlayIcon } from '@/icons/PlayIcon'
-import { VolumeIcon } from '@/icons/VolumeIcon'
+import { MutedIcon } from '@/icons'
+import { PauseIcon } from '@/icons'
+import { PlayIcon } from '@/icons'
+import { VolumeIcon } from '@/icons'
 import React, { useState, useEffect } from 'react'
 
 interface AudioPlayerProps {

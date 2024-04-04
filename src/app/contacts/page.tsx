@@ -23,7 +23,7 @@ const socials = [
   {
     label: 'Discord',
     icon: DiscordIcon,
-    href: 'https://discord.gg/Y7ujpKmmma'
+    href: 'https://discordapp.com/users/256154963602964480'
   },
   {
     label: 'GitHub',

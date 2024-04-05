@@ -11,12 +11,18 @@ import {
 } from '@react-email/components'
 import * as React from 'react'
 
-export const HireMeEmail = ({ title, message, email }: { title: string, message: string, email: string }) => (
+export const HireMeEmail = ({
+  title,
+  message,
+  email
+}: {
+  title: string
+  message: string
+  email: string
+}) => (
   <Html>
     <Head />
-    <Preview>
-      You&apos;re now ready to make live transactions with Stripe!
-    </Preview>
+    <Preview>A new job request was sent.</Preview>
     <Body style={main}>
       <Container style={container}>
         <Section style={box}>
@@ -27,7 +33,9 @@ export const HireMeEmail = ({ title, message, email }: { title: string, message:
           <Hr style={hr} />
           <Text style={h1}>{title}</Text>
           <Text style={paragraph}>{message}</Text>
-          <Text style={paragraph}>Sent by {email}</Text>
+          <Text style={paragraph}>
+            Sent by <a href={`mailto:${email}`}>{email}</a>
+          </Text>
         </Section>
       </Container>
     </Body>

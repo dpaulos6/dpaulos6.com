@@ -73,7 +73,9 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ src }) => {
   }
 
   return (
-    <div className="h-fit w-full mt-auto md:mt-0 bg-primary py-3 px-4 rounded-xl z-10 select-none">
+    <div className="flex-1 bg-primary py-3 px-4 rounded-xl z-10">
+      <audio src={src}></audio>
+    <div className="h-fit w-full mt-auto md:mt-0 bg-primary py-3 px-4 rounded-xl select-none">
       {audio && <audio src={src}></audio>}
       <div className="flex items-center text-white controls">
         <button

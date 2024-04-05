@@ -22,10 +22,11 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <title>dpaulos6</title>
+        <script defer data-domain="dpaulos6.xyz" src="https://stats.wouldyoubot.gg/js/script.js"></script>
       </head>
       <body>
         <div className="hidden limit:flex z-10">
-          <BackgroundBeams />
+          {/* <BackgroundBeams /> */}
           <Navbar />
           {children}
           {/* <BackgroundAudio /> */}

@@ -34,7 +34,7 @@
     --background-hover: 235 235 235;
     --background-menu: 247 247 247;
     --background-border: 221 221 221;
-    --hover: rgba(0, 0, 0, 0.098);
+    --hover: rgba(0, 0, 0, 0.04);
     --hire-hover: rgba(255, 255, 255, 0.75);
     --code: rgba(0, 0, 0, 0.102);
   }
@@ -79,7 +79,7 @@
   --background-hover: 235 235 235;
   --background-menu: 247 247 247;
   --background-border: 221 221 221;
-  --hover: rgba(0, 0, 0, 0.098);
+  --hover: rgba(0, 0, 0, 0.04);
   --hire-hover: rgba(255, 255, 255, 0.65);
   --code: rgba(0, 0, 0, 0.102);
 }

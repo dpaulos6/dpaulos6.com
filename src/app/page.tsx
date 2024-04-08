@@ -2,13 +2,14 @@
 import { useState, useEffect } from 'react'
 import './globals.css'
 
+const things = [
+  'Frontend developer',
+  'Passionate music producer',
+  'Kind human being',
+  'Gamer on free time'
+]
+
 export default function Home() {
-  const things = [
-    'Frontend developer',
-    'Passionate music producer',
-    'Kind human being',
-    'Gamer on free time'
-  ]
   const [currentThingIndex, setCurrentThingIndex] = useState(0)
 
   useEffect(() => {
@@ -21,14 +22,14 @@ export default function Home() {
 
   return (
     <>
-      <div className="w-screen h-screen flex flex-col gap-2 items-center justify-center text-text relative cursor-default">
+      <div className="w-screen h-screen flex flex-col gap-2 items-center justify-center text-text relative cursor-default z-10 pointer-events-none">
         <span className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl px-4 py-2 lowercase transition-[font] duration-500">
           Hi, I&apos;m{' '}
           <b className="font-medium">
             <code>Diogo Paulos</code>
           </b>
         </span>
-        <span className="fade-in-out w-max relative">
+        <span className="fade-in-out w-max relative mt-2">
           {things.map((thing, index) => (
             <span
               key={index}
@@ -39,6 +40,9 @@ export default function Home() {
             </span>
           ))}
         </span>
+        {/* <button className="inline-flex h-12 animate-shimmer items-center justify-center rounded-md border border-background-hover bg-[linear-gradient(110deg,rgb(var(--background)),40%,rgb(var(--background-hover)),50%,rgb(var(--background)))] bg-[length:200%_100%] px-6 font-medium text-text transition-colors focus:outline-none mt-52 pointer-events-auto">
+          Shimmer
+        </button> */}
       </div>
     </>
   )

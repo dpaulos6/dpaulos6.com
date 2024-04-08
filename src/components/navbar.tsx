@@ -66,7 +66,7 @@ export default function Navbar() {
   }, [colorMode])
 
   return (
-    <nav className="fixed top-0 left-0 w-full h-fit flex justify-center px-8 py-4 z-50 select-none">
+    <nav className="fixed top-0 left-0 w-full h-fit flex justify-center px-8 py-4 z-50">
       <div className="flex w-full max-w-7xl justify-between">
         <div>
           <Link href="/" className="text-2xl group">

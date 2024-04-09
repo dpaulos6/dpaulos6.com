@@ -42,47 +42,50 @@ export default function Page() {
           {projects.map((project, i) => (
             <div
               key={i}
-              className="flex items-center w-full h-full max-h-64 gap-8 p-6 rounded-xl hover:bg-hover transition group"
+              className="flex items-center w-full h-full max-h-64 p-0.5 rounded-[0.9rem] overflow-hidden transition group relative"
             >
-              <div className="flex w-auto h-full aspect-[5/2] rounded-xl overflow-hidden">
-                <Image
-                  src={
-                    project.thumbnail
-                      ? project.thumbnail
-                      : 'https://www.sbrv.org/wp-content/uploads/2019/11/preview.png'
-                  }
-                  alt={project.name + ' Thumbnail'}
-                  width={9999}
-                  height={9999}
-                  className="flex aspect-[3/2] object-cover object-center select-none"
-                />
-              </div>
-              <div className="w-full col-span-2 flex flex-col gap-2 py-2 pr-2 h-full">
-                <div className="flex items-center">
-                  <span className="text-3xl mr-2">{project.name}</span>
-                  {project.url ? (
-                    <Link href={project.url}>
-                      <LinkIcon className="p-2 w-10 rounded-md h-full aspect-square opacity-0 group-hover:opacity-100 hover:bg-primary/15 hover:text-primary transition" />
-                    </Link>
-                  ) : null}
-                  {project.github ? (
-                    <Link href={project.github}>
-                      <GithubIcon className="p-2 w-10 rounded-md h-full aspect-square opacity-0 group-hover:opacity-100 hover:bg-primary/15 hover:text-primary transition" />
-                    </Link>
-                  ) : null}
+              <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-primary to-accent opacity-0 group-hover:opacity-50 transition pointer-events-none "></div>
+              <div className="flex items-center  w-full h-full gap-8 p-6 rounded-xl bg-background z-10">
+                <div className="flex w-auto h-full aspect-[5/2] rounded-xl overflow-hidden">
+                  <Image
+                    src={
+                      project.thumbnail
+                        ? project.thumbnail
+                        : 'https://www.sbrv.org/wp-content/uploads/2019/11/preview.png'
+                    }
+                    alt={project.name + ' Thumbnail'}
+                    width={9999}
+                    height={9999}
+                    className="flex aspect-[3/2] object-cover object-center select-none"
+                  />
                 </div>
-                <span className="text-base leading-[1.75] overflow-ellipsis line-clamp-3 mb-2">
-                  {project.description}
-                </span>
-                <div className="flex w-full gap-4 mt-auto select-none">
-                  {project.technologies.map((tech, i) => (
-                    <span key={i} title={tech.label}>
-                      <tech.icon className="w-8 h-full aspect-square" />
-                    </span>
-                  ))}
-                  <button className="flex ml-auto mr-4 px-4 py-2 rounded-lg hover:bg-primary/15 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto hover:text-primary transition">
-                    View more
-                  </button>
+                <div className="w-full col-span-2 flex flex-col gap-2 py-2 pr-2 h-full">
+                  <div className="flex items-center">
+                    <span className="text-3xl mr-2">{project.name}</span>
+                    {project.url ? (
+                      <Link href={project.url}>
+                        <LinkIcon className="p-2 w-10 rounded-md h-full aspect-square opacity-0 group-hover:opacity-100 hover:bg-primary/15 hover:text-primary transition" />
+                      </Link>
+                    ) : null}
+                    {project.github ? (
+                      <Link href={project.github}>
+                        <GithubIcon className="p-2 w-10 rounded-md h-full aspect-square opacity-0 group-hover:opacity-100 hover:bg-primary/15 hover:text-primary transition" />
+                      </Link>
+                    ) : null}
+                  </div>
+                  <span className="text-base leading-[1.75] overflow-ellipsis line-clamp-3 mb-2">
+                    {project.description}
+                  </span>
+                  <div className="flex w-full gap-4 mt-auto select-none">
+                    {project.technologies.map((tech, i) => (
+                      <span key={i} title={tech.label}>
+                        <tech.icon className="w-8 h-full aspect-square" />
+                      </span>
+                    ))}
+                    <button className="flex ml-auto mr-4 px-4 py-2 rounded-lg hover:bg-primary/15 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto hover:text-primary transition">
+                      View more
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>

@@ -7,6 +7,8 @@ import Navbar from '@/components/navbar'
 import BackgroundAudio from '@/components/BackgroundAudio'
 import { BackgroundBeams } from '@/components/ui/background-beams'
 import { SpeedInsights } from '@vercel/speed-insights/next'
+import GradientBackground from '@/components/gradient-background'
+import Background from '@/components/someone-background'
 
 export const metadata: Metadata = {
   title: 'dpaulos6',
@@ -29,11 +31,11 @@ export default function RootLayout({
         ></script>
       </head>
       <body>
-        <div className="hidden limit:flex z-10">
-          {/* <BackgroundBeams /> */}
+        <div className="hidden limit:flex select-none">
           <Navbar />
-          {children}
+          <div className="z-10">{children}</div>
           {/* <BackgroundAudio /> */}
+          <GradientBackground />
         </div>
         <div className="w-screen h-screen flex justify-center items-center limit:hidden">
           <span className="flex text-text text-base text-center px-4">

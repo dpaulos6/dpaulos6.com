@@ -68,7 +68,7 @@ const BackgroundAudio: React.FC = () => {
   return (
     <>
       <div
-        className="flex md:hidden w-full h-1/3 absolute bottom-0 z-50 select-none"
+        className="flex md:hidden w-full h-1/3 absolute bottom-0 z-50"
         {...handlers}
       ></div>
       <div
@@ -77,7 +77,7 @@ const BackgroundAudio: React.FC = () => {
       >
         <span
           ref={audioLabel}
-          className={`w-full text-[.85rem] xs:text-sm md:text-base text-center absolute left-1/2 -translate-x-1/2 ${isTouchDevice ? labelSwipeStyles : 'top-4 opacity-0 group-hover:-top-4 group-hover:opacity-100'} transition-all !duration-500 select-none cursor-default pointer-events-none`}
+          className={`w-full text-[.85rem] xs:text-sm md:text-base text-center absolute left-1/2 -translate-x-1/2 ${isTouchDevice ? labelSwipeStyles : 'top-4 opacity-0 group-hover:-top-4 group-hover:opacity-100'} transition-all !duration-500 cursor-default pointer-events-none`}
         >
           Click play for an amazing experience
         </span>

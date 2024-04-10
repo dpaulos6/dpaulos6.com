@@ -63,7 +63,7 @@ export default function Navbar() {
   }, [colorMode])
 
   return (
-    <nav className="fixed top-0 left-0 w-full h-fit flex justify-center px-8 py-4 z-50 select-none">
+    <nav className="fixed top-0 left-0 w-full h-fit flex justify-center px-8 py-4 z-50">
       <div className="flex w-full max-w-7xl justify-between">
         <div>
           <Link href="/" className="text-2xl group">
@@ -88,7 +88,7 @@ export default function Navbar() {
             </div>
             <div className="hidden md:flex">
               <DropdownMenu>
-                <DropdownMenuTrigger className="flex justify-center items-center w-10 h-10 text-2xl rounded-xl text-text transition-all ring-0 outline-none border border-transparent hover:text-primary data-[state=open]:text-primary">
+                <DropdownMenuTrigger className="flex justify-center items-center w-10 h-10 text-3xl rounded-xl text-text transition-all ring-0 outline-none border border-transparent hover:text-primary data-[state=open]:text-primary">
                   {colorMode !== 'light' ? <DarkModeIcon /> : <LightModeIcon />}
                 </DropdownMenuTrigger>
                 <DropdownMenuContent className="bg-background-menu rounded-lg border-background-border">

@@ -1,8 +1,8 @@
 'use client'
 import { useEffect, useState } from 'react'
-import { DarkModeIcon } from '@//icons/DarkModeIcon'
-import { LightModeIcon } from '@//icons/LightModeIcon'
-import { MenuIcon } from '@//icons/MenuIcon'
+import { DarkModeIcon } from '@/icons/DarkModeIcon'
+import { LightModeIcon } from '@/icons/LightModeIcon'
+import { MenuIcon } from '@/icons/MenuIcon'
 import Link from 'next/link'
 import {
   DropdownMenu,
@@ -10,7 +10,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger
 } from '@/components/ui/dropdown-menu'
-import { MonitorIcon } from '@//icons/MonitorIcon'
+import { MonitorIcon } from '@/icons/MonitorIcon'
 import NavLink from '@/components/NavLink'
 
 type ColorMode = 'light' | 'dark'

@@ -17,6 +17,10 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
+import { useEffect, useState } from 'react'
+
 const formSchema = z.object({
   email: z.string().email({ message: 'Email must be valid!' }).min(1),
   title: z.string().min(1, { message: "Title can't be empty!" }),
@@ -24,6 +28,12 @@ const formSchema = z.object({
 })
 
 export default function Hire() {
+  const theme =
+    typeof localStorage !== 'undefined' ? localStorage.getItem('theme') : null
+
+  // Use theme variable
+  const themeMode = theme === 'dark' ? 'dark' : 'light'
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -35,15 +45,22 @@ export default function Hire() {
 
   async function onSubmit(values: any) {
     try {
-      const res = await fetch('/api/sendHireEmail', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(values)
-      })
+      const response = await toast.promise(
+        fetch('/api/sendHireEmail', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(values)
+        }),
+        {
+          pending: 'Sending email...',
+          success: 'Email sent successfully!',
+          error: 'Failed to send email.'
+        }
+      )
 
-      const data = await res.json()
+      const data = await response.json()
       console.log(data)
     } catch (error) {
       console.error(error)
@@ -128,6 +145,18 @@ export default function Hire() {
             </Button>
           </form>
         </Form>
+        <ToastContainer
+          position="top-center"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          pauseOnHover={false}
+          draggable={false}
+          theme={themeMode}
+        />
       </div>
     </section>
   )

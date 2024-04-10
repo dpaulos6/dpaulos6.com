@@ -1,23 +1,23 @@
-import { render } from '@react-email/render';
-import { Resend } from 'resend';
-import { HireMeEmail } from '@/emails/HireMeEmail'; // Importing named export
+import { render } from '@react-email/render'
+import { Resend } from 'resend'
+import { HireMeEmail } from '@/emails/HireMeEmail'
 
-const resend = new Resend(process.env.NEXT_PUBLIC_RESEND_API);
+const resend = new Resend(process.env.RESEND_API)
 const outlook = 'itzframepvp@outlook.com'
 
 export async function POST(request: Request, res: Response) {
-  const { email, title, message } = await request.json();
+  const { email, title, message } = await request.json()
 
   const { error } = await resend.emails.send({
-    from: 'dpaulos6 <onboarding@resend.dev>',
+    from: 'Website <hire@dpaulos6.xyz>',
     to: outlook,
-    subject: 'Your Developer Roadmap',
+    subject: 'Job Request: ' + title,
     html: render(HireMeEmail({ email, title, message }))
-  });
+  })
 
   if (error) {
-    return Response.json(error);
+    return Response.json(error)
   }
 
-  return Response.json({ message: 'Email sent successfully' });
+  return Response.json({ message: 'Email sent successfully' })
 }

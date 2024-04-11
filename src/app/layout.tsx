@@ -60,7 +60,8 @@ export default function RootLayout({
               "worksFor": {
                 "@type": "Organization",
                 "name": "Bomsite"
-              }  
+              }
+            }
             `
           }}
         ></script>

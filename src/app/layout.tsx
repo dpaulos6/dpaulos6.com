@@ -10,6 +10,10 @@ import { SpeedInsights } from '@vercel/speed-insights/next'
 import GradientBackground from '@/components/gradient-background'
 import Background from '@/components/someone-background'
 
+import { Poppins } from 'next/font/google'
+
+const font = Poppins({ subsets: ['latin'], weight: '400' })
+
 export const metadata: Metadata = {
   title: 'dpaulos6',
   description: "dpaulos6' Personal Portfolio"
@@ -21,10 +25,14 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={font.className}>
       <head>
         <title>dpaulos6</title>
-        <script defer data-domain="dpaulos6.xyz" src="https://stats.wouldyoubot.gg/js/script.js"></script>
+        <script
+          defer
+          data-domain="dpaulos6.xyz"
+          src="https://stats.wouldyoubot.gg/js/script.js"
+        ></script>
       </head>
       <body>
         <div className="hidden limit:flex select-none">

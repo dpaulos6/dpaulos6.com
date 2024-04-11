@@ -1,8 +1,8 @@
 'use client'
 import { useEffect, useState } from 'react'
-import { DarkModeIcon } from '@//icons/DarkModeIcon'
-import { LightModeIcon } from '@//icons/LightModeIcon'
-import { MenuIcon } from '@//icons/MenuIcon'
+import { DarkModeIcon } from '@/icons'
+import { LightModeIcon } from '@/icons'
+import { MenuIcon } from '@/icons'
 import Link from 'next/link'
 import {
   DropdownMenu,
@@ -10,7 +10,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger
 } from '@/components/ui/dropdown-menu'
-import { MonitorIcon } from '@//icons/MonitorIcon'
+import { MonitorIcon } from '@/icons'
 import NavLink from '@/components/NavLink'
 
 type ColorMode = 'light' | 'dark'
@@ -24,6 +24,7 @@ const items = [
 
 export default function Navbar() {
   const [colorMode, setColorMode] = useState<ColorMode>('light')
+  const [isScrolled, setIsScrolled] = useState(false)
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -65,10 +66,32 @@ export default function Navbar() {
     document.documentElement.setAttribute('data-theme', colorMode)
   }, [colorMode])
 
+  useEffect(() => {
+    console.log('scroll check mounted')
+
+    const handleScroll = () => {
+      console.log('scrolled')
+      const scroll = window.scrollY
+      scroll > 25 ? setIsScrolled(true) : setIsScrolled(false)
+    }
+
+    window.addEventListener('scroll', () => {
+      console.log('scroll')
+    })
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
+
   return (
-    <nav className="fixed top-0 left-0 w-full h-fit flex justify-center px-8 py-4 z-50">
+    <nav
+      className={`fixed top-0 left-0 w-full h-fit flex justify-center px-8 py-4 z-50 ${isScrolled ? 'bg-background' : ''}`}
+    >
       <div className="flex w-full max-w-7xl justify-between">
-        <div>
+        <div
+          className={`${isScrolled ? 'absolute top-8 left-8' : ''} transition-all duration-300`}
+        >
           <Link href="/" className="text-2xl group">
             <span className="text-text group-hover:text-primary transition duration-300">
               dpaulos

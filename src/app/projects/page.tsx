@@ -4,7 +4,7 @@ import Link from 'next/link'
 export default function Page() {
   return (
     <>
-      <div className="w-screen h-screen flex flex-col gap-2 items-center justify-center text-text">
+      <div className="w-screen h-screen flex flex-col gap-2 items-center justify-center text-text overflow-hidden">
         <span className="text-5xl">This is still being built</span>
         <span className="text-lg">
           You can join my{' '}

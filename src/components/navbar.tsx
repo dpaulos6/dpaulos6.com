@@ -80,7 +80,7 @@ export default function Navbar() {
         </div>
         <div className="flex items-center gap-6 md:gap-6">
           <NavLink items={items} />
-          <div>
+          <div className="hidden">
             <div className="flex md:hidden">
               <button
                 className="flex justify-center items-center w-10 h-10 text-3xl rounded-xl p-1 text-text border border-transparent hover:bg-hover hover:border-background-border transition-all"

@@ -17,7 +17,28 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-@media (prefers-color-scheme: light) {
+:root {
+  --primary: 64 162 227;
+  --primary-hover: 59 147 206;
+  --audio-hover: 61 148 206;
+  --secondary: 190 203 207;
+  --secondary-hover: 162 173 177;
+  --accent: 225 101 228;
+  --accent-hover: 184 84 185;
+  --text: 0 0 0;
+  --text-hover: 5 3 0;
+  --text-placeholder: 163 163 163;
+  --text-subtitle: 129 129 129;
+  --background: 255 255 255;
+  --background-hover: 230 230 230;
+  --background-menu: 247 247 247;
+  --background-border: 221 221 221;
+  --hover: rgba(0, 0, 0, 0.098);
+  --hire-hover: rgba(255, 255, 255, 0.65);
+  --code: rgba(0, 0, 0, 0.102);
+}
+
+/* @media (prefers-color-scheme: light) {
   :root {
     --primary: 64 162 227;
     --primary-hover: 59 147 206;
@@ -105,7 +126,7 @@
   --hire-hover: rgba(0, 0, 0, 0.75);
   --code: rgba(255, 255, 255, 0.063);
   --grid: 255 255 255;
-}
+} */
 
 html,
 body {

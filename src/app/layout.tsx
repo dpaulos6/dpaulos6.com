@@ -14,6 +14,13 @@ import { Poppins } from 'next/font/google'
 
 const font = Poppins({ subsets: ['latin'], weight: '400' })
 
+function age() {
+  var dob = new Date(2003, 5, 17)
+  var diff_ms = Date.now() - dob.getTime()
+  var age_dt = new Date(diff_ms)
+  return Math.abs(age_dt.getUTCFullYear() - 1970)
+}
+
 export const metadata: Metadata = {
   title: 'Diogo Paulos',
   description: `I'm Diogo Paulos, and I'm currently ${age()} years old, living in the beauty of Portugal.`

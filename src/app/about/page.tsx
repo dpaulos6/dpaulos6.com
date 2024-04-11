@@ -22,6 +22,7 @@ import {
   VscodeIcon
 } from '@/icons'
 import Image from 'next/image'
+import Head from "next/head";
 import { useEffect, useState } from 'react'
 
 export default function Page() {
@@ -35,6 +36,10 @@ export default function Page() {
   }, [])
 
   return (
+    <>
+    <Head>
+      <title>Diogo Paulos - About Me</title>
+    </Head>
     <section className="w-screen h-auto flex flex-col gap-40 items-center text-text overflow-x-hidden">
       <div className="w-full h-16 pointer-events-none" />
       <div className="w-full max-w-7xl flex flex-col items-center mb-40">
@@ -186,5 +191,6 @@ export default function Page() {
         </div>
       </div>
     </section>
+    </>
   )
 }

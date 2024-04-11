@@ -40,9 +40,6 @@ export default function Home() {
             </span>
           ))}
         </span>
-        {/* <button className="inline-flex h-12 animate-shimmer items-center justify-center rounded-md border border-background-hover bg-[linear-gradient(110deg,rgb(var(--background)),40%,rgb(var(--background-hover)),50%,rgb(var(--background)))] bg-[length:200%_100%] px-6 font-medium text-text transition-colors focus:outline-none mt-52 pointer-events-auto">
-          Shimmer
-        </button> */}
       </div>
     </>
   )

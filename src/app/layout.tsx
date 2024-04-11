@@ -16,7 +16,7 @@ const font = Poppins({ subsets: ['latin'], weight: '400' })
 
 export const metadata: Metadata = {
   title: 'Diogo Paulos',
-  description: "I'm Diogo Paulos, and I'm currently 20 years old, living in the beauty of Portugal."
+  description: `I'm Diogo Paulos, and I'm currently ${age()} years old, living in the beauty of Portugal.`
 }
 
 export default function RootLayout({

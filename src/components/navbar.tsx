@@ -66,27 +66,27 @@ export default function Navbar() {
     document.documentElement.setAttribute('data-theme', colorMode)
   }, [colorMode])
 
-  useEffect(() => {
-    console.log('scroll check mounted')
+  // useEffect(() => {
+  //   console.log('scroll check mounted')
 
-    const handleScroll = () => {
-      console.log('scrolled')
-      const scroll = window.scrollY
-      scroll > 25 ? setIsScrolled(true) : setIsScrolled(false)
-    }
+  //   const handleScroll = () => {
+  //     console.log('scrolled')
+  //     const scroll = window.scrollY
+  //     scroll > 25 ? setIsScrolled(true) : setIsScrolled(false)
+  //   }
 
-    window.addEventListener('scroll', () => {
-      console.log('scroll')
-    })
+  //   window.addEventListener('scroll', () => {
+  //     console.log('scroll')
+  //   })
 
-    return () => {
-      window.removeEventListener('scroll', handleScroll)
-    }
-  }, [])
+  //   return () => {
+  //     window.removeEventListener('scroll', handleScroll)
+  //   }
+  // }, [])
 
   return (
     <nav
-      className={`fixed top-0 left-0 w-full h-fit flex justify-center px-8 py-4 z-50 ${isScrolled ? 'bg-background' : ''}`}
+      className={`fixed top-0 left-0 w-full h-fit flex justify-center px-8 py-4 z-50 bg-background`}
     >
       <div className="flex w-full max-w-7xl justify-between">
         <div

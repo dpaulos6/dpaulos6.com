@@ -2,12 +2,9 @@
 import '@/app/globals.css'
 import {
   AstroIcon,
-  CplusplusIcon,
   CsharpIcon,
   EslintIcon,
   GitIcon,
-  GoIcon,
-  JavaIcon,
   JavascriptIcon,
   KotlinIcon,
   LucideIcon,
@@ -16,19 +13,14 @@ import {
   PnpmIcon,
   PostmanIcon,
   PrettierIcon,
-  PythonIcon,
   ReactIcon,
-  RustIcon,
   ShadcnIcon,
-  SupabaseIcon,
   SvelteIcon,
-  SwiftIcon,
   TailwindIcon,
   TypescriptIcon,
   ViteIcon,
   VscodeIcon
 } from '@/icons'
-import { EllipsisIcon } from 'lucide-react'
 import Image from 'next/image'
 import Head from "next/head";
 import { useEffect, useState } from 'react'
@@ -46,9 +38,9 @@ export default function Page() {
   return (
     <>
     <Head>
-    <title>Diogo Paulos - About Me</title>
+      <title>Diogo Paulos - About Me</title>
     </Head>
-    <section className="w-screen h-auto flex flex-col gap-40 items-center text-text">
+    <section className="w-screen h-auto flex flex-col gap-40 items-center text-text overflow-x-hidden">
       <div className="w-full h-16 pointer-events-none" />
       <div className="w-full max-w-7xl flex flex-col items-center mb-40">
         <div className="w-fit relative mb-32">
@@ -98,24 +90,24 @@ export default function Page() {
         <div className="flex justify-between w-full">
           <div className="flex flex-col gap-6">
             <span className="text-3xl">Frameworks</span>
-            <div className="flex flex-col">
-              <span className="w-fit flex items-center gap-4 text-2xl px-4 py-2 rounded-lg hover:bg-background-hover/40 transition">
+            <div className="w-fit flex flex-col">
+              <span className="w-full flex items-center gap-4 text-2xl px-4 py-2 rounded-lg hover:bg-background-hover/40 transition">
                 <NextjsIcon className="w-7 h-7 aspect-square" />
                 NextJS
               </span>
-              <span className="w-fit flex items-center gap-4 text-2xl px-4 py-2 rounded-lg hover:bg-background-hover/40 transition">
+              <span className="w-full flex items-center gap-4 text-2xl px-4 py-2 rounded-lg hover:bg-background-hover/40 transition">
                 <ReactIcon className="w-7 h-7 aspect-square" />
                 React
               </span>
-              <span className="w-fit flex items-center gap-4 text-2xl px-4 py-2 rounded-lg hover:bg-background-hover/40 transition">
+              <span className="w-full flex items-center gap-4 text-2xl px-4 py-2 rounded-lg hover:bg-background-hover/40 transition">
                 <AstroIcon className="w-7 h-7 aspect-square" />
                 Astro
               </span>
-              <span className="w-fit flex items-center gap-4 text-2xl px-4 py-2 rounded-lg hover:bg-background-hover/40 transition">
+              <span className="w-full flex items-center gap-4 text-2xl px-4 py-2 rounded-lg hover:bg-background-hover/40 transition">
                 <ViteIcon className="w-7 h-7 aspect-square" />
                 Vite
               </span>
-              <span className="w-fit flex items-center gap-4 text-2xl px-4 py-2 rounded-lg hover:bg-background-hover/40 transition">
+              <span className="w-full flex items-center gap-4 text-2xl px-4 py-2 rounded-lg hover:bg-background-hover/40 transition">
                 <SvelteIcon className="w-7 h-7 aspect-square" />
                 Svelte
               </span>
@@ -123,24 +115,24 @@ export default function Page() {
           </div>
           <div className="flex flex-col gap-6">
             <span className="text-3xl">Languages</span>
-            <div className="flex flex-col">
-              <span className="w-fit flex items-center gap-4 text-2xl px-4 py-2 rounded-lg hover:bg-background-hover/40 transition">
+            <div className="w-fit flex flex-col">
+              <span className="w-full flex items-center gap-4 text-2xl px-4 py-2 rounded-lg hover:bg-background-hover/40 transition">
                 <TypescriptIcon className="w-7 h-7 aspect-square" />
                 Typescript
               </span>
-              <span className="w-fit flex items-center gap-4 text-2xl px-4 py-2 rounded-lg hover:bg-background-hover/40 transition">
+              <span className="w-full flex items-center gap-4 text-2xl px-4 py-2 rounded-lg hover:bg-background-hover/40 transition">
                 <JavascriptIcon className="w-7 h-7 aspect-square" />
                 Javascript
               </span>
-              <span className="w-fit flex items-center gap-4 text-2xl px-4 py-2 rounded-lg hover:bg-background-hover/40 transition">
+              <span className="w-full flex items-center gap-4 text-2xl px-4 py-2 rounded-lg hover:bg-background-hover/40 transition">
                 <PhpIcon className="w-7 h-7 aspect-square" />
                 Php
               </span>
-              <span className="w-fit flex items-center gap-4 text-2xl px-4 py-2 rounded-lg hover:bg-background-hover/40 transition">
+              <span className="w-full flex items-center gap-4 text-2xl px-4 py-2 rounded-lg hover:bg-background-hover/40 transition">
                 <KotlinIcon className="w-7 h-7 aspect-square" />
                 Kotlin
               </span>
-              <span className="w-fit flex items-center gap-4 text-2xl px-4 py-2 rounded-lg hover:bg-background-hover/40 transition">
+              <span className="w-full flex items-center gap-4 text-2xl px-4 py-2 rounded-lg hover:bg-background-hover/40 transition">
                 <CsharpIcon className="w-7 h-7 aspect-square" />
                 C#
               </span>
@@ -148,24 +140,24 @@ export default function Page() {
           </div>
           <div className="flex flex-col gap-6">
             <span className="text-3xl">Tools</span>
-            <div className="flex flex-col">
-              <span className="w-fit flex items-center gap-4 text-2xl px-4 py-2 rounded-lg hover:bg-background-hover/40 transition">
+            <div className="w-fit flex flex-col">
+              <span className="w-full flex items-center gap-4 text-2xl px-4 py-2 rounded-lg hover:bg-background-hover/40 transition">
                 <VscodeIcon className="w-7 h-7 aspect-square" />
                 VSCode
               </span>
-              <span className="w-fit flex items-center gap-4 text-2xl px-4 py-2 rounded-lg hover:bg-background-hover/40 transition">
+              <span className="w-full flex items-center gap-4 text-2xl px-4 py-2 rounded-lg hover:bg-background-hover/40 transition">
                 <GitIcon className="w-7 h-7 aspect-square" />
                 Git
               </span>
-              <span className="w-fit flex items-center gap-4 text-2xl px-4 py-2 rounded-lg hover:bg-background-hover/40 transition">
+              <span className="w-full flex items-center gap-4 text-2xl px-4 py-2 rounded-lg hover:bg-background-hover/40 transition">
                 <PostmanIcon className="w-7 h-7 aspect-square" />
                 Postman
               </span>
-              <span className="w-fit flex items-center gap-4 text-2xl px-4 py-2 rounded-lg hover:bg-background-hover/40 transition">
+              <span className="w-full flex items-center gap-4 text-2xl px-4 py-2 rounded-lg hover:bg-background-hover/40 transition">
                 <PrettierIcon className="w-7 h-7 aspect-square" />
                 Prettier
               </span>
-              <span className="w-fit flex items-center gap-4 text-2xl px-4 py-2 rounded-lg hover:bg-background-hover/40 transition">
+              <span className="w-full flex items-center gap-4 text-2xl px-4 py-2 rounded-lg hover:bg-background-hover/40 transition">
                 <PnpmIcon className="w-7 h-7 aspect-square" />
                 Pnpm
               </span>
@@ -173,24 +165,24 @@ export default function Page() {
           </div>
           <div className="flex flex-col gap-6">
             <span className="text-3xl">Libraries</span>
-            <div className="flex flex-col">
-              <span className="w-fit flex items-center gap-4 text-2xl px-4 py-2 rounded-lg hover:bg-background-hover/40 transition">
+            <div className="w-fit flex flex-col">
+              <span className="w-full flex items-center gap-4 text-2xl px-4 py-2 rounded-lg hover:bg-background-hover/40 transition">
                 <TailwindIcon className="w-7 h-7 aspect-square" />
                 Tailwind
               </span>
-              <span className="w-fit flex items-center gap-4 text-2xl px-4 py-2 rounded-lg hover:bg-background-hover/40 transition">
+              <span className="w-full flex items-center gap-4 text-2xl px-4 py-2 rounded-lg hover:bg-background-hover/40 transition">
                 <ShadcnIcon className="w-7 h-7 aspect-square" />
                 Shadcn
               </span>
-              <span className="w-fit flex items-center gap-4 text-2xl px-4 py-2 rounded-lg hover:bg-background-hover/40 transition">
+              <span className="w-full flex items-center gap-4 text-2xl px-4 py-2 rounded-lg hover:bg-background-hover/40 transition">
                 <LucideIcon className="w-7 h-7 aspect-square" />
                 Lucide
               </span>
-              <span className="w-fit flex items-center gap-4 text-2xl px-4 py-2 rounded-lg hover:bg-background-hover/40 transition">
+              <span className="w-full flex items-center gap-4 text-2xl px-4 py-2 rounded-lg hover:bg-background-hover/40 transition">
                 <PrettierIcon className="w-7 h-7 aspect-square" />
                 Prettier
               </span>
-              <span className="w-fit flex items-center gap-4 text-2xl px-4 py-2 rounded-lg hover:bg-background-hover/40 transition">
+              <span className="w-full flex items-center gap-4 text-2xl px-4 py-2 rounded-lg hover:bg-background-hover/40 transition">
                 <EslintIcon className="w-7 h-7 aspect-square" />
                 Eslint
               </span>

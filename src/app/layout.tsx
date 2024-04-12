@@ -39,6 +39,10 @@ export default function RootLayout({
         <meta name="robots" content="index, follow" />
         <meta name="theme-color" content="#40A2E3" />
         <meta name="msapplication-TileColor" content="#40A2E3" />
+        <meta property="og:image" content="/favicon.ico" />
+        <meta property="og:image:type" content="image/x-icon" />
+        <meta property="og:url" content="https://dpaulos6.xyz/" />
+        <meta property="og:site_name" content="Diogo Paulos' Portfolio" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

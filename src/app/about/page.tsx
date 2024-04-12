@@ -106,7 +106,7 @@ export default function Page() {
         </div>
         <div className="w-full max-w-7xl flex flex-col items-center pb-40 px-8 xs:px-12 sm:px-16 md:px-20 lg:px-12 xl:px-0">
           <div className="hidden md:flex w-fit relative mb-32 text-center group">
-            <span className="text-5xl md:text-6xl px-48 pt-10 -mt-10">
+            <span className="text-5xl md:text-6xl px-48 pt-10 -mt-10 whitespace-nowrap">
               What stack do I use?
             </span>
             <span className="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 text-7xl md:text-8xl whitespace-nowrap text-neutral-200/50 -z-10 transition-all group-hover:opacity-0">

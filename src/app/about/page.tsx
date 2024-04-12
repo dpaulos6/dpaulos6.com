@@ -48,12 +48,15 @@ export default function Page() {
             <span className="text-5xl md:text-6xl px-24 pt-8 whitespace-nowrap">
               Who am I?
             </span>
-            <span className="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 text-7xl md:text-8xl whitespace-nowrap text-neutral-200/50 -z-10 transition-all md:group-hover:opacity-0">
+            <span
+              className="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 text-7xl md:text-8xl whitespace-nowrap text-neutral-200/50 -z-10 transition-all md:group-hover:opacity-0"
+              area-hidden="true"
+            >
               Who am I?
             </span>
             <span
-              className="hidden md:flex absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 text-7xl md:text-8xl whitespace-nowrap -z-10
-            bg-gradient-to-r text-transparent from-sky-400 to-primary bg-clip-text transition-all opacity-0 group-hover:opacity-50"
+              className="hidden md:flex absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 text-7xl md:text-8xl whitespace-nowrap -z-10 bg-gradient-to-r text-transparent from-sky-400 to-primary bg-clip-text transition-all opacity-0 group-hover:opacity-50"
+              area-hidden="true"
             >
               Who am I?
             </span>
@@ -112,10 +115,16 @@ export default function Page() {
             <span className="text-5xl md:text-6xl px-48 pt-10 -mt-10 whitespace-nowrap">
               What stack do I use?
             </span>
-            <span className="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 text-7xl md:text-8xl whitespace-nowrap text-neutral-200/50 -z-10 transition-all group-hover:opacity-0">
+            <span
+              className="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 text-7xl md:text-8xl whitespace-nowrap text-neutral-200/50 -z-10 transition-all group-hover:opacity-0"
+              area-hidden="true"
+            >
               What stack do I use?
             </span>
-            <span className="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 text-7xl md:text-8xl whitespace-nowrap -z-10 bg-gradient-to-r text-transparent from-sky-400 to-primary bg-clip-text transition-all opacity-0 group-hover:opacity-50">
+            <span
+              className="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 text-7xl md:text-8xl whitespace-nowrap -z-10 bg-gradient-to-r text-transparent from-sky-400 to-primary bg-clip-text transition-all opacity-0 group-hover:opacity-50"
+              area-hidden="true"
+            >
               What stack do I use?
             </span>
           </div>
@@ -123,7 +132,10 @@ export default function Page() {
             <span className="text-5xl md:text-6xl whitespace-nowrap">
               What stack?
             </span>
-            <span className="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 text-7xl md:text-8xl whitespace-nowrap text-neutral-200/50 -z-10">
+            <span
+              className="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 text-7xl md:text-8xl whitespace-nowrap text-neutral-200/50 -z-10"
+              area-hidden="true"
+            >
               What stack?
             </span>
           </div>

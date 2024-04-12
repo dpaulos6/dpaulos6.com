@@ -41,7 +41,7 @@ export default function Page() {
       <Head>
         <title>Diogo Paulos - About Me</title>
       </Head>
-      <section className="w-full h-full flex flex-col gap-40 items-center text-text overflow-x-hidden">
+      <section className="w-full h-full flex flex-col pt-24 md:pt-0 md:gap-40 items-center text-text overflow-x-hidden">
         <div className="w-full h-16 pointer-events-none" />
         <div className="w-full max-w-7xl flex flex-col items-center mb-40">
           <div className="w-fit relative mb-32 group">
@@ -107,7 +107,7 @@ export default function Page() {
             </div>
           </div>
         </div>
-        <div className="w-full max-w-7xl flex flex-col items-center pb-40 px-8 xs:px-12 sm:px-16 md:px-20 lg:px-12 xl:px-0">
+        <div className="w-full max-w-7xl flex flex-col items-center pb-20 md:pb-40 px-8 xs:px-12 sm:px-16 md:px-20 lg:px-12 xl:px-0">
           <div className="hidden md:flex w-fit relative mb-32 text-center group">
             <span className="text-5xl md:text-6xl px-48 pt-10 -mt-10 whitespace-nowrap">
               What stack do I use?

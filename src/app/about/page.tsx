@@ -18,6 +18,7 @@ import {
   SvelteIcon,
   TailwindIcon,
   TypescriptIcon,
+  VercelIcon,
   ViteIcon,
   VscodeIcon
 } from '@/icons'
@@ -193,8 +194,8 @@ export default function Page() {
                   Postman
                 </span>
                 <span className="w-full flex items-center gap-4 text-2xl px-4 py-2 rounded-lg hover:bg-background-hover/40 transition">
-                  <PrettierIcon className="w-7 h-7 aspect-square" />
-                  Prettier
+                  <VercelIcon className="w-7 h-7 aspect-square" />
+                  Vercel
                 </span>
                 <span className="w-full flex items-center gap-4 text-2xl px-4 py-2 rounded-lg hover:bg-background-hover/40 transition">
                   <PnpmIcon className="w-7 h-7 aspect-square" />

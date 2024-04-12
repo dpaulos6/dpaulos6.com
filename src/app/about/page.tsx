@@ -43,9 +43,15 @@ export default function Page() {
       <section className="w-full h-full flex flex-col gap-40 items-center text-text overflow-x-hidden">
         <div className="w-full h-16 pointer-events-none" />
         <div className="w-full max-w-7xl flex flex-col items-center mb-40">
-          <div className="w-fit relative mb-32">
-            <span className="text-5xl md:text-6xl">Who am I?</span>
-            <span className="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 text-7xl md:text-8xl whitespace-nowrap text-neutral-200/50 -z-10">
+          <div className="w-fit relative mb-32 group">
+            <span className="text-5xl md:text-6xl px-24 pt-8">Who am I?</span>
+            <span className="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 text-7xl md:text-8xl whitespace-nowrap text-neutral-200/50 -z-10 transition-all group-hover:opacity-0">
+              Who am I?
+            </span>
+            <span
+              className="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 text-7xl md:text-8xl whitespace-nowrap -z-10
+            bg-gradient-to-r text-transparent from-sky-400 to-primary bg-clip-text transition-all opacity-0 group-hover:opacity-50"
+            >
               Who am I?
             </span>
           </div>
@@ -64,32 +70,32 @@ export default function Page() {
               <span>
                 I&apos;m Diogo Paulos, currently {age} years old and living in
                 the beauty of{' '}
-                <text className="bg-gradient-to-b from-transparent from-60% to-red-400/75 to-60%">
+                <text className="bg-gradient-to-b from-transparent from-60% to-sky-400/60 to-60%">
                   Portugal
                 </text>
                 .
               </span>
               <span>
                 One thing that I love is coding . I&apos;m{' '}
-                <text className="bg-gradient-to-b from-transparent from-60% to-green-400/75 to-60%">
+                <text className="bg-gradient-to-b from-transparent from-60% to-sky-400/60 to-60%">
                   passionate
                 </text>{' '}
                 about exploring different programming languages and frameworks
                 and I&apos;m always eager to{' '}
-                <text className="bg-gradient-to-b from-transparent from-60% to-sky-400/75 to-60%">
+                <text className="bg-gradient-to-b from-transparent from-60% to-sky-400/60 to-60%">
                   learn
                 </text>{' '}
                 something new. Right now, I&apos;m fully immersed in mastering
                 modern web development technologies, so I can take my projects
                 to the{' '}
-                <text className="bg-gradient-to-b from-transparent from-60% to-fuchsia-400/75 to-60%">
+                <text className="bg-gradient-to-b from-transparent from-60% to-sky-400/60 to-60%">
                   next level
                 </text>
                 .
               </span>
               <span>
                 Aside from work, I{' '}
-                <text className="bg-gradient-to-b from-transparent from-60% to-yellow-400/75 to-60%">
+                <text className="bg-gradient-to-b from-transparent from-60% to-sky-400/60 to-60%">
                   enjoy
                 </text>{' '}
                 various hobbies, such as cooking , playing video games,
@@ -99,9 +105,14 @@ export default function Page() {
           </div>
         </div>
         <div className="w-full max-w-7xl flex flex-col items-center pb-40 px-8 xs:px-12 sm:px-16 md:px-20 lg:px-12 xl:px-0">
-          <div className="hidden md:flex w-fit relative mb-32 text-center">
-            <span className="text-5xl md:text-6xl">What stack do I use?</span>
-            <span className="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 text-8xl whitespace-nowrap text-neutral-200/50 -z-10">
+          <div className="hidden md:flex w-fit relative mb-32 text-center group">
+            <span className="text-5xl md:text-6xl px-48 pt-10 -mt-10">
+              What stack do I use?
+            </span>
+            <span className="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 text-7xl md:text-8xl whitespace-nowrap text-neutral-200/50 -z-10 transition-all group-hover:opacity-0">
+              What stack do I use?
+            </span>
+            <span className="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 text-7xl md:text-8xl whitespace-nowrap -z-10 bg-gradient-to-r text-transparent from-sky-400 to-primary bg-clip-text transition-all opacity-0 group-hover:opacity-50">
               What stack do I use?
             </span>
           </div>

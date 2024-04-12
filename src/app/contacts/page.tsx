@@ -8,7 +8,7 @@ import {
   LinkedinIcon
 } from '@/icons'
 import Link from 'next/link'
-import Head from "next/head";
+import Head from 'next/head'
 
 const socials = [
   {
@@ -49,7 +49,7 @@ export default function Page() {
       <Head>
         <title>Diogo Paulos - Contact</title>
       </Head>
-      <div className="w-screen h-screen flex items-center justify-center text-text overflow-hidden">
+      <div className="w-full h-full flex items-center justify-center text-text">
         <div className="flex flex-col gap-6 items-center justify-center max-w-7xl px-8">
           <span className="text-2xl md:text-4xl text-center">
             You can <b className="text-primary font-semibold">contact</b> me

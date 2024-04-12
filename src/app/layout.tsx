@@ -37,7 +37,7 @@ export default function RootLayout({
         <title>Diogo Paulos</title>
 
         <meta name="robots" content="index, follow" />
-        <meta name="theme-color" content="#40A2E3" />
+        <meta name="theme-color" content="#fff" />
         <meta name="msapplication-TileColor" content="#40A2E3" />
         <script
           type="application/ld+json"

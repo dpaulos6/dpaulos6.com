@@ -35,11 +35,10 @@ export default function RootLayout({
     <html lang="en" className={font.className}>
       <head>
         <title>Diogo Paulos</title>
-        
+
         <meta name="robots" content="index, follow" />
         <meta name="theme-color" content="#40A2E3" />
         <meta name="msapplication-TileColor" content="#40A2E3" />
-
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -71,12 +70,11 @@ export default function RootLayout({
           data-domain="dpaulos6.xyz"
           src="https://stats.wouldyoubot.gg/js/script.js"
         ></script>
-
       </head>
       <body>
         <div className="hidden limit:flex select-none">
           <Navbar />
-          <div className="z-10">{children}</div>
+          <div className="w-full min-h-screen flex z-10">{children}</div>
           {/* <BackgroundAudio /> */}
           <GradientBackground />
         </div>

@@ -127,12 +127,11 @@ body {
   margin: 0;
   padding: 0;
   background-color: rgb(var(--background));
-  width: 100vw;
-  height: 100%;
 }
 
 ::-webkit-scrollbar {
   width: 10px;
+  height: 10px;
 }
 
 ::-webkit-scrollbar-track {

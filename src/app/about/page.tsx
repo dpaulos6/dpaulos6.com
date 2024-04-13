@@ -76,34 +76,34 @@ export default function Page() {
               <span>
                 I&apos;m Diogo Paulos, currently {age} years old and living in
                 the beauty of{' '}
-                <text className="bg-gradient-to-b from-transparent from-60% to-sky-400/60 to-60%">
+                <span className="bg-gradient-to-b from-transparent from-60% to-sky-400/60 to-60%">
                   Portugal
-                </text>
+                </span>
                 .
               </span>
               <span>
                 One thing that I love is coding . I&apos;m{' '}
-                <text className="bg-gradient-to-b from-transparent from-60% to-sky-400/60 to-60%">
+                <span className="bg-gradient-to-b from-transparent from-60% to-sky-400/60 to-60%">
                   passionate
-                </text>{' '}
+                </span>{' '}
                 about exploring different programming languages and frameworks
                 and I&apos;m always eager to{' '}
-                <text className="bg-gradient-to-b from-transparent from-60% to-sky-400/60 to-60%">
+                <span className="bg-gradient-to-b from-transparent from-60% to-sky-400/60 to-60%">
                   learn
-                </text>{' '}
+                </span>{' '}
                 something new. Right now, I&apos;m fully immersed in mastering
                 modern web development technologies, so I can take my projects
                 to the{' '}
-                <text className="bg-gradient-to-b from-transparent from-60% to-sky-400/60 to-60%">
+                <span className="bg-gradient-to-b from-transparent from-60% to-sky-400/60 to-60%">
                   next level
-                </text>
+                </span>
                 .
               </span>
               <span>
                 Aside from work, I{' '}
-                <text className="bg-gradient-to-b from-transparent from-60% to-sky-400/60 to-60%">
+                <span className="bg-gradient-to-b from-transparent from-60% to-sky-400/60 to-60%">
                   enjoy
-                </text>{' '}
+                </span>{' '}
                 various hobbies, such as cooking , playing video games,
                 producing music, taking and editing photos, among others.
               </span>

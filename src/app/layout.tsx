@@ -35,10 +35,15 @@ export default function RootLayout({
     <html lang="en" className={font.className}>
       <head>
         <title>Diogo Paulos</title>
-        
+
         <meta name="robots" content="index, follow" />
         <meta name="theme-color" content="#40A2E3" />
         <meta name="msapplication-TileColor" content="#40A2E3" />
+
+        <meta
+          name="google-site-verification"
+          content="GIEMYYdVuBC-MWItd08APF11prO3MTs2ko1Ifu2jINU"
+        />
 
         <script
           type="application/ld+json"
@@ -70,7 +75,6 @@ export default function RootLayout({
           data-domain="dpaulos6.xyz"
           src="https://stats.wouldyoubot.gg/js/script.js"
         ></script>
-
       </head>
       <body>
         <div className="hidden limit:flex select-none">

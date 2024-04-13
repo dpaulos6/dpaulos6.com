@@ -44,7 +44,11 @@ export default function RootLayout({
           name="google-site-verification"
           content="GIEMYYdVuBC-MWItd08APF11prO3MTs2ko1Ifu2jINU"
         />
-
+        
+        <meta property="og:image" content="/favicon.ico" />
+        <meta property="og:image:type" content="image/x-icon" />
+        <meta property="og:url" content="https://dpaulos6.xyz/" />
+        <meta property="og:site_name" content="Diogo Paulos' Portfolio" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -65,7 +69,8 @@ export default function RootLayout({
               "worksFor": {
                 "@type": "Organization",
                 "name": "Bomsite"
-              }  
+              }
+            }
             `
           }}
         ></script>
@@ -79,7 +84,7 @@ export default function RootLayout({
       <body>
         <div className="hidden limit:flex select-none">
           <Navbar />
-          <div className="z-10">{children}</div>
+          <div className="w-full min-h-screen flex z-10">{children}</div>
           {/* <BackgroundAudio /> */}
           <GradientBackground />
         </div>

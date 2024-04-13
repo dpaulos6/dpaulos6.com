@@ -39,6 +39,12 @@ export default function RootLayout({
         <meta name="robots" content="index, follow" />
         <meta name="theme-color" content="#40A2E3" />
         <meta name="msapplication-TileColor" content="#40A2E3" />
+
+        <meta
+          name="google-site-verification"
+          content="GIEMYYdVuBC-MWItd08APF11prO3MTs2ko1Ifu2jINU"
+        />
+        
         <meta property="og:image" content="/favicon.ico" />
         <meta property="og:image:type" content="image/x-icon" />
         <meta property="og:url" content="https://dpaulos6.xyz/" />

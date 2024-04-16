@@ -44,7 +44,7 @@ export default function RootLayout({
           name="google-site-verification"
           content="GIEMYYdVuBC-MWItd08APF11prO3MTs2ko1Ifu2jINU"
         />
-        
+
         <meta property="og:image" content="/favicon.ico" />
         <meta property="og:image:type" content="image/x-icon" />
         <meta property="og:url" content="https://dpaulos6.xyz/" />

@@ -14,7 +14,7 @@ This project was built using NextJS + TypeScript, and below are the steps to run
 
 ### Warn: Install a package manager, if not already
 
-This project uses a package manager called `pnpm`, which will require it to be installed on your OS to correctly setup the project. You can use a package manager of your choice, but I used pnpm so I will only provide steps for `pnpm` usage.
+You will be required to have a package manager installed in order to install all the modules to successfully run the project. You can use a package manager of your choice, but I used PNPM so I will only provide steps for it.
 
 If you don't have it installed, I wont guide you through the installation, but you can follow their [documentation](https://pnpm.io/installation).
 

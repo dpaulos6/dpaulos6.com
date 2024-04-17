@@ -3,10 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --turbo",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "postbuild": "next-sitemap"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.3.4",
@@ -32,14 +33,10 @@
     "react-player": "^2.15.1",
     "react-router-dom": "^6.22.2",
     "react-swipeable": "^7.0.1",
-    "radix-ui": "^1.0.1",
-    "react-email": "^2.1.0",
-    "react-hook-form": "^7.51.0",
-    "react-toastify": "^10.0.5",
-    "resend": "^3.2.0",
-    "tailwind-merge": "^2.2.1",
+    "styled-components": "^6.1.8",
+    "tailwind-merge": "^2.2.2",
     "tailwindcss-animate": "^1.0.7",
-    "zod": "^3.22.4"
+    "next-sitemap": "^4.2.3"
   },
   "devDependencies": {
     "@types/node": "^20.11.28",

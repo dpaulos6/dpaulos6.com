@@ -23,7 +23,7 @@ export default function Home() {
 
   return (
     <>
-      <div className="w-screen h-screen flex flex-col gap-2 items-center justify-center text-text relative cursor-default z-10 pointer-events-none">
+      <div className="w-full h-full flex flex-col gap-2 items-center justify-center text-text relative cursor-default z-10 pointer-events-none">
         <span className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl px-4 py-2 lowercase transition-[font] duration-500">
           Hi, I&apos;m{' '}
           <b className="font-medium">
@@ -41,9 +41,6 @@ export default function Home() {
             </span>
           ))}
         </span>
-        {/* <button className="inline-flex h-12 animate-shimmer items-center justify-center rounded-md border border-background-hover bg-[linear-gradient(110deg,rgb(var(--background)),40%,rgb(var(--background-hover)),50%,rgb(var(--background)))] bg-[length:200%_100%] px-6 font-medium text-text transition-colors focus:outline-none mt-52 pointer-events-auto">
-          Shimmer
-        </button> */}
       </div>
       <HireMeButton />
     </>

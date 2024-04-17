@@ -9,6 +9,7 @@ import {
 import Link from 'next/link'
 import Image from 'next/image'
 import { LinkIcon } from 'lucide-react'
+import Head from 'next/head'
 
 const projects = [
   {
@@ -28,11 +29,12 @@ const projects = [
   }
 ]
 
-// const contributions = [{ name: "Would You Bot's Website" }]
-
 export default function Page() {
   return (
     <>
+      <Head>
+        <title>Diogo Paulos - Projects</title>
+      </Head>
       <div className="w-screen h-screen flex flex-col gap-2 items-center text-text">
         <span className="text-2xl text-center mt-32">
           This is a preview of what to expect. <br />

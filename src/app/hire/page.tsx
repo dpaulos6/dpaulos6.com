@@ -19,7 +19,7 @@ import { z } from 'zod'
 
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
-import { useEffect, useState } from 'react'
+import ShinyButton from '@/components/ShinyButton'
 
 const formSchema = z.object({
   email: z.string().email({ message: 'Email must be valid!' }).min(1),
@@ -140,9 +140,7 @@ export default function Hire() {
                 </FormItem>
               )}
             />
-            <Button className="flex w-1/2 mx-auto bg-primary" type="submit">
-              Submit
-            </Button>
+            <ShinyButton className="flex mx-auto">Submit</ShinyButton>
           </form>
         </Form>
         <ToastContainer

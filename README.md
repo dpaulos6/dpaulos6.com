@@ -12,11 +12,9 @@ This website is an attempt to describe who I am as a person, using a color palet
 
 This project was built using NextJS + TypeScript, and below are the steps to run it locally on your system.
 
-### Warn: Install a package manager, if not already
+### Warn: Install PNPM
 
-This project uses a package manager called `pnpm`, which will require it to be installed on your OS to correctly setup the project. You can use a package manager of your choice, but I used pnpm so I will only provide steps for `pnpm` usage.
-
-If you don't have it installed, I wont guide you through the installation, but you can follow their [documentation](https://pnpm.io/installation).
+You will be required to have pnpm to install the modules, if you don't have it follow the instructions on their [documentation](https://pnpm.io/installation).
 
 ### Install dependencies
 

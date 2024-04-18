@@ -10,9 +10,20 @@ import { SpeedInsights } from '@vercel/speed-insights/next'
 import GradientBackground from '@/components/gradient-background'
 import Background from '@/components/someone-background'
 
+import { Poppins } from 'next/font/google'
+
+const font = Poppins({ subsets: ['latin'], weight: '400' })
+
+function age() {
+  var dob = new Date(2003, 5, 17)
+  var diff_ms = Date.now() - dob.getTime()
+  var age_dt = new Date(diff_ms)
+  return Math.abs(age_dt.getUTCFullYear() - 1970)
+}
+
 export const metadata: Metadata = {
-  title: 'dpaulos6',
-  description: "dpaulos6' Personal Portfolio"
+  title: 'Diogo Paulos',
+  description: `I'm Diogo Paulos, and I'm currently ${age()} years old, living in the beauty of Portugal.`
 }
 
 export default function RootLayout({
@@ -21,15 +32,59 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={font.className}>
       <head>
-        <title>dpaulos6</title>
-        <script defer data-domain="dpaulos6.xyz" src="https://stats.wouldyoubot.gg/js/script.js"></script>
+        <title>Diogo Paulos</title>
+
+        <meta name="robots" content="index, follow" />
+        <meta name="theme-color" content="#40A2E3" />
+        <meta name="msapplication-TileColor" content="#40A2E3" />
+
+        <meta
+          name="google-site-verification"
+          content="GIEMYYdVuBC-MWItd08APF11prO3MTs2ko1Ifu2jINU"
+        />
+
+        <meta property="og:image" content="/favicon.ico" />
+        <meta property="og:image:type" content="image/x-icon" />
+        <meta property="og:url" content="https://dpaulos6.xyz/" />
+        <meta property="og:site_name" content="Diogo Paulos' Portfolio" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: `
+            {
+              "@context": "https://schema.org/",
+              "@type": "Person",
+              "name": "Diogo Paulos",
+              "url": "https://dpaulos6.xyz",
+              "image": "https://www.dpaulos6.xyz/_next/image?url=%2Fdpaulos6_nobg.png&w=3840&q=75",
+              "sameAs": [
+                "https://www.linkedin.com/in/dpaulos6/",
+                "https://discord.com/invite/Y7ujpKmmma",
+                "https://github.com/dpaulos6",
+                "https://www.instagram.com/dpaulos6"
+              ],
+              "jobTitle": "Frontend Developer Intern",
+              "worksFor": {
+                "@type": "Organization",
+                "name": "Bomsite"
+              }
+            }
+            `
+          }}
+        ></script>
+
+        <script
+          defer
+          data-domain="dpaulos6.xyz"
+          src="https://stats.wouldyoubot.gg/js/script.js"
+        ></script>
       </head>
       <body>
         <div className="hidden limit:flex select-none">
           <Navbar />
-          <div className="z-10">{children}</div>
+          <div className="w-full min-h-screen flex z-10">{children}</div>
           {/* <BackgroundAudio /> */}
           <GradientBackground />
         </div>

@@ -154,6 +154,7 @@ export default function Hire() {
           pauseOnHover={false}
           draggable={false}
           theme={themeMode}
+          className="mt-20"
         />
       </div>
     </section>

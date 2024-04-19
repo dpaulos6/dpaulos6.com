@@ -77,3 +77,11 @@ In general, my @ is always **dpaulos6** on all social medias, but here is a list
 - [LinkedIn](https://www.linkedin.com/in/dpaulos6/)
 - [GitHub](https://www.github.com/dpaulos6/)
 - [Discord Server](https://discord.gg/Y7ujpKmmma)
+
+## Contributors
+
+Thanks to the contributors for helping me out!
+
+<a href="https://github.com/dpaulos6/portfolio/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=dpaulos6/portfolio&max=1000&columns=11"/>
+</a>

@@ -45,8 +45,8 @@ export default function RootLayout({
           content="GIEMYYdVuBC-MWItd08APF11prO3MTs2ko1Ifu2jINU"
         />
 
-        <meta property="og:image" content="/favicon.ico" />
-        <meta property="og:image:type" content="image/x-icon" />
+        <meta property="og:image" content="/preview.png" />
+        <meta property="og:image:type" content="image/png" />
         <meta property="og:url" content="https://dpaulos6.xyz/" />
         <meta property="og:site_name" content="Diogo Paulos' Portfolio" />
         <script

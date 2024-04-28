@@ -1,6 +1,7 @@
 'use client'
 import { useState, useEffect } from 'react'
 import './globals.css'
+import HireMeButton from '@/components/HireMeButton'
 
 const things = [
   'Frontend developer',

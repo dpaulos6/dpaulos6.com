@@ -42,7 +42,6 @@ export default function Home() {
           ))}
         </span>
       </div>
-      <HireMeButton />
     </>
   )
 }

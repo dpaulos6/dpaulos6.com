@@ -19,7 +19,7 @@ import { z } from 'zod'
 
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
-import ShinyButton from '@/components/ShinyButton'
+import ShinyButton from '@/components/ShinyButton.jsx'
 
 const formSchema = z.object({
   email: z.string().email({ message: 'Email must be valid!' }).min(1),
@@ -45,44 +45,43 @@ export default function Hire() {
 
   async function onSubmit(values: any) {
     try {
-      const response = await toast.promise(
-        fetch('/api/sendHireEmail', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(values)
-        }),
-        {
-          pending: 'Sending email...',
-          success: 'Email sent successfully!',
-          error: 'Failed to send email.'
-        }
-      )
+      const response = await fetch('/api/sendHireEmail', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(values)
+      })
 
       const data = await response.json()
-      console.log(data)
+
+      if (!data.statusCode) {
+        toast.success(data.message)
+      } else {
+        console.error('Failed to send email.')
+      }
     } catch (error) {
       console.error(error)
+      console.error('An unexpected error occurred.')
     }
   }
 
   return (
-    <section id="hire_page">
-      <div className="w-screen h-screen flex flex-col gap-2 items-center justify-center text-text">
+    <section id="hire_page" className="w-full pt-16 px-8">
+      <div className="h-full flex flex-col gap-2 items-center justify-center text-text">
         <span className="text-4xl text-primary">Hire me</span>
-        <div className="flex flex-col text-center mb-4">
-          <span className="text-lg">
+        <div className="hidden sm:flex flex-col text-center mb-4">
+          <span className="text-sm md:text-base xl:text-lg transition-all">
             If you want to send me a job offer, please fill the fields below.
           </span>
-          <span className="text-base text-text-subtitle">
+          <span className="text-xs md:text-sm xl:text-base text-text-subtitle transition-all">
             If the project falls out of my skill-set, I will not reply to it.
           </span>
         </div>
         <Form {...form}>
           <form
             onSubmit={form.handleSubmit(onSubmit)}
-            className="space-y-8 w-1/3"
+            className="space-y-8 w-full sm:w-[30rem] md:w-[35rem] transition-all"
           >
             <FormField
               control={form.control}
@@ -93,9 +92,6 @@ export default function Hire() {
                   <FormControl>
                     <Input placeholder="dpaulos6@outlook.com" {...field} />
                   </FormControl>
-                  <FormDescription>
-                    The email that will be used to contact you.
-                  </FormDescription>
                   <FormMessage />
                 </FormItem>
               )}
@@ -112,9 +108,6 @@ export default function Hire() {
                       {...field}
                     />
                   </FormControl>
-                  <FormDescription>
-                    Short title that can give an idea of what the project is.
-                  </FormDescription>
                   <FormMessage />
                 </FormItem>
               )}
@@ -132,10 +125,6 @@ export default function Hire() {
                       {...field}
                     />
                   </FormControl>
-                  <FormDescription>
-                    Here will be your request in detail with everything you
-                    want.
-                  </FormDescription>
                   <FormMessage />
                 </FormItem>
               )}
@@ -150,7 +139,7 @@ export default function Hire() {
           newestOnTop={false}
           closeOnClick
           rtl={false}
-          pauseOnFocusLoss
+          pauseOnFocusLoss={false}
           pauseOnHover={false}
           draggable={false}
           theme={themeMode}

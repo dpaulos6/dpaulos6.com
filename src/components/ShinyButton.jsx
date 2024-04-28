@@ -1,12 +1,7 @@
-import { motion, Variants } from 'framer-motion'
+import { motion } from 'framer-motion'
 
-interface Props {
-  children: React.ReactNode
-  className?: string
-}
-
-const ShinyButton = ({ children, className }: Props) => {
-  const buttonVariants: Variants = {
+const ShinyButton = ({ children, className }) => {
+  const buttonVariants = {
     initial: { '--x': '100%' },
     animate: { '--x': '-100%' }
   }

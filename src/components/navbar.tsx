@@ -1,5 +1,12 @@
 'use client'
-import { FolderIcon, HomeIcon, InfoIcon, MenuIcon, PhoneIcon } from '@/icons'
+import {
+  FolderIcon,
+  HomeIcon,
+  InfoIcon,
+  MenuIcon,
+  PhoneIcon,
+  WorkIcon
+} from '@/icons'
 import Link from 'next/link'
 import {
   DropdownMenu,
@@ -8,17 +15,44 @@ import {
   DropdownMenuTrigger
 } from '@/components/ui/dropdown-menu'
 import NavLink from '@/components/NavLink'
+import HireMeButton from '@/components/HireMeButton'
 
 const items = [
-  { label: 'Home', value: '#home', href: '/', icon: HomeIcon },
-  { label: 'About', value: '#about', href: '/about', icon: InfoIcon },
+  {
+    label: 'Home',
+    value: '#home',
+    href: '/',
+    icon: HomeIcon,
+    mobileOnly: false
+  },
+  {
+    label: 'About',
+    value: '#about',
+    href: '/about',
+    icon: InfoIcon,
+    mobileOnly: false
+  },
   {
     label: 'Projects',
     value: '#projects',
     href: '/projects',
-    icon: FolderIcon
+    icon: FolderIcon,
+    mobileOnly: false
   },
-  { label: 'Contacts', value: '#contacts', href: '/contacts', icon: PhoneIcon }
+  {
+    label: 'Contacts',
+    value: '#contacts',
+    href: '/contacts',
+    icon: PhoneIcon,
+    mobileOnly: false
+  },
+  {
+    label: 'Hire Me',
+    value: '#hire',
+    href: '/chire',
+    icon: WorkIcon,
+    mobileOnly: true
+  }
 ]
 
 export default function Navbar() {
@@ -39,6 +73,7 @@ export default function Navbar() {
         </div>
         <div className="flex items-center gap-6 md:gap-6">
           <NavLink items={items} />
+          <HireMeButton />
           <div className="flex md:hidden">
             <DropdownMenu>
               <DropdownMenuTrigger className="flex justify-center items-center w-9 h-9 text-2xl rounded-xl text-text transition-all ring-0 outline-none border border-transparent hover:text-primary data-[state=open]:text-primary">

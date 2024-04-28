@@ -28,12 +28,6 @@ const formSchema = z.object({
 })
 
 export default function Hire() {
-  const theme =
-    typeof localStorage !== 'undefined' ? localStorage.getItem('theme') : null
-
-  // Use theme variable
-  const themeMode = theme === 'dark' ? 'dark' : 'light'
-
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -142,7 +136,7 @@ export default function Hire() {
           pauseOnFocusLoss={false}
           pauseOnHover={false}
           draggable={false}
-          theme={themeMode}
+          theme="light"
           className="mt-20"
         />
       </div>

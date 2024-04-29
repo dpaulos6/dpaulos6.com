@@ -11,7 +11,7 @@ export async function POST(request: Request, res: Response) {
   const { error } = await resend.emails.send({
     from: 'Website <hire@dpaulos6.xyz>',
     to: outlook,
-    subject: 'Job Request: ' + title,
+    subject: title,
     html: render(HireMeEmail({ email, title, message }))
   })
 

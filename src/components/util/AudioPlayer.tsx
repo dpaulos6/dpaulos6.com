@@ -75,33 +75,34 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ src }) => {
   return (
     <div className="flex-1 bg-primary py-3 px-4 rounded-xl z-10">
       <audio src={src}></audio>
-    <div className="h-fit w-full mt-auto md:mt-0 bg-primary py-3 px-4 rounded-xl select-none">
-      {audio && <audio src={src}></audio>}
-      <div className="flex items-center text-white controls">
-        <button
-          onClick={togglePlay}
-          className="flex text-white text-3xl justify-center items-center p-2 rounded-xl hover:bg-audio-hover transition-[background-color]"
-        >
-          {!isPlaying ? <PlayIcon /> : <PauseIcon />}
-        </button>
-        <button
-          id="volumeButton"
-          className="flex text-white text-3xl justify-center items-center p-2 rounded-xl hover:bg-audio-hover transition-[background-color]"
-          onClick={toggleMute}
-        >
-          {isMuted ? <MutedIcon /> : <VolumeIcon />}
-        </button>
-        <div className="flex items-center w-full h-full rounded-xl hover:bg-audio-hover transition-[background-color] cursor-pointer">
-          <input
-            id="volumeSlider"
-            type="range"
-            min="0"
-            max="1"
-            step="0.01"
-            value={volume}
-            onChange={handleVolumeChange}
-            className="w-full h-full py-6 px-3"
-          />
+      <div className="h-fit w-full mt-auto md:mt-0 bg-primary py-3 px-4 rounded-xl select-none">
+        {audio && <audio src={src}></audio>}
+        <div className="flex items-center text-white controls">
+          <button
+            onClick={togglePlay}
+            className="flex text-white text-3xl justify-center items-center p-2 rounded-xl hover:bg-audio-hover transition-[background-color]"
+          >
+            {!isPlaying ? <PlayIcon /> : <PauseIcon />}
+          </button>
+          <button
+            id="volumeButton"
+            className="flex text-white text-3xl justify-center items-center p-2 rounded-xl hover:bg-audio-hover transition-[background-color]"
+            onClick={toggleMute}
+          >
+            {isMuted ? <MutedIcon /> : <VolumeIcon />}
+          </button>
+          <div className="flex items-center w-full h-full rounded-xl hover:bg-audio-hover transition-[background-color] cursor-pointer">
+            <input
+              id="volumeSlider"
+              type="range"
+              min="0"
+              max="1"
+              step="0.01"
+              value={volume}
+              onChange={handleVolumeChange}
+              className="w-full h-full py-6 px-3"
+            />
+          </div>
         </div>
       </div>
     </div>

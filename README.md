@@ -12,11 +12,9 @@ This website is an attempt to describe who I am as a person, using a color palet
 
 This project was built using NextJS + TypeScript, and below are the steps to run it locally on your system.
 
-### Warn: Install a package manager, if not already
+### Warn: Install PNPM
 
-You will be required to have a package manager installed in order to install all the modules to successfully run the project. You can use a package manager of your choice, but I used PNPM so I will only provide steps for it.
-
-If you don't have it installed, I wont guide you through the installation, but you can follow their [documentation](https://pnpm.io/installation).
+You will be required to have pnpm to install the modules, if you don't have it follow the instructions on their [documentation](https://pnpm.io/installation).
 
 ### Install dependencies
 
@@ -79,3 +77,11 @@ In general, my @ is always **dpaulos6** on all social medias, but here is a list
 - [LinkedIn](https://www.linkedin.com/in/dpaulos6/)
 - [GitHub](https://www.github.com/dpaulos6/)
 - [Discord Server](https://discord.gg/Y7ujpKmmma)
+
+## Contributors
+
+Thanks to the contributors for helping me out!
+
+<a href="https://github.com/dpaulos6/portfolio/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=dpaulos6/portfolio&max=1000&columns=11"/>
+</a>

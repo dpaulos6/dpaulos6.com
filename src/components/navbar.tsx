@@ -49,7 +49,7 @@ const items = [
   {
     label: 'Hire Me',
     value: '#hire',
-    href: '/chire',
+    href: '/hire',
     icon: WorkIcon,
     mobileOnly: true
   }

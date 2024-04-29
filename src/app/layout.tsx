@@ -84,7 +84,7 @@ export default function RootLayout({
       <body>
         <div className="hidden limit:flex select-none">
           <Navbar />
-          <div className="w-full min-h-screen flex z-10">{children}</div>
+          <div className="w-full min-h-dvh flex z-10">{children}</div>
           {/* <BackgroundAudio /> */}
           <GradientBackground />
         </div>

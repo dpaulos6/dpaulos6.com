@@ -137,7 +137,7 @@ export default function Hire() {
           pauseOnHover={false}
           draggable={false}
           theme="light"
-          className="mt-20"
+          className="!w-2/3 !left-1/2 !-translate-x-1/2 xs:!w-auto !mt-20"
         />
       </div>
     </section>

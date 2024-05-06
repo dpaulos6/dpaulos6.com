@@ -127,6 +127,8 @@ body {
   margin: 0;
   padding: 0;
   background-color: rgb(var(--background));
+  min-height: 100dvh;
+  position: relative;
 }
 
 ::-webkit-scrollbar {

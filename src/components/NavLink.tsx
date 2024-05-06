@@ -8,6 +8,7 @@ interface NavLinkProps {
     label: string
     value: string
     href: string
+    mobileOnly: boolean
   }[]
 }
 
@@ -59,17 +60,19 @@ function NavLink({ items }: NavLinkProps) {
         ref={highlightRef}
         style={highlightStyles}
       ></div>
-      {items.map((item, index) => (
-        <Link
-          key={index}
-          href={item.href}
-          title={item.label}
-          className={`flex items-center text-xl lowercase transition-all ${path === item.href ? 'text-primary' : 'text-text'} relative`}
-          onMouseOver={(ev: any) => repositionHighlight(ev, item)}
-        >
-          {item.label}
-        </Link>
-      ))}
+      {items.map((item, index) =>
+        item.mobileOnly === false ? (
+          <Link
+            key={index}
+            href={item.href}
+            title={item.label}
+            className={`flex items-center text-xl lowercase transition-all ${path === item.href ? 'text-primary' : 'text-text'} relative`}
+            onMouseOver={(ev: any) => repositionHighlight(ev, item)}
+          >
+            {item.label}
+          </Link>
+        ) : null
+      )}
     </div>
   )
 }

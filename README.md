@@ -4,7 +4,7 @@ This is a repo where I store the source code of my personal portfolio, so I can 
 
 ## Inspiration / Meaning
 
-This website is an attempt to describe who I am as a person, using a color palette I truly find relaxing. All of the content included and design of the website is as much unique as my creativity allows, trying to reflect my style and vibe.
+This website is an attempt to describe who I am as a person, using a color palette that I enjoy. All of the content included and design of the website is as much unique as my creativity allows, trying to reflect my style and vibe.
 
 <!-- The works included were made by me, some of them were projects of my own ideas, some of them were internship or real client projects. -->
 

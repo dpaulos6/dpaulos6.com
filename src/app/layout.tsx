@@ -49,6 +49,8 @@ export default function RootLayout({
         <meta property="og:image:type" content="image/png" />
         <meta property="og:url" content="https://dpaulos6.xyz/" />
         <meta property="og:site_name" content="Diogo Paulos' Portfolio" />
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:image" content="0" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

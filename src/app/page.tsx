@@ -23,7 +23,7 @@ export default function Home() {
 
   return (
     <>
-      <div className="w-full h-full flex flex-col gap-2 items-center justify-center text-text relative cursor-default z-10 pointer-events-none">
+      <div className="w-full flex flex-col gap-2 items-center justify-center text-text relative cursor-default z-10 pointer-events-none">
         <span className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl px-4 py-2 lowercase transition-[font] duration-500">
           Hi, I&apos;m{' '}
           <b className="font-medium">

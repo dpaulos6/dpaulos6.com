@@ -41,7 +41,7 @@ export default function Page() {
       <Head>
         <title>Diogo Paulos - About Me</title>
       </Head>
-      <section className="w-full h-full flex flex-col pt-24 md:pt-0 md:gap-40 items-center text-text overflow-x-hidden">
+      <section className="flex-1 flex flex-col pt-24 md:pt-0 md:gap-40 items-center text-text overflow-x-hidden">
         <div className="w-full h-16 pointer-events-none" />
         <div className="w-full max-w-7xl flex flex-col items-center mb-40">
           <div className="w-fit relative mb-32 group">

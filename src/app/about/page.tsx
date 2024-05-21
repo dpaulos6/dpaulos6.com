@@ -25,6 +25,7 @@ import {
 import Image from 'next/image'
 import Head from 'next/head'
 import { useEffect, useState } from 'react'
+import ShinyButton from '@/components/ShinyButton'
 
 export default function Page() {
   const [age, setAge] = useState(0)
@@ -108,6 +109,31 @@ export default function Page() {
                 producing music, taking and editing photos, among others.
               </span>
             </div>
+          </div>
+        </div>
+        <div className="w-full max-w-7xl flex flex-col items-center mb-40">
+          <div className="w-fit relative mb-32 group">
+            <span className="text-5xl md:text-6xl px-24 pt-8 whitespace-nowrap">
+              Feedback!
+            </span>
+            <span
+              className="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 text-7xl md:text-8xl  whitespace-nowrap text-neutral-200/50 -z-10 transition-all md:group-hover:opacity-0"
+              area-hidden="true"
+            >
+              Feedback!
+            </span>
+            <span
+              className="hidden md:flex absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 text-7xl md:text-8xl whitespace-nowrap -z-10 bg-gradient-to-r text-transparent from-sky-400 to-primary bg-clip-text transition-all opacity-0 group-hover:opacity-50"
+              area-hidden="true"
+            >
+              Feedback!
+            </span>
+          </div>
+          <div className="flex flex-col items-center justify-center gap-16 w-full px-8 xs:px-12 sm:px-16 md:px-20">
+            <div>
+              <span>There is no reviews yet</span>
+            </div>
+            <ShinyButton>Submit yours</ShinyButton>
           </div>
         </div>
         <div className="w-full max-w-7xl flex flex-col items-center pb-20 md:pb-40 px-8 xs:px-12 sm:px-16 md:px-20 lg:px-12 xl:px-0">

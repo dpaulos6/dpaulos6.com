@@ -77,7 +77,18 @@ const contributions = [
     url: 'https://www.nizzyabi.com/',
     github: 'https://github.com/NizarAbiZaher/platform',
     thumbnail: '',
-    description: ''
+    description:
+      'Nizzyabi.com is a Programming Course Platform for self-taught developers who want to improve their web development skills.',
+    role: 'Frontend Adjustments'
+  },
+  {
+    name: 'Would You Bot',
+    url: 'https://wouldyoubot.gg/',
+    github: 'https://github.com/Would-You-Bot/website',
+    thumbnail: 'https://i.imgur.com/BsWSxze.png',
+    description:
+      'Play fun and entertaining games with Would You, featuring user polls and customization. Play Would You Rather, Never Have I Ever, Higher or Lower, and What Would You Do!',
+    role: 'Web Developer'
   }
 ]
 
@@ -86,7 +97,7 @@ export default function Page() {
     Array(projects.length).fill(false)
   )
 
-  function toggleExpanded(index: number) {
+  function toggleProjectExpanded(index: number) {
     const expandedCopy = Array(projects.length).fill(false)
     expandedCopy[index] = !isExpanded[index]
     setIsExpanded(expandedCopy)
@@ -103,52 +114,148 @@ export default function Page() {
       <Head>
         <title>Diogo Paulos - Projects</title>
       </Head>
-      <div className="w-screen h-screen flex flex-col gap-2 items-center text-text">
-        <span className="text-5xl md:text-6xl text-center mt-32">Projects</span>
-        <div className="flex flex-col items-center gap-8 w-full max-w-5xl mt-12 p-8">
-          {projects
-            .slice()
-            .reverse()
-            .map((project, i) => (
+      <div className="w-screen h-auto flex flex-col gap-20 items-center text-text py-32">
+        <div className="flex flex-col gap-12">
+          <span className="text-5xl md:text-6xl text-center">Projects</span>
+          <div className="flex flex-col items-center gap-6 w-full max-w-5xl p-8">
+            {projects
+              .slice()
+              .reverse()
+              .map((project, i) => (
+                <div
+                  key={i}
+                  className={`flex justify-center items-center w-fit lg:w-full p-[2px] rounded-[0.9rem] overflow-hidden transition-all group relative`}
+                >
+                  <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-primary to-accent opacity-0 group-hover:opacity-50 transition pointer-events-none "></div>
+                  <div className="flex flex-col max-w-96 md:max-w-xl lg:max-w-none lg:flex-row items-center w-full h-full gap-4 md:gap-6 lg:gap-8 p-6 rounded-xl bg-background z-10">
+                    <div className="flex basis-3/5 w-full h-fit aspect-[5/3] relative">
+                      <Image
+                        src={
+                          project.thumbnail
+                            ? project.thumbnail
+                            : 'https://www.sbrv.org/wp-content/uploads/2019/11/preview.png'
+                        }
+                        alt={project.name + ' Thumbnail'}
+                        width={9999}
+                        height={9999}
+                        className="flex object-cover object-center select-none rounded-xl border border-neutral-200/60"
+                      />
+                      <Badge
+                        className={`z-50 w-max absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 lg:-left-2 lg:translate-x-0 lowercase ${project.tag.styles}`}
+                      >
+                        <span>{project.tag.label}</span>
+                      </Badge>
+                    </div>
+                    <div className="w-full col-span-2 flex flex-col gap-2 py-2 pr-2 h-full">
+                      <div className="flex items-center">
+                        <span className="text-xl md:text-2xl lg:text-3xl mr-2">
+                          {project.name}
+                        </span>
+                        {project.currentWebsite ? (
+                          <span className="text-neutral-400 text-xs lg:text-sm mt-auto mb-2.5 lg:mb-1.5 mr-2">
+                            this website
+                          </span>
+                        ) : null}
+                        {project.url && !project.currentWebsite ? (
+                          <TooltipProvider>
+                            <Tooltip>
+                              <TooltipTrigger>
+                                <Link href={project.url} target="_blank">
+                                  <LinkIcon className="p-2 w-10 rounded-md h-full aspect-square lg:opacity-0 lg:group-hover:opacity-100 hover:bg-primary/15 hover:text-primary transition" />
+                                </Link>
+                              </TooltipTrigger>
+                              <TooltipContent>
+                                <p>Visit URL</p>
+                              </TooltipContent>
+                            </Tooltip>
+                          </TooltipProvider>
+                        ) : null}
+                        {project.github ? (
+                          <TooltipProvider>
+                            <Tooltip>
+                              <TooltipTrigger>
+                                <Link href={project.github} target="_blank">
+                                  <GithubIcon className="p-2 w-10 rounded-md h-full aspect-square lg:opacity-0 lg:group-hover:opacity-100 hover:bg-primary/15 hover:text-primary transition" />
+                                </Link>
+                              </TooltipTrigger>
+                              <TooltipContent>
+                                <p>View on GitHub</p>
+                              </TooltipContent>
+                            </Tooltip>
+                          </TooltipProvider>
+                        ) : null}
+                      </div>
+                      <span
+                        className={`${isExpanded[i] ? 'h-auto line-clamp-none overflow-auto' : 'lg:overflow-ellipsis lg:line-clamp-3'} text-xs md:text-sm lg:text-base leading-[1.75] mb-2`}
+                      >
+                        {project.description}
+                      </span>
+                      <div className="flex flex-wrap w-full gap-4 mt-auto select-none">
+                        {project.technologies.map((tech, i) => (
+                          <TooltipProvider key={i}>
+                            <Tooltip>
+                              <TooltipTrigger>
+                                <tech.icon className="w-6 md:w-8 h-full aspect-square" />
+                              </TooltipTrigger>
+                              <TooltipContent>
+                                <p>{tech.label}</p>
+                              </TooltipContent>
+                            </Tooltip>
+                          </TooltipProvider>
+                        ))}
+                        <button
+                          onClick={() => toggleProjectExpanded(i)}
+                          className="hidden lg:flex ml-auto mr-4 px-4 py-2 rounded-lg hover:bg-primary/15 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto hover:text-primary transition"
+                        >
+                          {isExpanded[i] ? 'Collapse' : 'Expand'}
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+          </div>
+        </div>
+        <div className="flex flex-col gap-12">
+          <span className="text-5xl md:text-6xl text-center mt-32">
+            Open Source Contribution
+          </span>
+          <div className="flex flex-wrap items-center gap-6 w-full max-w-5xl p-8">
+            {contributions.map((contribution, i) => (
               <div
                 key={i}
-                className={`flex justify-center items-center w-fit lg:w-full p-[2px] rounded-[0.9rem] overflow-hidden transition-all group relative`}
+                className={`flex justify-center items-center w-full basis-[calc(50%-0.75rem)] p-[2px] rounded-[0.9rem] overflow-hidden transition-all group relative`}
               >
                 <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-primary to-accent opacity-0 group-hover:opacity-50 transition pointer-events-none "></div>
-                <div className="flex flex-col max-w-96 md:max-w-xl lg:max-w-none lg:flex-row items-center w-full h-full gap-4 md:gap-6 lg:gap-8 p-6 rounded-xl bg-background z-10">
+                <div className="flex flex-col max-w-96 md:max-w-xl lg:max-w-none items-center w-full h-full gap-4 md:gap-6 lg:gap-4 p-6 rounded-xl bg-background z-10">
                   <div className="flex basis-3/5 w-full h-fit aspect-[5/3] relative">
                     <Image
                       src={
-                        project.thumbnail
-                          ? project.thumbnail
+                        contribution.thumbnail
+                          ? contribution.thumbnail
                           : 'https://www.sbrv.org/wp-content/uploads/2019/11/preview.png'
                       }
-                      alt={project.name + ' Thumbnail'}
+                      alt={contribution.name + ' Thumbnail'}
                       width={9999}
                       height={9999}
                       className="flex object-cover object-center select-none rounded-xl border border-neutral-200/60"
                     />
                     <Badge
-                      className={`z-50 w-max absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 lg:-left-2 lg:translate-x-0 lowercase ${project.tag.styles}`}
+                      className={`z-50 w-max absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 lg:-left-2 lg:translate-x-0 lowercase bg-sky-300`}
                     >
-                      <span>{project.tag.label}</span>
+                      <span>{contribution.role}</span>
                     </Badge>
                   </div>
                   <div className="w-full col-span-2 flex flex-col gap-2 py-2 pr-2 h-full">
                     <div className="flex items-center">
                       <span className="text-xl md:text-2xl lg:text-3xl mr-2">
-                        {project.name}
+                        {contribution.name}
                       </span>
-                      {project.currentWebsite ? (
-                        <span className="text-neutral-400 text-xs lg:text-sm mt-auto mb-2.5 lg:mb-1.5 mr-2">
-                          this website
-                        </span>
-                      ) : null}
-                      {project.url && !project.currentWebsite ? (
+                      {contribution.url ? (
                         <TooltipProvider>
                           <Tooltip>
                             <TooltipTrigger>
-                              <Link href={project.url} target="_blank">
+                              <Link href={contribution.url} target="_blank">
                                 <LinkIcon className="p-2 w-10 rounded-md h-full aspect-square lg:opacity-0 lg:group-hover:opacity-100 hover:bg-primary/15 hover:text-primary transition" />
                               </Link>
                             </TooltipTrigger>
@@ -158,11 +265,11 @@ export default function Page() {
                           </Tooltip>
                         </TooltipProvider>
                       ) : null}
-                      {project.github ? (
+                      {contribution.github ? (
                         <TooltipProvider>
                           <Tooltip>
                             <TooltipTrigger>
-                              <Link href={project.github} target="_blank">
+                              <Link href={contribution.github} target="_blank">
                                 <GithubIcon className="p-2 w-10 rounded-md h-full aspect-square lg:opacity-0 lg:group-hover:opacity-100 hover:bg-primary/15 hover:text-primary transition" />
                               </Link>
                             </TooltipTrigger>
@@ -173,35 +280,11 @@ export default function Page() {
                         </TooltipProvider>
                       ) : null}
                     </div>
-                    <span
-                      className={`${isExpanded[i] ? 'h-auto line-clamp-none overflow-auto' : 'lg:overflow-ellipsis lg:line-clamp-3'} text-xs md:text-sm lg:text-base leading-[1.75] mb-2`}
-                    >
-                      {project.description}
-                    </span>
-                    <div className="flex flex-wrap w-full gap-4 mt-auto select-none">
-                      {project.technologies.map((tech, i) => (
-                        <TooltipProvider key={i}>
-                          <Tooltip>
-                            <TooltipTrigger>
-                              <tech.icon className="w-6 md:w-8 h-full aspect-square" />
-                            </TooltipTrigger>
-                            <TooltipContent>
-                              <p>{tech.label}</p>
-                            </TooltipContent>
-                          </Tooltip>
-                        </TooltipProvider>
-                      ))}
-                      <button
-                        onClick={() => toggleExpanded(i)}
-                        className="hidden lg:flex ml-auto mr-4 px-4 py-2 rounded-lg hover:bg-primary/15 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto hover:text-primary transition"
-                      >
-                        {isExpanded[i] ? 'Collapse' : 'Expand'}
-                      </button>
-                    </div>
                   </div>
                 </div>
               </div>
             ))}
+          </div>
         </div>
       </div>
     </>

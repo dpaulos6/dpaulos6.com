@@ -1,10 +1,8 @@
 'use client'
 import '@/app/globals.css'
-import { Button } from '@/components/ui/button'
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -12,13 +10,10 @@ import {
 } from '@/components/ui/form'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
-
+import { useToast } from '@/components/ui/use-toast'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
-
-import { ToastContainer, toast } from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.css'
 import ShinyButton from '@/components/ShinyButton.jsx'
 
 const formSchema = z.object({
@@ -28,6 +23,8 @@ const formSchema = z.object({
 })
 
 export default function Hire() {
+  const { toast } = useToast()
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -37,7 +34,35 @@ export default function Hire() {
     }
   })
 
+  function isCooldownActive() {
+    const lastSubmissionTime = localStorage.getItem('lastSubmissionTime')
+    if (lastSubmissionTime) {
+      const currentTime = new Date().getTime()
+      const timeDifference = currentTime - parseInt(lastSubmissionTime, 10)
+      const oneDayInMilliseconds = 24 * 60 * 60 * 1000
+      return timeDifference < oneDayInMilliseconds
+    }
+    return false
+  }
+
+  function setLastSubmissionTime() {
+    const currentTime = new Date().getTime()
+    localStorage.setItem('lastSubmissionTime', currentTime.toString())
+  }
+
   async function onSubmit(values: any) {
+    if (isCooldownActive()) {
+      toast({
+        description: 'You can only send an email once every 24 hours.',
+        variant: 'destructive'
+      })
+      return
+    }
+
+    toast({
+      description: 'Sending email...'
+    })
+
     try {
       const response = await fetch('/api/sendHireEmail', {
         method: 'POST',
@@ -50,7 +75,11 @@ export default function Hire() {
       const data = await response.json()
 
       if (!data.statusCode) {
-        toast.success(data.message)
+        setLastSubmissionTime()
+        toast({
+          description: 'Email sent successfully!',
+          variant: 'success'
+        })
       } else {
         console.error('Failed to send email.')
       }
@@ -126,19 +155,6 @@ export default function Hire() {
             <ShinyButton className="flex mx-auto">Submit</ShinyButton>
           </form>
         </Form>
-        <ToastContainer
-          position="top-center"
-          autoClose={5000}
-          hideProgressBar={false}
-          newestOnTop={false}
-          closeOnClick
-          rtl={false}
-          pauseOnFocusLoss={false}
-          pauseOnHover={false}
-          draggable={false}
-          theme="light"
-          className="!w-2/3 !left-1/2 !-translate-x-1/2 xs:!w-auto !mt-20"
-        />
       </div>
     </section>
   )

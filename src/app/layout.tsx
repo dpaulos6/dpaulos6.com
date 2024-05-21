@@ -11,6 +11,7 @@ import GradientBackground from '@/components/gradient-background'
 import Background from '@/components/someone-background'
 
 import { Poppins } from 'next/font/google'
+import { Toaster } from '@/components/ui/toaster'
 
 const font = Poppins({ subsets: ['latin'], weight: '400' })
 
@@ -88,6 +89,7 @@ export default function RootLayout({
         <div className="min-h-screen hidden limit:flex select-none">
           <Navbar />
           <div className="w-full flex z-10">{children}</div>
+          <Toaster />
           {/* <BackgroundAudio /> */}
         </div>
         <div className="w-screen h-screen flex justify-center items-center limit:hidden">

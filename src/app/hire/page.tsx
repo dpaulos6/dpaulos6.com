@@ -15,6 +15,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 import ShinyButton from '@/components/ShinyButton.jsx'
+import Head from 'next/head'
 
 const formSchema = z.object({
   email: z.string().email({ message: 'Email must be valid!' }).min(1),
@@ -90,72 +91,77 @@ export default function Hire() {
   }
 
   return (
-    <section id="hire_page" className="w-full pt-16 px-8">
-      <div className="h-full flex flex-col gap-2 items-center justify-center text-text">
-        <span className="text-4xl text-primary">Hire me</span>
-        <div className="hidden sm:flex flex-col text-center mb-4">
-          <span className="text-sm md:text-base xl:text-lg transition-all">
-            If you want to send me a job offer, please fill the fields below.
-          </span>
-          <span className="text-xs md:text-sm xl:text-base text-text-subtitle transition-all">
-            If the project falls out of my skill-set, I will not reply to it.
-          </span>
+    <>
+      <Head>
+        <title>Diogo Paulos - Hire Me</title>
+      </Head>
+      <main id="hire_page" className="w-full pt-16 px-8">
+        <div className="h-full flex flex-col gap-2 items-center justify-center text-text">
+          <span className="text-4xl text-primary">Hire me</span>
+          <div className="hidden sm:flex flex-col text-center mb-4">
+            <span className="text-sm md:text-base xl:text-lg transition-all">
+              If you want to send me a job offer, please fill the fields below.
+            </span>
+            <span className="text-xs md:text-sm xl:text-base text-text-subtitle transition-all">
+              If the project falls out of my skill-set, I will not reply to it.
+            </span>
+          </div>
+          <Form {...form}>
+            <form
+              onSubmit={form.handleSubmit(onSubmit)}
+              className="space-y-8 w-full sm:w-[30rem] md:w-[35rem] transition-all"
+            >
+              <FormField
+                control={form.control}
+                name="email"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Email</FormLabel>
+                    <FormControl>
+                      <Input placeholder="dpaulos6@outlook.com" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="title"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Title</FormLabel>
+                    <FormControl>
+                      <Input
+                        placeholder="Modern and Responsive Portfolio"
+                        {...field}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="message"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Message</FormLabel>
+                    <FormControl>
+                      <Textarea
+                        rows={10}
+                        placeholder="Hey there! I've got this idea for a killer portfolio website, and I need your expertise to bring it to life. It's gotta be sleek, responsive, you know the drill. Think you're up for the challenge? Let's make something awesome together!"
+                        {...field}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <ShinyButton className="flex mx-auto">Submit</ShinyButton>
+            </form>
+          </Form>
         </div>
-        <Form {...form}>
-          <form
-            onSubmit={form.handleSubmit(onSubmit)}
-            className="space-y-8 w-full sm:w-[30rem] md:w-[35rem] transition-all"
-          >
-            <FormField
-              control={form.control}
-              name="email"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Email</FormLabel>
-                  <FormControl>
-                    <Input placeholder="dpaulos6@outlook.com" {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="title"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Title</FormLabel>
-                  <FormControl>
-                    <Input
-                      placeholder="Modern and Responsive Portfolio"
-                      {...field}
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="message"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Message</FormLabel>
-                  <FormControl>
-                    <Textarea
-                      rows={10}
-                      placeholder="Hey there! I've got this idea for a killer portfolio website, and I need your expertise to bring it to life. It's gotta be sleek, responsive, you know the drill. Think you're up for the challenge? Let's make something awesome together!"
-                      {...field}
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <ShinyButton className="flex mx-auto">Submit</ShinyButton>
-          </form>
-        </Form>
-      </div>
-    </section>
+      </main>
+    </>
   )
 }

@@ -114,7 +114,7 @@ export default function Page() {
       <Head>
         <title>Diogo Paulos - Projects</title>
       </Head>
-      <div className="w-screen h-auto flex flex-col gap-20 items-center text-text py-32">
+      <main className="w-screen h-auto flex flex-col gap-20 items-center text-text py-32">
         <div className="flex flex-col gap-12">
           <span className="text-5xl md:text-6xl text-center">Projects</span>
           <div className="flex flex-col items-center gap-6 w-full max-w-5xl p-8">
@@ -286,7 +286,7 @@ export default function Page() {
             ))}
           </div>
         </div>
-      </div>
+      </main>
     </>
   )
 }

@@ -25,9 +25,7 @@ export async function POST(request: Request, res: Response) {
       .select('ip')
 
     if (getIp && getIp.length > 0) {
-      const existingIp = getIp.map((entry) => {
-        if (bcrypt.compareSync(entry.ip, hashedIp)) return true
-      })
+      const existingIp = getIp.some((entry) => bcrypt.compareSync(ip, entry.ip))
       if (existingIp) {
         return new Response(
           JSON.stringify({

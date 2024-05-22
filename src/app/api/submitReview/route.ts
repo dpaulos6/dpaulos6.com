@@ -1,5 +1,10 @@
 import { createClient } from '@supabase/supabase-js'
 import bcrypt from 'bcrypt'
+import { render } from '@react-email/render'
+import { Resend } from 'resend'
+
+const resend = new Resend(process.env.RESEND_API)
+const outlook = 'itzframepvp@outlook.com'
 
 const supabase = createClient(
   process.env.SUPABASE_URL!,
@@ -43,7 +48,14 @@ export async function POST(request: Request, res: Response) {
       .insert([{ name: name, content: message, ip: hashedIp }])
       .select()
 
-    if (error) {
+    const { error: err } = await resend.emails.send({
+      from: 'Website <reviews@dpaulos6.xyz>',
+      to: outlook,
+      subject: 'New review submission',
+      html: `<span>New review from ${name}.</span>`
+    })
+
+    if (error || err) {
       return new Response(JSON.stringify(error), { status: 500 })
     }
 

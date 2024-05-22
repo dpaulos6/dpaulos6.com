@@ -258,3 +258,7 @@ blockquote {
   mask-composite: exclude;
   -webkit-mask-composite: xor;
 }
+
+.masonry > div > div {
+  width: auto !important;
+}

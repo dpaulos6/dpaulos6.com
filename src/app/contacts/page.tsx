@@ -47,9 +47,9 @@ export default function Page() {
   return (
     <>
       <Head>
-        <title>Diogo Paulos - Contact</title>
+        <title>Diogo Paulos - Contacts</title>
       </Head>
-      <div className="w-full h-full flex items-center justify-center text-text">
+      <main className="w-full flex items-center justify-center text-text">
         <div className="flex flex-col gap-6 items-center justify-center max-w-7xl px-8">
           <span className="text-2xl md:text-4xl text-center">
             You can <b className="text-primary font-semibold">contact</b> me
@@ -69,7 +69,7 @@ export default function Page() {
             ))}
           </div>
         </div>
-      </div>
+      </main>
     </>
   )
 }

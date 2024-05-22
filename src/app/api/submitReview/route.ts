@@ -7,8 +7,8 @@ const resend = new Resend(process.env.RESEND_API)
 const outlook = 'itzframepvp@outlook.com'
 
 const supabase = createClient(
-  process.env.SUPABASE_URL ?? '',
-  process.env.SUPABASE_KEY ?? ''
+  process.env.SUPABASE_URL!,
+  process.env.SUPABASE_KEY!
 )
 
 export async function POST(request: Request, res: Response) {

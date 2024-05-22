@@ -18,7 +18,7 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ src }) => {
 
   useEffect(() => {
     setAudio(new Audio(src))
-  }, [])
+  }, [src])
 
   useEffect(() => {
     if (audio) {
@@ -33,7 +33,7 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ src }) => {
     } else if (audio) {
       audio.volume = lastVolume
     }
-  }, [isMuted])
+  }, [audio, isMuted, lastVolume])
 
   useEffect(() => {
     return () => {

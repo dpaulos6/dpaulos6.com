@@ -66,6 +66,26 @@ export default function Page() {
   const { toast } = useToast()
   const [age, setAge] = useState(0)
   const [reviews, setReviews] = useState<Review[]>([])
+
+  const fetchReviews = async () => {
+    try {
+      const response = await fetch('/api/getReviews')
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`)
+      }
+      const data = await response.json()
+      setReviews(data)
+    } catch (error) {
+      console.error('Error fetching reviews:', error)
+    }
+  }
+
+  useEffect(() => {
+    fetchReviews()
+    const interval = setInterval(fetchReviews, 60000)
+    return () => clearInterval(interval)
+  }, [])
+
   const approvedReviews = reviews.filter((review) => review.approved)
 
   const form = useForm<z.infer<typeof formSchema>>({
@@ -81,27 +101,6 @@ export default function Page() {
     var diff_ms = Date.now() - dob.getTime()
     var age_dt = new Date(diff_ms)
     setAge(Math.abs(age_dt.getUTCFullYear() - 1970))
-  }, [])
-
-  useEffect(() => {
-    const fetchReviews = async () => {
-      try {
-        const response = await fetch('/api/getReviews', {
-          method: 'GET'
-        })
-
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`)
-        }
-
-        const data = await response.json()
-        setReviews(data)
-      } catch (error) {
-        console.error('Error fetching reviews:', error)
-      }
-    }
-
-    fetchReviews()
   }, [])
 
   async function onSubmit(values: any) {
@@ -287,7 +286,7 @@ export default function Page() {
                 <DialogHeader>
                   <span className="text-2xl">Submit your review</span>
                 </DialogHeader>
-                <div className="flex gap-3 items-center my-2 p-3 border border-red-300 bg-red-200 rounded-md text-text">
+                <div className="flex gap-3 items-center mt-2 -mb-2 p-3 border border-red-300 bg-red-200 rounded-md text-text">
                   <AlertTriangle className="min-w-16 h-auto text-red-500" />
                   <span>
                     Sensitive information will be collected. See{' '}
@@ -298,6 +297,12 @@ export default function Page() {
                       privacy policy
                     </Link>{' '}
                     before continuing!
+                  </span>
+                </div>
+                <div className="flex gap-3 items-center mb-2 p-3 border border-neutral-300 bg-neutral-200 rounded-md text-text">
+                  <span>
+                    Before being public, all the reviews are scanned for
+                    inappropriate content.
                   </span>
                 </div>
                 <Form {...form}>

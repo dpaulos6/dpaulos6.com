@@ -2,6 +2,7 @@ import { createClient } from '@supabase/supabase-js'
 import bcrypt from 'bcrypt'
 import { render } from '@react-email/render'
 import { Resend } from 'resend'
+import NewReview from '@/emails/NewReview'
 
 const resend = new Resend(process.env.RESEND_API)
 const outlook = 'itzframepvp@outlook.com'
@@ -41,23 +42,29 @@ export async function POST(request: Request, res: Response) {
       return new Response(JSON.stringify(getErr), { status: 500 })
     }
 
-    const { data, error } = await supabase
+    const { data: insertData, error: insertError } = await supabase
       .from('reviews')
       .insert([{ name: name, content: message, ip: hashedIp }])
       .select()
 
-    const { error: err } = await resend.emails.send({
+    if (insertError) {
+      return new Response(JSON.stringify(insertError), { status: 500 })
+    }
+
+    const id: number = insertData?.[0]?.id
+
+    const { error: emailError } = await resend.emails.send({
       from: 'Website <reviews@dpaulos6.xyz>',
       to: outlook,
       subject: 'New review submission',
-      html: `<span>New review from ${name}.</span>`
+      html: render(NewReview({ name, message, id }))
     })
 
-    if (error || err) {
-      return new Response(JSON.stringify(error), { status: 500 })
+    if (emailError) {
+      return new Response(JSON.stringify(emailError), { status: 500 })
     }
 
-    return new Response(JSON.stringify(data), { status: 200 })
+    return new Response(JSON.stringify(insertData), { status: 200 })
   } catch (error) {
     console.error('Error processing request:', error)
     return new Response('Internal Server Error', { status: 500 })

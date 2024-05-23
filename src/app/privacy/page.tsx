@@ -15,8 +15,8 @@ export default function Privacy() {
           <span>
             When you submit a review and it is approved, your name and review
             content will be publicly displayed to help other users benefit from
-            your feedback. We also collect your IP address (hashed) to prevent
-            spam or multiple reviews, as only one review per user is intended.
+            your feedback. I also collect your IP address (hashed) to ensure
+            only one review per user is sent (it also helps preventing spam).
           </span>
           <span className="text-xl sm:text-2xl md:text-3xl">
             What Data We Collect
@@ -48,7 +48,7 @@ export default function Privacy() {
           <span>
             By submitting your review, you consent to the public display of your
             name and review content on the website, as well as your IP address
-            being stored in a database.
+            being hashed and stored in a database.
           </span>
         </div>
       </main>

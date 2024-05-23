@@ -66,6 +66,26 @@ export default function Page() {
   const { toast } = useToast()
   const [age, setAge] = useState(0)
   const [reviews, setReviews] = useState<Review[]>([])
+
+  const fetchReviews = async () => {
+    try {
+      const response = await fetch('/api/getReviews')
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`)
+      }
+      const data = await response.json()
+      setReviews(data)
+    } catch (error) {
+      console.error('Error fetching reviews:', error)
+    }
+  }
+
+  useEffect(() => {
+    fetchReviews()
+    const interval = setInterval(fetchReviews, 60000)
+    return () => clearInterval(interval)
+  }, [])
+
   const approvedReviews = reviews.filter((review) => review.approved)
 
   const form = useForm<z.infer<typeof formSchema>>({
@@ -81,27 +101,6 @@ export default function Page() {
     var diff_ms = Date.now() - dob.getTime()
     var age_dt = new Date(diff_ms)
     setAge(Math.abs(age_dt.getUTCFullYear() - 1970))
-  }, [])
-
-  useEffect(() => {
-    const fetchReviews = async () => {
-      try {
-        const response = await fetch('/api/getReviews', {
-          method: 'GET'
-        })
-
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`)
-        }
-
-        const data = await response.json()
-        setReviews(data)
-      } catch (error) {
-        console.error('Error fetching reviews:', error)
-      }
-    }
-
-    fetchReviews()
   }, [])
 
   async function onSubmit(values: any) {

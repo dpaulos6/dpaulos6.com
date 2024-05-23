@@ -95,7 +95,7 @@ export default function Hire() {
       <Head>
         <title>Diogo Paulos - Hire Me</title>
       </Head>
-      <main id="hire_page" className="w-full pt-16 px-8">
+      <main id="hire_page" className="w-full pt-24 px-8">
         <div className="h-full flex flex-col gap-2 items-center justify-center text-text">
           <span className="text-4xl text-primary">Hire me</span>
           <div className="hidden sm:flex flex-col text-center mb-4">

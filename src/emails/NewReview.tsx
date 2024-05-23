@@ -23,7 +23,7 @@ export const NewReview = ({
 }) => (
   <Html>
     <Head />
-    <Preview>A new job request was sent.</Preview>
+    <Preview>A new review was submitted.</Preview>
     <Body style={main}>
       <Container style={container}>
         <Section style={box}>

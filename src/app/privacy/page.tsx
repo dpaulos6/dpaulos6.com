@@ -27,14 +27,14 @@ export default function Privacy() {
             the safest and most secure way to store data.
           </span>
           <span>
-            You can see the implementation on the{' '}
+            You can see the implementation{' '}
             <Link
               href="https://github.com/dpaulos6/portfolio"
               className="text-blue-500 hover:underline"
             >
-              website&apos;s github repository
+              here
             </Link>{' '}
-            or the{' '}
+            or check the{' '}
             <Link
               href="https://www.npmjs.com/package/bcrypt"
               className="text-blue-500 hover:underline"

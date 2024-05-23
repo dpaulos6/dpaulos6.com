@@ -286,7 +286,7 @@ export default function Page() {
                 <DialogHeader>
                   <span className="text-2xl">Submit your review</span>
                 </DialogHeader>
-                <div className="flex gap-3 items-center my-2 p-3 border border-red-300 bg-red-200 rounded-md text-text">
+                <div className="flex gap-3 items-center mt-2 -mb-2 p-3 border border-red-300 bg-red-200 rounded-md text-text">
                   <AlertTriangle className="min-w-16 h-auto text-red-500" />
                   <span>
                     Sensitive information will be collected. See{' '}
@@ -297,6 +297,12 @@ export default function Page() {
                       privacy policy
                     </Link>{' '}
                     before continuing!
+                  </span>
+                </div>
+                <div className="flex gap-3 items-center mb-2 p-3 border border-neutral-300 bg-neutral-200 rounded-md text-text">
+                  <span>
+                    Before being public, all the reviews are scanned for
+                    inappropriate content.
                   </span>
                 </div>
                 <Form {...form}>

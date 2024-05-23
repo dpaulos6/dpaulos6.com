@@ -48,7 +48,7 @@ import { z } from 'zod'
 import { useToast } from '@/components/ui/use-toast'
 import { Textarea } from '@/components/ui/textarea'
 import { Input } from '@/components/ui/input'
-import { AlertTriangle } from 'lucide-react'
+import { AlertTriangle, RefreshCwIcon } from 'lucide-react'
 
 interface Review {
   id: number
@@ -66,27 +66,24 @@ export default function Page() {
   const { toast } = useToast()
   const [age, setAge] = useState(0)
   const [reviews, setReviews] = useState<Review[]>([])
-
-  const fetchReviews = async () => {
-    try {
-      const response = await fetch('/api/getReviews')
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`)
-      }
-      const data = await response.json()
-      setReviews(data)
-    } catch (error) {
-      console.error('Error fetching reviews:', error)
-    }
-  }
+  const approvedReviews = reviews.filter((review) => review.approved)
+  const [forceRefresh, setForceRefresh] = useState(0)
 
   useEffect(() => {
+    const fetchReviews = async () => {
+      try {
+        const response = await fetch('/api/getReviews')
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`)
+        }
+        const data = await response.json()
+        setReviews(data)
+      } catch (error) {
+        console.error('Error fetching reviews:', error)
+      }
+    }
     fetchReviews()
-    const interval = setInterval(fetchReviews, 60000)
-    return () => clearInterval(interval)
-  }, [])
-
-  const approvedReviews = reviews.filter((review) => review.approved)
+  }, [forceRefresh])
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -225,7 +222,7 @@ export default function Page() {
             </div>
           </div>
         </div>
-        <div className="w-full max-w-7xl flex flex-col items-center mb-40">
+        <div className="w-full max-w-7xl flex flex-col items-center mb-40 px-8">
           <div className="w-fit relative mb-16 group">
             <span className="text-5xl md:text-6xl px-24 pt-8 whitespace-nowrap">
               Feedback!
@@ -251,7 +248,14 @@ export default function Page() {
             </Link>
             !
           </span>
-          <div className="flex flex-col items-center justify-center gap-16 w-full px-8 xs:px-12 sm:px-16 md:px-20">
+          <button
+            className="flex gap-2 items-center ml-auto mb-4 px-4 py-1.5 bg-neutral-200 rounded-lg"
+            onClick={() => setForceRefresh((prev) => prev + 1)}
+          >
+            <RefreshCwIcon className="w-4 h-auto" />
+            Force refresh
+          </button>
+          <div className="flex flex-col items-center justify-center gap-16 w-full">
             {approvedReviews.length > 0 ? (
               <ResponsiveMasonry
                 className="masonry"

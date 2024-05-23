@@ -57,10 +57,10 @@ const projects = [
     description:
       'This is the new and modern website for SlotBot, an innovative Discord bot designed for economic simulation and competitive PvP gameplay across multiple servers. The website serves as a central hub for SlotBot users and server administrators, providing a seamless experience for accessing bot features and settings.',
     technologies: [
-      { label: 'Astro', icon: AstroIcon },
+      { label: 'NextJS', icon: NextjsIcon },
       { label: 'Typescript', icon: TypescriptIcon },
       { label: 'Tailwind CSS', icon: TailwindIcon },
-      { label: 'Soon will add the rest', icon: Ellipsis }
+      { label: 'Among others', icon: Ellipsis }
     ],
     github: '',
     url: '',

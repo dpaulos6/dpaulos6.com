@@ -18,6 +18,31 @@ export default function Privacy() {
             your feedback. I also collect your IP address (hashed) to ensure
             only one review per user is sent (it also helps preventing spam).
           </span>
+          <span>
+            To your assurance, a hashed string can&apos;t be reversed to
+            it&apos;s original value, it is only possible to be validated. The
+            same string will never return the same hash, as it always generates
+            a different hash even for the same string. Besides the database
+            being secure and regularly monitored, hashed strings is already of
+            the safest and most secure way to store data.
+          </span>
+          <span>
+            You can see the implementation{' '}
+            <Link
+              href="https://github.com/dpaulos6/portfolio"
+              className="text-blue-500 hover:underline"
+            >
+              here
+            </Link>{' '}
+            or check the{' '}
+            <Link
+              href="https://www.npmjs.com/package/bcrypt"
+              className="text-blue-500 hover:underline"
+            >
+              bcrypt documentation
+            </Link>{' '}
+            for more information about the hashing algorithm that was used.
+          </span>
           <span className="text-xl sm:text-2xl md:text-3xl">
             What Data We Collect
           </span>

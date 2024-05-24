@@ -54,7 +54,7 @@ export async function POST(request: Request, res: Response) {
     const id: number = insertData?.[0]?.id
 
     const { error: emailError } = await resend.emails.send({
-      from: 'Website <reviews@dpaulos6.xyz>',
+      from: 'Website <reviews@dpaulos6.com>',
       to: outlook,
       subject: 'New review submission',
       html: render(NewReview({ name, message, id }))

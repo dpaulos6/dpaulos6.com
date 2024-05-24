@@ -94,10 +94,12 @@ export default function Page() {
   })
 
   useEffect(() => {
-    var dob = new Date(2003, 5, 17)
-    var diff_ms = Date.now() - dob.getTime()
-    var age_dt = new Date(diff_ms)
-    setAge(Math.abs(age_dt.getUTCFullYear() - 1970))
+    const dobString = '2003-05-17'
+    const dobMilliseconds = Date.parse(dobString)
+    const currentMilliseconds = Date.now()
+    const ageMilliseconds = currentMilliseconds - dobMilliseconds
+    const ageYears = new Date(ageMilliseconds).getUTCFullYear() - 1970
+    setAge(ageYears)
   }, [])
 
   async function onSubmit(values: any) {

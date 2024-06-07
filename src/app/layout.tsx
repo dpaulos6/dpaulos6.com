@@ -11,6 +11,8 @@ import GradientBackground from '@/components/gradient-background'
 import Background from '@/components/someone-background'
 
 import { Poppins } from 'next/font/google'
+import { Toaster } from '@/components/ui/toaster'
+import Footer from '@/components/footer'
 
 const font = Poppins({ subsets: ['latin'], weight: '400' })
 
@@ -39,10 +41,18 @@ export default function RootLayout({
         <meta name="robots" content="index, follow" />
         <meta name="theme-color" content="#40A2E3" />
         <meta name="msapplication-TileColor" content="#40A2E3" />
-        <meta property="og:image" content="/favicon.ico" />
-        <meta property="og:image:type" content="image/x-icon" />
+
+        <meta
+          name="google-site-verification"
+          content="GIEMYYdVuBC-MWItd08APF11prO3MTs2ko1Ifu2jINU"
+        />
+
+        <meta property="og:image" content="/thumbnail.png" />
+        <meta property="og:image:type" content="image/png" />
         <meta property="og:url" content="https://dpaulos6.xyz/" />
         <meta property="og:site_name" content="Diogo Paulos' Portfolio" />
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:image" content="0" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -76,11 +86,13 @@ export default function RootLayout({
         ></script>
       </head>
       <body>
-        <div className="hidden limit:flex select-none">
+        <GradientBackground />
+        <div className="min-h-screen hidden limit:flex flex-col select-none">
           <Navbar />
-          <div className="w-full min-h-screen flex z-10">{children}</div>
+          <div className="w-full flex-1 flex z-10">{children}</div>
+          <Toaster />
           {/* <BackgroundAudio /> */}
-          <GradientBackground />
+          <Footer />
         </div>
         <div className="w-screen h-screen flex justify-center items-center limit:hidden">
           <span className="flex text-text text-base text-center px-4">

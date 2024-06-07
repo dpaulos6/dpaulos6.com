@@ -1,5 +1,6 @@
 'use client'
 import '@/app/globals.css'
+import { fetchData } from '@/helpers/fetchData'
 import {
   AstroIcon,
   CsharpIcon,
@@ -67,23 +68,25 @@ export default function Page() {
   const [age, setAge] = useState(0)
   const [reviews, setReviews] = useState<Review[]>([])
   const approvedReviews = reviews.filter((review) => review.approved)
-  const [forceRefresh, setForceRefresh] = useState(0)
+
+  const updateData = async () => {
+    const data = await fetchData('/api/getReviews')
+    console.log(data)
+    setReviews(data)
+  }
 
   useEffect(() => {
     const fetchReviews = async () => {
       try {
-        const response = await fetch('/api/getReviews')
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`)
-        }
-        const data = await response.json()
+        const data = await fetchData('/api/getReviews')
         setReviews(data)
       } catch (error) {
         console.error('Error fetching reviews:', error)
       }
     }
+
     fetchReviews()
-  }, [forceRefresh])
+  }, [])
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -252,7 +255,7 @@ export default function Page() {
           </span>
           <button
             className="flex gap-2 items-center ml-auto mb-4 px-4 py-1.5 bg-neutral-200 rounded-lg"
-            onClick={() => setForceRefresh((prev) => prev + 1)}
+            onClick={updateData}
           >
             <RefreshCwIcon className="w-4 h-auto" />
             Force refresh

@@ -1,8 +1,7 @@
+import resend from '@/helpers/resendClient'
 import { render } from '@react-email/render'
-import { Resend } from 'resend'
 import { HireMeEmail } from '@/emails/HireMeEmail'
 
-const resend = new Resend(process.env.RESEND_API)
 const outlook = 'itzframepvp@outlook.com'
 
 export async function POST(request: Request, res: Response) {

@@ -1,19 +1,16 @@
-import { createClient } from '@supabase/supabase-js'
+import supabase from '@/helpers/supabaseClient'
+import authenticate from '@/helpers/supabaseAuth'
+import resend from '@/helpers/resendClient'
 import bcrypt from 'bcrypt'
 import { render } from '@react-email/render'
-import { Resend } from 'resend'
 import NewReview from '@/emails/NewReview'
 
-const resend = new Resend(process.env.RESEND_API)
 const outlook = 'itzframepvp@outlook.com'
-
-const supabase = createClient(
-  process.env.SUPABASE_URL!,
-  process.env.SUPABASE_KEY!
-)
 
 export async function POST(request: Request, res: Response) {
   try {
+    await authenticate()
+
     const body = await request.json()
 
     const { name, message, ip } = body

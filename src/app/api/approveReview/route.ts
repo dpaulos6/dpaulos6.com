@@ -1,9 +1,5 @@
-import { createClient } from '@supabase/supabase-js'
-
-const supabase = createClient(
-  process.env.SUPABASE_URL!,
-  process.env.SUPABASE_KEY!
-)
+import supabase from '@/helpers/supabaseClient'
+import authenticate from '@/helpers/supabaseAuth'
 
 export async function GET(req: Request, res: Response) {
   const { searchParams } = new URL(req.url as string, 'http://localhost')
@@ -14,6 +10,8 @@ export async function GET(req: Request, res: Response) {
   }
 
   try {
+    await authenticate()
+
     const reviewId = parseInt(id, 10)
     if (isNaN(reviewId)) {
       throw new Error('Invalid review ID')

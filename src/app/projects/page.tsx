@@ -32,7 +32,7 @@ const projects = [
   {
     name: 'Portfolio',
     link: '/',
-    thumbnail: '/thumbnail.png',
+    thumbnail: '/thumbnails/dpaulos6.png',
     description:
       'This website is an attempt to describe who I am as a person, using a color palette that I enjoy. All of the content included and design of the website is as much unique as my creativity allows, trying to reflect my style and vibe.',
     technologies: [
@@ -73,13 +73,22 @@ const projects = [
 
 const contributions = [
   {
+    name: 'Nizzy Starter',
+    url: 'https://www.nizzystarter.com/',
+    github: 'https://github.com/NizarAbiZaher/nizzy-starter',
+    thumbnail: '/thumbnails/nizzystarter.png',
+    description:
+      'Nizzy Starter is an open-source SaaS Starter Kit with bare minimum configuration, ready to go.',
+    role: 'Styling and documentation'
+  },
+  {
     name: 'nizzyabi',
     url: 'https://www.nizzyabi.com/',
     github: 'https://github.com/NizarAbiZaher/platform',
-    thumbnail: '',
+    thumbnail: '/thumbnails/nizzyabi.png',
     description:
       'Nizzyabi.com is a Programming Course Platform for self-taught developers who want to improve their web development skills.',
-    role: 'Frontend Adjustments'
+    role: 'Styling and documentation'
   },
   {
     name: 'Would You Bot',
@@ -220,11 +229,11 @@ export default function Page() {
           <span className="text-5xl md:text-6xl text-center mt-32">
             Open Source Contribution
           </span>
-          <div className="flex flex-wrap items-center gap-6 w-full max-w-5xl p-8">
+          <div className="flex flex-col md:flex-row md:flex-wrap items-center gap-6 w-full max-w-5xl p-8">
             {contributions.map((contribution, i) => (
               <div
                 key={i}
-                className={`flex justify-center items-center w-full basis-[calc(50%-0.75rem)] p-[2px] rounded-[0.9rem] overflow-hidden transition-all group relative`}
+                className={`flex justify-center items-center w-fit md:w-full basis-[calc(50%-0.75rem)] p-[2px] rounded-[0.9rem] overflow-hidden transition-all group relative`}
               >
                 <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-primary to-accent opacity-0 group-hover:opacity-50 transition pointer-events-none "></div>
                 <div className="flex flex-col max-w-96 md:max-w-xl lg:max-w-none items-center w-full h-full gap-4 md:gap-6 lg:gap-4 p-6 rounded-xl bg-background z-10">

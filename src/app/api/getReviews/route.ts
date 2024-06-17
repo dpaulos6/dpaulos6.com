@@ -1,11 +1,10 @@
-import { createClient } from '@supabase/supabase-js'
-const supabase = createClient(
-  process.env.SUPABASE_URL!,
-  process.env.SUPABASE_KEY!
-)
+import supabase from '@/helpers/supabaseClient'
+import authenticate from '@/helpers/supabaseAuth'
 
 export async function GET(request: Request, res: Response) {
   try {
+    await authenticate()
+
     let { data: reviews, error } = await supabase
       .from('reviews')
       .select('id, name, content, approved')
@@ -15,8 +14,8 @@ export async function GET(request: Request, res: Response) {
     }
 
     return new Response(JSON.stringify(reviews), { status: 200 })
-  } catch (error) {
-    console.error('Error processing request:', error)
+  } catch (err) {
+    console.error('Error processing request:', err)
     return new Response('Internal Server Error', { status: 500 })
   }
 }

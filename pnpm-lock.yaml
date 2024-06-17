@@ -63,7 +63,7 @@ importers:
         specifier: ^2.1.0
         version: 2.1.0
       framer-motion:
-        specifier: ^11.0.24
+        specifier: ^11.1.1
         version: 11.1.1(@emotion/is-prop-valid@1.2.1)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       gsap:
         specifier: ^3.12.5
@@ -95,6 +95,9 @@ importers:
       react-email:
         specifier: ^2.1.0
         version: 2.1.1(@swc/helpers@0.5.5)(eslint@8.57.0)
+      react-fast-marquee:
+        specifier: ^1.6.4
+        version: 1.6.4(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       react-hook-form:
         specifier: ^7.51.0
         version: 7.51.3(react@18.2.0)
@@ -3288,6 +3291,12 @@ packages:
 
   react-fast-compare@3.2.2:
     resolution: {integrity: sha512-nsO+KSNgo1SbJqJEYRE9ERzo7YtYbou/OqjSQKxV7jcKox7+usiUVZOAC+XnDOABXggQTno0Y1CpVnuWEc1boQ==}
+
+  react-fast-marquee@1.6.4:
+    resolution: {integrity: sha512-LAgvhRmHdqaUQ8R5jCUwzEGFUIjnCCt3T3W8X7j7wF6DWe0SATlpP0JX1V0pp2qX3DYUezmn1Iz5AtRFdL2EWQ==}
+    peerDependencies:
+      react: '>= 16.8.0 || 18.0.0'
+      react-dom: '>= 16.8.0 || 18.0.0'
 
   react-hook-form@7.51.3:
     resolution: {integrity: sha512-cvJ/wbHdhYx8aviSWh28w9ImjmVsb5Y05n1+FW786vEZQJV5STNM0pW6ujS+oiBecb0ARBxJFyAnXj9+GHXACQ==}
@@ -7358,6 +7367,11 @@ snapshots:
       - webpack-cli
 
   react-fast-compare@3.2.2: {}
+
+  react-fast-marquee@1.6.4(react-dom@18.2.0(react@18.2.0))(react@18.2.0):
+    dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
 
   react-hook-form@7.51.3(react@18.2.0):
     dependencies:

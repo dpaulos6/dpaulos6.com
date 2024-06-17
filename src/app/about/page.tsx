@@ -27,7 +27,6 @@ import Image from 'next/image'
 import Head from 'next/head'
 import { useEffect, useState } from 'react'
 import ShinyButton from '@/components/ShinyButton'
-import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry'
 import Link from 'next/link'
 import {
   Dialog,
@@ -50,6 +49,7 @@ import { useToast } from '@/components/ui/use-toast'
 import { Textarea } from '@/components/ui/textarea'
 import { Input } from '@/components/ui/input'
 import { AlertTriangle, RefreshCwIcon } from 'lucide-react'
+import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry'
 
 interface Review {
   id: number

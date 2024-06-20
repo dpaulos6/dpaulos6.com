@@ -124,8 +124,24 @@ export default function Page() {
         <title>Diogo Paulos - Projects</title>
       </Head>
       <main className="w-screen h-auto flex flex-col gap-20 items-center text-text py-32">
-        <div className="flex flex-col gap-12">
-          <span className="text-5xl md:text-6xl text-center">Projects</span>
+        <div className="flex flex-col items-center gap-12">
+          <div className="w-fit relative mt-16 group">
+            <span className="text-5xl md:text-6xl px-24 pt-8 whitespace-nowrap">
+              Projects
+            </span>
+            <span
+              className="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 text-7xl md:text-8xl whitespace-nowrap text-neutral-200/50 -z-10 transition-all md:group-hover:opacity-0"
+              area-hidden="true"
+            >
+              Projects
+            </span>
+            <span
+              className="hidden md:flex absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 text-7xl md:text-8xl whitespace-nowrap -z-10 bg-gradient-to-r text-transparent from-sky-400 to-primary bg-clip-text transition-all opacity-0 group-hover:opacity-50"
+              area-hidden="true"
+            >
+              Projects
+            </span>
+          </div>
           <div className="flex flex-col items-center gap-6 w-full max-w-5xl p-8">
             {projects
               .slice()
@@ -225,10 +241,24 @@ export default function Page() {
               ))}
           </div>
         </div>
-        <div className="flex flex-col gap-12">
-          <span className="text-5xl md:text-6xl text-center mt-32">
-            Open Source Contribution
-          </span>
+        <div className="flex flex-col items-center gap-12">
+          <div className="w-fit relative mt-16 group">
+            <span className="text-5xl md:text-6xl px-24 pt-8 whitespace-nowrap">
+              Contributions
+            </span>
+            <span
+              className="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 text-7xl md:text-8xl whitespace-nowrap text-neutral-200/50 -z-10 transition-all md:group-hover:opacity-0"
+              area-hidden="true"
+            >
+              Contributions
+            </span>
+            <span
+              className="hidden md:flex absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 text-7xl md:text-8xl whitespace-nowrap -z-10 bg-gradient-to-r text-transparent from-sky-400 to-primary bg-clip-text transition-all opacity-0 group-hover:opacity-50"
+              area-hidden="true"
+            >
+              Contributions
+            </span>
+          </div>
           <div className="flex flex-col md:flex-row md:flex-wrap items-center gap-6 w-full max-w-5xl p-8">
             {contributions.map((contribution, i) => (
               <div

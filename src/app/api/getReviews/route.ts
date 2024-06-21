@@ -10,6 +10,7 @@ export async function GET(request: Request, res: Response) {
     let { data: reviews, error } = await supabase
       .from('reviews')
       .select('id, name, content, approved')
+      .eq('approved', true)
 
     if (error) {
       return new Response(JSON.stringify(error), { status: 500 })

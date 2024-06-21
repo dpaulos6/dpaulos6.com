@@ -66,7 +66,10 @@ export default function Navbar() {
     >
       <div className="flex w-full max-w-7xl justify-between">
         <div>
-          <Link href="/" className="text-2xl group">
+          <Link
+            href="/"
+            className="text-2xl group rounded-xl focus:outline-none focus:ring-2 focus:ring-primary"
+          >
             <span className="text-text group-hover:text-primary transition duration-300">
               dpaulos
             </span>
@@ -79,7 +82,7 @@ export default function Navbar() {
           <NavLink items={items} />
           <HireMeButton />
           <button
-            className="text-text p-2 rounded-xl hover:bg-text/5 transition"
+            className="text-text p-2 rounded-xl hover:bg-text/5 transition focus:outline-none focus:ring-2 focus:ring-primary"
             onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
           >
             {theme === 'light' ? <Moon /> : <Sun />}

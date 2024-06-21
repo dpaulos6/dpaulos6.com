@@ -181,8 +181,12 @@ export default function Page() {
                         {project.url && !project.currentWebsite ? (
                           <TooltipProvider>
                             <Tooltip>
-                              <TooltipTrigger>
-                                <Link href={project.url} target="_blank">
+                              <TooltipTrigger tabIndex={-1}>
+                                <Link
+                                  href={project.url}
+                                  className="focus:outline-none focus:ring-2 focus:ring-primary"
+                                  target="_blank"
+                                >
                                   <LinkIcon className="p-2 w-10 rounded-md h-full aspect-square lg:opacity-0 lg:group-hover:opacity-100 hover:bg-primary/15 hover:text-primary transition" />
                                 </Link>
                               </TooltipTrigger>
@@ -195,8 +199,12 @@ export default function Page() {
                         {project.github ? (
                           <TooltipProvider>
                             <Tooltip>
-                              <TooltipTrigger>
-                                <Link href={project.github} target="_blank">
+                              <TooltipTrigger tabIndex={-1}>
+                                <Link
+                                  href={project.github}
+                                  className="focus:outline-none focus:ring-2 focus:ring-primary"
+                                  target="_blank"
+                                >
                                   <GithubIcon className="p-2 w-10 rounded-md h-full aspect-square lg:opacity-0 lg:group-hover:opacity-100 hover:bg-primary/15 hover:text-primary transition" />
                                 </Link>
                               </TooltipTrigger>
@@ -216,7 +224,7 @@ export default function Page() {
                         {project.technologies.map((tech, i) => (
                           <TooltipProvider key={i}>
                             <Tooltip>
-                              <TooltipTrigger>
+                              <TooltipTrigger className="h-fit rounded-md focus:outline-none focus:ring-2 focus:ring-primary">
                                 <tech.icon className="w-6 md:w-8 h-full aspect-square" />
                               </TooltipTrigger>
                               <TooltipContent>
@@ -227,7 +235,7 @@ export default function Page() {
                         ))}
                         <button
                           onClick={() => toggleProjectExpanded(i)}
-                          className="hidden lg:flex ml-auto mr-4 px-4 py-2 rounded-lg hover:bg-primary/15 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto hover:text-primary transition"
+                          className="hidden lg:flex ml-auto mr-4 px-4 py-2 rounded-lg hover:bg-primary/15 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto hover:text-primary transition focus:outline-none focus:ring-2 focus:ring-primary"
                         >
                           {isExpanded[i] ? 'Collapse' : 'Expand'}
                         </button>
@@ -290,8 +298,12 @@ export default function Page() {
                       {contribution.url ? (
                         <TooltipProvider>
                           <Tooltip>
-                            <TooltipTrigger>
-                              <Link href={contribution.url} target="_blank">
+                            <TooltipTrigger tabIndex={-1}>
+                              <Link
+                                href={contribution.url}
+                                target="_blank"
+                                tabIndex={-1}
+                              >
                                 <LinkIcon className="p-2 w-10 rounded-md h-full aspect-square lg:opacity-0 lg:group-hover:opacity-100 hover:bg-primary/15 hover:text-primary transition" />
                               </Link>
                             </TooltipTrigger>
@@ -304,8 +316,12 @@ export default function Page() {
                       {contribution.github ? (
                         <TooltipProvider>
                           <Tooltip>
-                            <TooltipTrigger>
-                              <Link href={contribution.github} target="_blank">
+                            <TooltipTrigger tabIndex={-1}>
+                              <Link
+                                href={contribution.github}
+                                target="_blank"
+                                tabIndex={-1}
+                              >
                                 <GithubIcon className="p-2 w-10 rounded-md h-full aspect-square lg:opacity-0 lg:group-hover:opacity-100 hover:bg-primary/15 hover:text-primary transition" />
                               </Link>
                             </TooltipTrigger>

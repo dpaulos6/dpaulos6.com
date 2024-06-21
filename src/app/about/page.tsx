@@ -249,13 +249,6 @@ export default function Page() {
             </Link>
             !
           </span>
-          <button
-            className="flex gap-2 items-center ml-auto mb-4 px-4 py-1.5 bg-neutral-200 dark:bg-neutral-800 rounded-lg select-none"
-            onClick={() => setForceRefresh((prev) => prev + 1)}
-          >
-            <RefreshCwIcon className="w-4 h-auto" />
-            Force refresh
-          </button>
           <div className="flex flex-col items-center justify-center gap-16 w-full">
             {reviews.length > 0 ? (
               <ResponsiveMasonry

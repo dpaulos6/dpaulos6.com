@@ -66,7 +66,6 @@ export default function Page() {
   const { toast } = useToast()
   const [age, setAge] = useState(0)
   const [reviews, setReviews] = useState<Review[]>([])
-  const approvedReviews = reviews.filter((review) => review.approved)
   const [forceRefresh, setForceRefresh] = useState(0)
 
   useEffect(() => {
@@ -251,20 +250,20 @@ export default function Page() {
             !
           </span>
           <button
-            className="flex gap-2 items-center ml-auto mb-4 px-4 py-1.5 bg-neutral-200 dark:bg-neutral-800 rounded-lg select-none rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+            className="flex gap-2 items-center ml-auto mb-4 px-4 py-1.5 bg-neutral-200 dark:bg-neutral-800 rounded-lg select-none"
             onClick={() => setForceRefresh((prev) => prev + 1)}
           >
             <RefreshCwIcon className="w-4 h-auto" />
             Force refresh
           </button>
           <div className="flex flex-col items-center justify-center gap-16 w-full">
-            {approvedReviews.length > 0 ? (
+            {reviews.length > 0 ? (
               <ResponsiveMasonry
                 className="masonry"
                 columnsCountBreakPoints={{ 350: 1, 756: 2, 1024: 3 }}
               >
                 <Masonry gutter="1.5rem">
-                  {approvedReviews.map((review) => (
+                  {reviews.map((review) => (
                     <div
                       key={review.id}
                       className="rounded-lg border bg-background-menu border-background-border p-6 shadow-sm"

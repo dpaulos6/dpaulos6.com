@@ -11,6 +11,7 @@ export async function GET(request: Request, res: Response) {
       .from('reviews')
       .select('id, name, content, approved')
       .eq('approved', true)
+      .order('name')
 
     if (error) {
       return new Response(JSON.stringify(error), { status: 500 })

@@ -178,11 +178,6 @@ export default function Page() {
                         <span className="text-xl md:text-2xl lg:text-3xl mr-2">
                           {project.name}
                         </span>
-                        {project.currentWebsite ? (
-                          <span className="text-neutral-400 text-xs lg:text-sm mt-auto mb-2.5 lg:mb-1.5 mr-2">
-                            this website
-                          </span>
-                        ) : null}
                         {project.url && !project.currentWebsite ? (
                           <TooltipProvider>
                             <Tooltip>

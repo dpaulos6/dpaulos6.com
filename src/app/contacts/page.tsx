@@ -61,7 +61,7 @@ export default function Page() {
                 key={i}
                 href={social.href}
                 target="_blank"
-                className="w-fit flex gap-1.5 items-center py-0.5 px-1.5 md:py-1 md:px-2 rounded-lg hover:bg-primary/10 hover:text-primary transition"
+                className="w-fit flex gap-1.5 items-center py-0.5 px-1.5 md:py-1 md:px-2 rounded-lg hover:bg-primary/10 hover:text-primary transition select-none"
               >
                 <social.icon className="text-2xl md:text-3xl" />
                 <span className="text-xl md:text-2xl">{social.label}</span>

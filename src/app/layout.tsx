@@ -42,7 +42,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <GradientBackground />
-          <div className="min-h-screen hidden limit:flex flex-col select-none">
+          <div className="min-h-screen hidden limit:flex flex-col">
             <Navbar />
             <div className="w-full flex-1 flex z-10">{children}</div>
             <Toaster />

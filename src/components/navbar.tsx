@@ -62,7 +62,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 w-full h-fit flex justify-center px-8 py-4 z-50 bg-background`}
+      className={`fixed top-0 left-0 w-full h-fit flex justify-center px-8 py-4 z-50 bg-background select-none`}
     >
       <div className="flex w-full max-w-7xl justify-between">
         <div>

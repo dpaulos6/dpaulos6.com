@@ -72,7 +72,7 @@ export default function Page() {
   useEffect(() => {
     const fetchReviews = async () => {
       try {
-        const response = await fetch('/api/getReviews')
+        const response = await fetch('/api/getReviews', { cache: 'no-store' })
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`)
         }

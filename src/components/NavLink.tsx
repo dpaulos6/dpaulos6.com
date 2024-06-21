@@ -66,7 +66,7 @@ function NavLink({ items }: NavLinkProps) {
             key={index}
             href={item.href}
             title={item.label}
-            className={`flex items-center text-xl lowercase transition-all rounded-xl py-1 focus:outline-none focus:ring-2 focus:ring-primary ${path === item.href ? 'text-primary' : 'text-text'} relative`}
+            className={`flex items-center text-xl lowercase transition-all rounded-xl py-1 ${path === item.href ? 'text-primary' : 'text-text'} relative`}
             onMouseOver={(ev: any) => repositionHighlight(ev, item)}
           >
             {item.label}

@@ -68,7 +68,7 @@ export default function Navbar() {
         <div>
           <Link
             href="/"
-            className="text-2xl group rounded-xl focus:outline-none focus:ring-2 focus:ring-primary"
+            className="text-2xl group rounded-xl"
           >
             <span className="text-text group-hover:text-primary transition duration-300">
               dpaulos
@@ -82,7 +82,7 @@ export default function Navbar() {
           <NavLink items={items} />
           <HireMeButton />
           <button
-            className="text-text p-2 rounded-xl hover:bg-text/5 transition focus:outline-none focus:ring-2 focus:ring-primary"
+            className="text-text p-2 rounded-xl hover:bg-text/5 transition"
             onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
           >
             {theme === 'light' ? <Moon /> : <Sun />}

@@ -184,7 +184,7 @@ export default function Page() {
                               <TooltipTrigger tabIndex={-1}>
                                 <Link
                                   href={project.url}
-                                  className="focus:outline-none focus:ring-2 focus:ring-primary"
+                                  className=""
                                   target="_blank"
                                 >
                                   <LinkIcon className="p-2 w-10 rounded-md h-full aspect-square lg:opacity-0 lg:group-hover:opacity-100 hover:bg-primary/15 hover:text-primary transition" />
@@ -202,7 +202,7 @@ export default function Page() {
                               <TooltipTrigger tabIndex={-1}>
                                 <Link
                                   href={project.github}
-                                  className="focus:outline-none focus:ring-2 focus:ring-primary"
+                                  className=""
                                   target="_blank"
                                 >
                                   <GithubIcon className="p-2 w-10 rounded-md h-full aspect-square lg:opacity-0 lg:group-hover:opacity-100 hover:bg-primary/15 hover:text-primary transition" />
@@ -224,7 +224,7 @@ export default function Page() {
                         {project.technologies.map((tech, i) => (
                           <TooltipProvider key={i}>
                             <Tooltip>
-                              <TooltipTrigger className="h-fit rounded-md focus:outline-none focus:ring-2 focus:ring-primary">
+                              <TooltipTrigger className="h-fit rounded-md ">
                                 <tech.icon className="w-6 md:w-8 h-full aspect-square" />
                               </TooltipTrigger>
                               <TooltipContent>
@@ -235,7 +235,7 @@ export default function Page() {
                         ))}
                         <button
                           onClick={() => toggleProjectExpanded(i)}
-                          className="hidden lg:flex ml-auto mr-4 px-4 py-2 rounded-lg hover:bg-primary/15 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto hover:text-primary transition focus:outline-none focus:ring-2 focus:ring-primary"
+                          className="hidden lg:flex ml-auto mr-4 px-4 py-2 rounded-lg hover:bg-primary/15 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto hover:text-primary transition "
                         >
                           {isExpanded[i] ? 'Collapse' : 'Expand'}
                         </button>
@@ -302,7 +302,6 @@ export default function Page() {
                               <Link
                                 href={contribution.url}
                                 target="_blank"
-                                tabIndex={-1}
                               >
                                 <LinkIcon className="p-2 w-10 rounded-md h-full aspect-square lg:opacity-0 lg:group-hover:opacity-100 hover:bg-primary/15 hover:text-primary transition" />
                               </Link>
@@ -320,7 +319,6 @@ export default function Page() {
                               <Link
                                 href={contribution.github}
                                 target="_blank"
-                                tabIndex={-1}
                               >
                                 <GithubIcon className="p-2 w-10 rounded-md h-full aspect-square lg:opacity-0 lg:group-hover:opacity-100 hover:bg-primary/15 hover:text-primary transition" />
                               </Link>

@@ -251,7 +251,7 @@ export default function Page() {
             !
           </span>
           <button
-            className="flex gap-2 items-center ml-auto mb-4 px-4 py-1.5 bg-neutral-200 dark:bg-neutral-800 rounded-lg select-none rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+            className="flex gap-2 items-center ml-auto mb-4 px-4 py-1.5 bg-neutral-200 dark:bg-neutral-800 rounded-lg select-none"
             onClick={() => setForceRefresh((prev) => prev + 1)}
           >
             <RefreshCwIcon className="w-4 h-auto" />

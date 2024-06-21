@@ -155,7 +155,7 @@ export default function Page() {
       <Head>
         <title>Diogo Paulos - Contacts</title>
       </Head>
-      <main className="flex-1 flex flex-col pt-24 md:pt-0 lg:gap-20 xl:gap-40 items-center text-text overflow-x-hidden">
+      <main className="flex-1 flex flex-col gap-20 xl:gap-40 items-center text-text overflow-x-hidden">
         <div className="w-full h-16 pointer-events-none" />
         <div className="w-full max-w-7xl flex flex-col items-center mb-40">
           <div className="w-fit relative mb-32 group">
@@ -163,7 +163,7 @@ export default function Page() {
               Who am I?
             </span>
             <span
-              className="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 text-7xl md:text-8xl whitespace-nowrap text-neutral-200/50 -z-10 transition-all md:group-hover:opacity-0"
+              className="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 text-7xl md:text-8xl whitespace-nowrap text-neutral-200/50 dark:text-neutral-600/50 -z-10 transition-all md:group-hover:opacity-0"
               area-hidden="true"
             >
               Who am I?
@@ -230,7 +230,7 @@ export default function Page() {
               Feedback!
             </span>
             <span
-              className="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 text-7xl md:text-8xl  whitespace-nowrap text-neutral-200/50 -z-10 transition-all md:group-hover:opacity-0"
+              className="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 text-7xl md:text-8xl  whitespace-nowrap text-neutral-200/50 dark:text-neutral-600/50 -z-10 transition-all md:group-hover:opacity-0"
               area-hidden="true"
             >
               Feedback!
@@ -251,7 +251,7 @@ export default function Page() {
             !
           </span>
           <button
-            className="flex gap-2 items-center ml-auto mb-4 px-4 py-1.5 bg-neutral-200 rounded-lg"
+            className="flex gap-2 items-center ml-auto mb-4 px-4 py-1.5 bg-neutral-200 dark:bg-neutral-800 rounded-lg"
             onClick={() => setForceRefresh((prev) => prev + 1)}
           >
             <RefreshCwIcon className="w-4 h-auto" />
@@ -267,7 +267,7 @@ export default function Page() {
                   {approvedReviews.map((review) => (
                     <div
                       key={review.id}
-                      className="rounded-lg border bg-white p-6 shadow-sm"
+                      className="rounded-lg border bg-background-menu border-background-border p-6 shadow-sm"
                     >
                       <span className="text-lg font-medium leading-relaxed">
                         &quot;{review.content}&quot;
@@ -292,7 +292,7 @@ export default function Page() {
                 <DialogHeader>
                   <span className="text-2xl">Submit your review</span>
                 </DialogHeader>
-                <div className="flex gap-3 items-center mt-2 -mb-2 p-3 border border-red-300 bg-red-200 rounded-md text-text">
+                <div className="flex gap-3 items-center mt-2 -mb-2 p-3 border border-red-300 bg-red-200 dark:border-red-600 dark:bg-red-400 rounded-md text-text">
                   <AlertTriangle className="min-w-16 h-auto text-red-500" />
                   <span>
                     Sensitive information will be collected. See{' '}
@@ -305,7 +305,7 @@ export default function Page() {
                     before continuing!
                   </span>
                 </div>
-                <div className="flex gap-3 items-center mb-2 p-3 border border-neutral-300 bg-neutral-200 rounded-md text-text">
+                <div className="flex gap-3 items-center mb-2 p-3 border border-neutral-300 bg-neutral-200 dark:border-neutral-600 dark:bg-neutral-400 rounded-md text-text">
                   <span>
                     Before being public, all the reviews are scanned for
                     inappropriate content.
@@ -359,7 +359,7 @@ export default function Page() {
               What stack do I use?
             </span>
             <span
-              className="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 text-7xl md:text-8xl whitespace-nowrap text-neutral-200/50 -z-10 transition-all group-hover:opacity-0"
+              className="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 text-7xl md:text-8xl whitespace-nowrap text-neutral-200/50 dark:text-neutral-600/50 -z-10 transition-all group-hover:opacity-0"
               area-hidden="true"
             >
               What stack do I use?
@@ -376,7 +376,7 @@ export default function Page() {
               What stack?
             </span>
             <span
-              className="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 text-7xl md:text-8xl whitespace-nowrap text-neutral-200/50 -z-10"
+              className="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 text-7xl md:text-8xl whitespace-nowrap text-neutral-200/50 dark:text-neutral-600/50 -z-10"
               area-hidden="true"
             >
               What stack?

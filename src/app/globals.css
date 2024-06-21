@@ -20,7 +20,7 @@
   --accent: 225 101 228;
   --accent-hover: 184 84 185;
   --text: 0 0 0;
-  --text-hover: 5 3 0;
+  --text-hover: 150 150 150;
   --text-placeholder: 163 163 163;
   --text-subtitle: 129 129 129;
   --background: 255 255 255;
@@ -32,75 +32,7 @@
   --code: rgba(0, 0, 0, 0.102);
 }
 
-/* @media (prefers-color-scheme: light) {
-  :root {
-    --primary: 64 162 227;
-    --primary-hover: 59 147 206;
-    --audio-hover: 61 148 206;
-    --secondary: 190 203 207;
-    --secondary-hover: 162 173 177;
-    --accent: 225 101 228;
-    --accent-hover: 184 84 185;
-    --text: 0 0 0;
-    --text-hover: 5 3 0;
-    --text-placeholder: 163 163 163;
-    --text-subtitle: 129 129 129;
-    --background: 255 255 255;
-    --background-hover: 230 230 230;
-    --background-menu: 247 247 247;
-    --background-border: 221 221 221;
-    --hover: rgba(0, 0, 0, 0.098);
-    --hire-hover: rgba(255, 255, 255, 0.65);
-    --code: rgba(0, 0, 0, 0.102);
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --primary: 29 126 191;
-    --primary-hover: 28 113 170;
-    --audio-hover: 24 114 173;
-    --secondary: 190 203 207;
-    --secondary-hover: 176 186 189;
-    --accent: 150 27 152;
-    --accent-hover: 133 25 134;
-    --text: 255 255 255;
-    --text-hover: 253 248 240;
-    --text-placeholder: 83 83 83;
-    --text-subtitle: 129 129 129;
-    --background: 15 15 15;
-    --background-hover: 40 40 40;
-    --background-menu: 27 26 26;
-    --background-border: 51 50 49;
-    --hover: rgba(255, 255, 255, 0.063);
-    --hire-hover: rgba(0, 0, 0, 0.75);
-    --code: rgba(255, 255, 255, 0.063);
-    --grid: 255 255 255;
-  }
-}
-
-[data-theme='light'] {
-  --primary: 64 162 227;
-  --primary-hover: 59 147 206;
-  --audio-hover: 61 148 206;
-  --secondary: 190 203 207;
-  --secondary-hover: 162 173 177;
-  --accent: 225 101 228;
-  --accent-hover: 184 84 185;
-  --text: 0 0 0;
-  --text-hover: 5 3 0;
-  --text-placeholder: 163 163 163;
-  --text-subtitle: 129 129 129;
-  --background: 255 255 255;
-  --background-hover: 230 230 230;
-  --background-menu: 247 247 247;
-  --background-border: 221 221 221;
-  --hover: rgba(0, 0, 0, 0.04);
-  --hire-hover: rgba(255, 255, 255, 0.65);
-  --code: rgba(0, 0, 0, 0.102);
-}
-
-[data-theme='dark'] {
+.dark {
   --primary: 29 126 191;
   --primary-hover: 28 113 170;
   --audio-hover: 24 114 173;
@@ -109,7 +41,7 @@
   --accent: 150 27 152;
   --accent-hover: 133 25 134;
   --text: 255 255 255;
-  --text-hover: 253 248 240;
+  --text-hover: 150 150 150;
   --text-placeholder: 83 83 83;
   --text-subtitle: 129 129 129;
   --background: 15 15 15;
@@ -120,7 +52,7 @@
   --hire-hover: rgba(0, 0, 0, 0.75);
   --code: rgba(255, 255, 255, 0.063);
   --grid: 255 255 255;
-} */
+}
 
 html,
 body {

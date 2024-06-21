@@ -21,7 +21,7 @@ const ShinyButton = ({ children, className = '' }) => {
       }}
       variants={buttonVariants}
       className={cn(
-        'px-10 py-2 rounded-md relative bg-background-menu select-none',
+        'px-10 py-2 rounded-md relative bg-background-menu select-none focus:outline-none focus:ring-2 focus:ring-primary',
         className
       )}
     >

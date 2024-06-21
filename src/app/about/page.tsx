@@ -251,7 +251,7 @@ export default function Page() {
             !
           </span>
           <button
-            className="flex gap-2 items-center ml-auto mb-4 px-4 py-1.5 bg-neutral-200 dark:bg-neutral-800 rounded-lg select-none"
+            className="flex gap-2 items-center ml-auto mb-4 px-4 py-1.5 bg-neutral-200 dark:bg-neutral-800 rounded-lg select-none rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
             onClick={() => setForceRefresh((prev) => prev + 1)}
           >
             <RefreshCwIcon className="w-4 h-auto" />
@@ -285,7 +285,7 @@ export default function Page() {
               </span>
             )}
             <Dialog>
-              <DialogTrigger>
+              <DialogTrigger tabIndex={-1}>
                 <ShinyButton>Submit yours</ShinyButton>
               </DialogTrigger>
               <DialogContent className="w-[90vw] sm:w-full text-text">

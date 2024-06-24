@@ -149,6 +149,26 @@ export default function Page() {
     }
   }
 
+  const [isSmallScreen, setIsSmallScreen] = useState(false)
+
+  const checkScreenSize = () => {
+    if (window.innerWidth < 640) {
+      setIsSmallScreen(true)
+    } else {
+      setIsSmallScreen(false)
+    }
+  }
+
+  useEffect(() => {
+    checkScreenSize()
+
+    window.addEventListener('resize', checkScreenSize)
+
+    return () => {
+      window.removeEventListener('resize', checkScreenSize)
+    }
+  }, [])
+
   return (
     <>
       <Head>
@@ -284,7 +304,7 @@ export default function Page() {
                 <DialogHeader>
                   <span className="text-2xl">Submit your review</span>
                 </DialogHeader>
-                <div className="flex gap-3 items-center mt-2 -mb-2 p-3 border border-red-300 bg-red-200 dark:border-red-600 dark:bg-red-400 rounded-md text-text">
+                <div className="flex gap-3 items-center mt-2 -mb-2 p-1.5 sm:p-3 border border-red-300 bg-red-200 dark:border-red-600 dark:bg-red-400 rounded-md text-text">
                   <AlertTriangle className="w-24 sm:min-w-16 h-auto text-red-500" />
                   <span className="text-sm sm:text-base">
                     Sensitive information will be collected. See{' '}
@@ -297,7 +317,7 @@ export default function Page() {
                     before continuing!
                   </span>
                 </div>
-                <div className="flex gap-3 items-center mb-2 p-3 border border-neutral-300 bg-neutral-200 dark:border-neutral-600 dark:bg-neutral-400 rounded-md text-text">
+                <div className="flex gap-3 items-center mb-2 p-1.5 sm:p-3 border border-neutral-300 bg-neutral-200 dark:border-neutral-600 dark:bg-neutral-400 rounded-md text-text">
                   <span className="text-sm sm:text-base">
                     Before being public, all the reviews are scanned for
                     inappropriate content.
@@ -313,7 +333,9 @@ export default function Page() {
                       name="name"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="text-base">Your name</FormLabel>
+                          <FormLabel className="text-base">
+                            Your name
+                          </FormLabel>
                           <FormControl>
                             <Input placeholder="John Doe" {...field} />
                           </FormControl>
@@ -329,7 +351,7 @@ export default function Page() {
                           <FormLabel className="text-base">Message</FormLabel>
                           <FormControl>
                             <Textarea
-                              rows={10}
+                              rows={isSmallScreen ? 6 : 10}
                               placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu sem integer vitae justo eget magna."
                               {...field}
                             />

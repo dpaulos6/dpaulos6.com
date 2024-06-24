@@ -285,8 +285,8 @@ export default function Page() {
                   <span className="text-2xl">Submit your review</span>
                 </DialogHeader>
                 <div className="flex gap-3 items-center mt-2 -mb-2 p-3 border border-red-300 bg-red-200 dark:border-red-600 dark:bg-red-400 rounded-md text-text">
-                  <AlertTriangle className="min-w-16 h-auto text-red-500" />
-                  <span>
+                  <AlertTriangle className="w-24 sm:min-w-16 h-auto text-red-500" />
+                  <span className="text-sm sm:text-base">
                     Sensitive information will be collected. See{' '}
                     <Link
                       href="/privacy"
@@ -298,7 +298,7 @@ export default function Page() {
                   </span>
                 </div>
                 <div className="flex gap-3 items-center mb-2 p-3 border border-neutral-300 bg-neutral-200 dark:border-neutral-600 dark:bg-neutral-400 rounded-md text-text">
-                  <span>
+                  <span className="text-sm sm:text-base">
                     Before being public, all the reviews are scanned for
                     inappropriate content.
                   </span>
@@ -306,7 +306,7 @@ export default function Page() {
                 <Form {...form}>
                   <form
                     onSubmit={form.handleSubmit(onSubmit)}
-                    className="space-y-8 w-full transition-all"
+                    className="space-y-5 md:space-y-8 w-full transition-all"
                   >
                     <FormField
                       control={form.control}

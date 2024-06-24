@@ -32,7 +32,7 @@ const projects = [
   {
     name: 'Portfolio',
     link: '/',
-    thumbnail: '/thumbnails/dpaulos6.png',
+    thumbnail: '/thumbnail.png',
     description:
       'This website is an attempt to describe who I am as a person, using a color palette that I enjoy. All of the content included and design of the website is as much unique as my creativity allows, trying to reflect my style and vibe.',
     technologies: [

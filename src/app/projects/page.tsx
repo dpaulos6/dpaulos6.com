@@ -138,7 +138,7 @@ export default function Page() {
               Projects
             </span>
             <span
-              className="hidden md:flex absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 text-7xl md:text-8xl whitespace-nowrap -z-10 bg-gradient-to-r text-transparent from-sky-400 to-primary bg-clip-text transition-all opacity-0 group-hover:opacity-50"
+              className="hidden md:flex absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 text-7xl md:text-8xl whitespace-nowrap -z-10 bg-gradient-to-r text-transparent from-primary-hover to-primary bg-clip-text transition-all opacity-0 group-hover:opacity-50"
               area-hidden="true"
             >
               Projects
@@ -258,7 +258,7 @@ export default function Page() {
               Contributions
             </span>
             <span
-              className="hidden md:flex absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 text-7xl md:text-8xl whitespace-nowrap -z-10 bg-gradient-to-r text-transparent from-sky-400 to-primary bg-clip-text transition-all opacity-0 group-hover:opacity-50"
+              className="hidden md:flex absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 text-7xl md:text-8xl whitespace-nowrap -z-10 bg-gradient-to-r text-transparent from-primary-hover to-primary bg-clip-text transition-all opacity-0 group-hover:opacity-50"
               area-hidden="true"
             >
               Contributions
@@ -299,10 +299,7 @@ export default function Page() {
                         <TooltipProvider>
                           <Tooltip>
                             <TooltipTrigger tabIndex={-1}>
-                              <Link
-                                href={contribution.url}
-                                target="_blank"
-                              >
+                              <Link href={contribution.url} target="_blank">
                                 <LinkIcon className="p-2 w-10 rounded-md h-full aspect-square lg:opacity-0 lg:group-hover:opacity-100 hover:bg-primary/15 hover:text-primary transition" />
                               </Link>
                             </TooltipTrigger>
@@ -316,10 +313,7 @@ export default function Page() {
                         <TooltipProvider>
                           <Tooltip>
                             <TooltipTrigger tabIndex={-1}>
-                              <Link
-                                href={contribution.github}
-                                target="_blank"
-                              >
+                              <Link href={contribution.github} target="_blank">
                                 <GithubIcon className="p-2 w-10 rounded-md h-full aspect-square lg:opacity-0 lg:group-hover:opacity-100 hover:bg-primary/15 hover:text-primary transition" />
                               </Link>
                             </TooltipTrigger>

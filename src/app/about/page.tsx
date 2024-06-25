@@ -66,13 +66,12 @@ export default function Page() {
   const { toast } = useToast()
   const [age, setAge] = useState(0)
   const [reviews, setReviews] = useState<Review[]>([])
-  const approvedReviews = reviews.filter((review) => review.approved)
   const [forceRefresh, setForceRefresh] = useState(0)
 
   useEffect(() => {
     const fetchReviews = async () => {
       try {
-        const response = await fetch('/api/getReviews')
+        const response = await fetch('/api/getReviews', { cache: 'no-store' })
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`)
         }
@@ -150,12 +149,32 @@ export default function Page() {
     }
   }
 
+  const [isSmallScreen, setIsSmallScreen] = useState(false)
+
+  const checkScreenSize = () => {
+    if (window.innerWidth < 640) {
+      setIsSmallScreen(true)
+    } else {
+      setIsSmallScreen(false)
+    }
+  }
+
+  useEffect(() => {
+    checkScreenSize()
+
+    window.addEventListener('resize', checkScreenSize)
+
+    return () => {
+      window.removeEventListener('resize', checkScreenSize)
+    }
+  }, [])
+
   return (
     <>
       <Head>
         <title>Diogo Paulos - Contacts</title>
       </Head>
-      <main className="flex-1 flex flex-col pt-24 md:pt-0 lg:gap-20 xl:gap-40 items-center text-text overflow-x-hidden">
+      <main className="flex-1 flex flex-col gap-20 xl:gap-40 items-center text-text overflow-x-hidden">
         <div className="w-full h-16 pointer-events-none" />
         <div className="w-full max-w-7xl flex flex-col items-center mb-40">
           <div className="w-fit relative mb-32 group">
@@ -163,13 +182,13 @@ export default function Page() {
               Who am I?
             </span>
             <span
-              className="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 text-7xl md:text-8xl whitespace-nowrap text-neutral-200/50 -z-10 transition-all md:group-hover:opacity-0"
+              className="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 text-7xl md:text-8xl whitespace-nowrap text-neutral-200/50 dark:text-neutral-600/50 -z-10 transition-all md:group-hover:opacity-0 select-none"
               area-hidden="true"
             >
               Who am I?
             </span>
             <span
-              className="hidden md:flex absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 text-7xl md:text-8xl whitespace-nowrap -z-10 bg-gradient-to-r text-transparent from-sky-400 to-primary bg-clip-text transition-all opacity-0 group-hover:opacity-50"
+              className="hidden md:flex absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 text-7xl md:text-8xl whitespace-nowrap -z-10 bg-gradient-to-r text-transparent from-primary-hover to-primary bg-clip-text transition-all opacity-0 group-hover:opacity-50 select-none"
               area-hidden="true"
             >
               Who am I?
@@ -182,7 +201,7 @@ export default function Page() {
                 alt="Diogo Paulos"
                 width={9999}
                 height={9999}
-                className="rounded-b-full"
+                className="rounded-b-full select-none"
                 priority
               />
             </div>
@@ -190,32 +209,32 @@ export default function Page() {
               <span>
                 I&apos;m Diogo Paulos, currently {age} years old and living in
                 the beauty of{' '}
-                <span className="bg-gradient-to-b from-transparent from-60% to-sky-400/60 to-60%">
+                <span className="bg-gradient-to-b from-transparent from-60% to-primary/60 to-60%">
                   Portugal
                 </span>
                 .
               </span>
               <span>
                 One thing that I love is coding . I&apos;m{' '}
-                <span className="bg-gradient-to-b from-transparent from-60% to-sky-400/60 to-60%">
+                <span className="bg-gradient-to-b from-transparent from-60% to-primary/60 to-60%">
                   passionate
                 </span>{' '}
                 about exploring different programming languages and frameworks
                 and I&apos;m always eager to{' '}
-                <span className="bg-gradient-to-b from-transparent from-60% to-sky-400/60 to-60%">
+                <span className="bg-gradient-to-b from-transparent from-60% to-primary/60 to-60%">
                   learn
                 </span>{' '}
                 something new. Right now, I&apos;m fully immersed in mastering
                 modern web development technologies, so I can take my projects
                 to the{' '}
-                <span className="bg-gradient-to-b from-transparent from-60% to-sky-400/60 to-60%">
+                <span className="bg-gradient-to-b from-transparent from-60% to-primary/60 to-60%">
                   next level
                 </span>
                 .
               </span>
               <span>
                 Aside from work, I{' '}
-                <span className="bg-gradient-to-b from-transparent from-60% to-sky-400/60 to-60%">
+                <span className="bg-gradient-to-b from-transparent from-60% to-primary/60 to-60%">
                   enjoy
                 </span>{' '}
                 various hobbies, such as cooking , playing video games,
@@ -230,13 +249,13 @@ export default function Page() {
               Feedback!
             </span>
             <span
-              className="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 text-7xl md:text-8xl  whitespace-nowrap text-neutral-200/50 -z-10 transition-all md:group-hover:opacity-0"
+              className="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 text-7xl md:text-8xl  whitespace-nowrap text-neutral-200/50 dark:text-neutral-600/50 -z-10 transition-all md:group-hover:opacity-0 select-none"
               area-hidden="true"
             >
               Feedback!
             </span>
             <span
-              className="hidden md:flex absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 text-7xl md:text-8xl whitespace-nowrap -z-10 bg-gradient-to-r text-transparent from-sky-400 to-primary bg-clip-text transition-all opacity-0 group-hover:opacity-50"
+              className="hidden md:flex absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 text-7xl md:text-8xl whitespace-nowrap -z-10 bg-gradient-to-r text-transparent from-primary-hover to-primary bg-clip-text transition-all opacity-0 group-hover:opacity-50 select-none"
               area-hidden="true"
             >
               Feedback!
@@ -250,24 +269,17 @@ export default function Page() {
             </Link>
             !
           </span>
-          <button
-            className="flex gap-2 items-center ml-auto mb-4 px-4 py-1.5 bg-neutral-200 rounded-lg"
-            onClick={() => setForceRefresh((prev) => prev + 1)}
-          >
-            <RefreshCwIcon className="w-4 h-auto" />
-            Force refresh
-          </button>
           <div className="flex flex-col items-center justify-center gap-16 w-full">
-            {approvedReviews.length > 0 ? (
+            {reviews.length > 0 ? (
               <ResponsiveMasonry
                 className="masonry"
                 columnsCountBreakPoints={{ 350: 1, 756: 2, 1024: 3 }}
               >
                 <Masonry gutter="1.5rem">
-                  {approvedReviews.map((review) => (
+                  {reviews.map((review) => (
                     <div
                       key={review.id}
-                      className="rounded-lg border bg-white p-6 shadow-sm"
+                      className="rounded-lg border bg-background-menu border-background-border p-6 shadow-sm"
                     >
                       <span className="text-lg font-medium leading-relaxed">
                         &quot;{review.content}&quot;
@@ -285,16 +297,16 @@ export default function Page() {
               </span>
             )}
             <Dialog>
-              <DialogTrigger>
+              <DialogTrigger tabIndex={-1}>
                 <ShinyButton>Submit yours</ShinyButton>
               </DialogTrigger>
               <DialogContent className="w-[90vw] sm:w-full text-text">
                 <DialogHeader>
                   <span className="text-2xl">Submit your review</span>
                 </DialogHeader>
-                <div className="flex gap-3 items-center mt-2 -mb-2 p-3 border border-red-300 bg-red-200 rounded-md text-text">
-                  <AlertTriangle className="min-w-16 h-auto text-red-500" />
-                  <span>
+                <div className="flex gap-3 items-center mt-2 -mb-2 p-1.5 sm:p-3 border border-red-300 bg-red-200 dark:border-red-600 dark:bg-red-400 rounded-md text-text">
+                  <AlertTriangle className="w-24 sm:min-w-16 h-auto text-red-500" />
+                  <span className="text-sm sm:text-base">
                     Sensitive information will be collected. See{' '}
                     <Link
                       href="/privacy"
@@ -305,8 +317,8 @@ export default function Page() {
                     before continuing!
                   </span>
                 </div>
-                <div className="flex gap-3 items-center mb-2 p-3 border border-neutral-300 bg-neutral-200 rounded-md text-text">
-                  <span>
+                <div className="flex gap-3 items-center mb-2 p-1.5 sm:p-3 border border-neutral-300 bg-neutral-200 dark:border-neutral-600 dark:bg-neutral-400 rounded-md text-text">
+                  <span className="text-sm sm:text-base">
                     Before being public, all the reviews are scanned for
                     inappropriate content.
                   </span>
@@ -314,7 +326,7 @@ export default function Page() {
                 <Form {...form}>
                   <form
                     onSubmit={form.handleSubmit(onSubmit)}
-                    className="space-y-8 w-full transition-all"
+                    className="space-y-5 md:space-y-8 w-full transition-all"
                   >
                     <FormField
                       control={form.control}
@@ -337,7 +349,7 @@ export default function Page() {
                           <FormLabel className="text-base">Message</FormLabel>
                           <FormControl>
                             <Textarea
-                              rows={10}
+                              rows={isSmallScreen ? 6 : 10}
                               placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu sem integer vitae justo eget magna."
                               {...field}
                             />
@@ -359,13 +371,13 @@ export default function Page() {
               What stack do I use?
             </span>
             <span
-              className="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 text-7xl md:text-8xl whitespace-nowrap text-neutral-200/50 -z-10 transition-all group-hover:opacity-0"
+              className="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 text-7xl md:text-8xl whitespace-nowrap text-neutral-200/50 dark:text-neutral-600/50 -z-10 transition-all group-hover:opacity-0 select-none"
               area-hidden="true"
             >
               What stack do I use?
             </span>
             <span
-              className="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 text-7xl md:text-8xl whitespace-nowrap -z-10 bg-gradient-to-r text-transparent from-sky-400 to-primary bg-clip-text transition-all opacity-0 group-hover:opacity-50"
+              className="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 text-7xl md:text-8xl whitespace-nowrap -z-10 bg-gradient-to-r text-transparent from-primary-hover to-primary bg-clip-text transition-all opacity-0 group-hover:opacity-50 select-none"
               area-hidden="true"
             >
               What stack do I use?
@@ -376,7 +388,7 @@ export default function Page() {
               What stack?
             </span>
             <span
-              className="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 text-7xl md:text-8xl whitespace-nowrap text-neutral-200/50 -z-10"
+              className="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 text-7xl md:text-8xl whitespace-nowrap text-neutral-200/50 dark:text-neutral-600/50 -z-10 select-none"
               area-hidden="true"
             >
               What stack?
@@ -386,23 +398,23 @@ export default function Page() {
             <div className="flex flex-col justify-between items-center lg:items-start lg:justify-start gap-6 basis-full sm:basis-1/2 lg:basis-auto">
               <span className="text-3xl">Frameworks</span>
               <div className="w-fit flex flex-col">
-                <span className="w-full flex items-center gap-4 text-2xl px-4 py-2 rounded-lg hover:bg-background-hover/40 transition">
+                <span className="w-full flex items-center gap-4 text-2xl px-4 py-2 rounded-lg hover:bg-background-hover/40 transition cursor-default">
                   <NextjsIcon className="w-7 h-7 aspect-square" />
                   NextJS
                 </span>
-                <span className="w-full flex items-center gap-4 text-2xl px-4 py-2 rounded-lg hover:bg-background-hover/40 transition">
+                <span className="w-full flex items-center gap-4 text-2xl px-4 py-2 rounded-lg hover:bg-background-hover/40 transition cursor-default">
                   <ReactIcon className="w-7 h-7 aspect-square" />
                   React
                 </span>
-                <span className="w-full flex items-center gap-4 text-2xl px-4 py-2 rounded-lg hover:bg-background-hover/40 transition">
+                <span className="w-full flex items-center gap-4 text-2xl px-4 py-2 rounded-lg hover:bg-background-hover/40 transition cursor-default">
                   <AstroIcon className="w-7 h-7 aspect-square" />
                   Astro
                 </span>
-                <span className="w-full flex items-center gap-4 text-2xl px-4 py-2 rounded-lg hover:bg-background-hover/40 transition">
+                <span className="w-full flex items-center gap-4 text-2xl px-4 py-2 rounded-lg hover:bg-background-hover/40 transition cursor-default">
                   <ViteIcon className="w-7 h-7 aspect-square" />
                   Vite
                 </span>
-                <span className="w-full flex items-center gap-4 text-2xl px-4 py-2 rounded-lg hover:bg-background-hover/40 transition">
+                <span className="w-full flex items-center gap-4 text-2xl px-4 py-2 rounded-lg hover:bg-background-hover/40 transition cursor-default">
                   <SvelteIcon className="w-7 h-7 aspect-square" />
                   Svelte
                 </span>
@@ -411,23 +423,23 @@ export default function Page() {
             <div className="flex flex-col justify-between items-center lg:items-start lg:justify-start gap-6 basis-full sm:basis-1/2 lg:basis-auto">
               <span className="text-3xl">Languages</span>
               <div className="w-fit flex flex-col">
-                <span className="w-full flex items-center gap-4 text-2xl px-4 py-2 rounded-lg hover:bg-background-hover/40 transition">
+                <span className="w-full flex items-center gap-4 text-2xl px-4 py-2 rounded-lg hover:bg-background-hover/40 transition cursor-default">
                   <TypescriptIcon className="w-7 h-7 aspect-square" />
                   Typescript
                 </span>
-                <span className="w-full flex items-center gap-4 text-2xl px-4 py-2 rounded-lg hover:bg-background-hover/40 transition">
+                <span className="w-full flex items-center gap-4 text-2xl px-4 py-2 rounded-lg hover:bg-background-hover/40 transition cursor-default">
                   <JavascriptIcon className="w-7 h-7 aspect-square" />
                   Javascript
                 </span>
-                <span className="w-full flex items-center gap-4 text-2xl px-4 py-2 rounded-lg hover:bg-background-hover/40 transition">
+                <span className="w-full flex items-center gap-4 text-2xl px-4 py-2 rounded-lg hover:bg-background-hover/40 transition cursor-default">
                   <PhpIcon className="w-7 h-7 aspect-square" />
                   Php
                 </span>
-                <span className="w-full flex items-center gap-4 text-2xl px-4 py-2 rounded-lg hover:bg-background-hover/40 transition">
+                <span className="w-full flex items-center gap-4 text-2xl px-4 py-2 rounded-lg hover:bg-background-hover/40 transition cursor-default">
                   <KotlinIcon className="w-7 h-7 aspect-square" />
                   Kotlin
                 </span>
-                <span className="w-full flex items-center gap-4 text-2xl px-4 py-2 rounded-lg hover:bg-background-hover/40 transition">
+                <span className="w-full flex items-center gap-4 text-2xl px-4 py-2 rounded-lg hover:bg-background-hover/40 transition cursor-default">
                   <CsharpIcon className="w-7 h-7 aspect-square" />
                   C#
                 </span>
@@ -436,23 +448,23 @@ export default function Page() {
             <div className="flex flex-col justify-between items-center lg:items-start lg:justify-start gap-6 basis-full sm:basis-1/2 lg:basis-auto">
               <span className="text-3xl">Tools</span>
               <div className="w-fit flex flex-col">
-                <span className="w-full flex items-center gap-4 text-2xl px-4 py-2 rounded-lg hover:bg-background-hover/40 transition">
+                <span className="w-full flex items-center gap-4 text-2xl px-4 py-2 rounded-lg hover:bg-background-hover/40 transition cursor-default">
                   <VscodeIcon className="w-7 h-7 aspect-square" />
                   VSCode
                 </span>
-                <span className="w-full flex items-center gap-4 text-2xl px-4 py-2 rounded-lg hover:bg-background-hover/40 transition">
+                <span className="w-full flex items-center gap-4 text-2xl px-4 py-2 rounded-lg hover:bg-background-hover/40 transition cursor-default">
                   <GitIcon className="w-7 h-7 aspect-square" />
                   Git
                 </span>
-                <span className="w-full flex items-center gap-4 text-2xl px-4 py-2 rounded-lg hover:bg-background-hover/40 transition">
+                <span className="w-full flex items-center gap-4 text-2xl px-4 py-2 rounded-lg hover:bg-background-hover/40 transition cursor-default">
                   <PostmanIcon className="w-7 h-7 aspect-square" />
                   Postman
                 </span>
-                <span className="w-full flex items-center gap-4 text-2xl px-4 py-2 rounded-lg hover:bg-background-hover/40 transition">
+                <span className="w-full flex items-center gap-4 text-2xl px-4 py-2 rounded-lg hover:bg-background-hover/40 transition cursor-default">
                   <VercelIcon className="w-7 h-7 aspect-square" />
                   Vercel
                 </span>
-                <span className="w-full flex items-center gap-4 text-2xl px-4 py-2 rounded-lg hover:bg-background-hover/40 transition">
+                <span className="w-full flex items-center gap-4 text-2xl px-4 py-2 rounded-lg hover:bg-background-hover/40 transition cursor-default">
                   <PnpmIcon className="w-7 h-7 aspect-square" />
                   Pnpm
                 </span>
@@ -461,23 +473,23 @@ export default function Page() {
             <div className="flex flex-col justify-between items-center lg:items-start lg:justify-start gap-6 basis-full sm:basis-1/2 lg:basis-auto">
               <span className="text-3xl">Libraries</span>
               <div className="w-fit flex flex-col">
-                <span className="w-full flex items-center gap-4 text-2xl px-4 py-2 rounded-lg hover:bg-background-hover/40 transition">
+                <span className="w-full flex items-center gap-4 text-2xl px-4 py-2 rounded-lg hover:bg-background-hover/40 transition cursor-default">
                   <TailwindIcon className="w-7 h-7 aspect-square" />
                   Tailwind
                 </span>
-                <span className="w-full flex items-center gap-4 text-2xl px-4 py-2 rounded-lg hover:bg-background-hover/40 transition">
+                <span className="w-full flex items-center gap-4 text-2xl px-4 py-2 rounded-lg hover:bg-background-hover/40 transition cursor-default">
                   <ShadcnIcon className="w-7 h-7 aspect-square" />
                   Shadcn
                 </span>
-                <span className="w-full flex items-center gap-4 text-2xl px-4 py-2 rounded-lg hover:bg-background-hover/40 transition">
+                <span className="w-full flex items-center gap-4 text-2xl px-4 py-2 rounded-lg hover:bg-background-hover/40 transition cursor-default">
                   <LucideIcon className="w-7 h-7 aspect-square" />
                   Lucide
                 </span>
-                <span className="w-full flex items-center gap-4 text-2xl px-4 py-2 rounded-lg hover:bg-background-hover/40 transition">
+                <span className="w-full flex items-center gap-4 text-2xl px-4 py-2 rounded-lg hover:bg-background-hover/40 transition cursor-default">
                   <PrettierIcon className="w-7 h-7 aspect-square" />
                   Prettier
                 </span>
-                <span className="w-full flex items-center gap-4 text-2xl px-4 py-2 rounded-lg hover:bg-background-hover/40 transition">
+                <span className="w-full flex items-center gap-4 text-2xl px-4 py-2 rounded-lg hover:bg-background-hover/40 transition cursor-default">
                   <EslintIcon className="w-7 h-7 aspect-square" />
                   Eslint
                 </span>

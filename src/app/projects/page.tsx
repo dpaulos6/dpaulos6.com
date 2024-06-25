@@ -32,7 +32,7 @@ const projects = [
   {
     name: 'Portfolio',
     link: '/',
-    thumbnail: '/thumbnails/dpaulos6.png',
+    thumbnail: '/thumbnail.png',
     description:
       'This website is an attempt to describe who I am as a person, using a color palette that I enjoy. All of the content included and design of the website is as much unique as my creativity allows, trying to reflect my style and vibe.',
     technologies: [
@@ -45,7 +45,8 @@ const projects = [
     github: 'https://github.com/dpaulos6/portfolio',
     url: 'https://dpaulos6.xyz/',
     tag: {
-      styles: 'border-transparent bg-sky-300 text-primary-foreground',
+      styles:
+        'border-transparent bg-sky-300 dark:bg-sky-600 text-primary-foreground',
       label: 'active portfolio'
     },
     currentWebsite: true
@@ -65,7 +66,8 @@ const projects = [
     github: '',
     url: '',
     tag: {
-      styles: 'border-transparent bg-yellow-300 text-primary-foreground',
+      styles:
+        'border-transparent bg-yellow-300 dark:bg-yellow-500 text-primary-foreground',
       label: 'under development'
     }
   }
@@ -124,19 +126,19 @@ export default function Page() {
         <title>Diogo Paulos - Projects</title>
       </Head>
       <main className="w-screen h-auto flex flex-col gap-20 items-center text-text py-32">
-        <div className="flex flex-col items-center gap-12">
-          <div className="w-fit relative mt-16 group">
+        <div className="flex flex-col items-center gap-12 pt-12">
+          <div className="w-fit relative group">
             <span className="text-5xl md:text-6xl px-24 pt-8 whitespace-nowrap">
               Projects
             </span>
             <span
-              className="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 text-7xl md:text-8xl whitespace-nowrap text-neutral-200/50 -z-10 transition-all md:group-hover:opacity-0"
+              className="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 text-7xl md:text-8xl whitespace-nowrap text-neutral-200/50 dark:text-neutral-600/50 -z-10 transition-all md:group-hover:opacity-0"
               area-hidden="true"
             >
               Projects
             </span>
             <span
-              className="hidden md:flex absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 text-7xl md:text-8xl whitespace-nowrap -z-10 bg-gradient-to-r text-transparent from-sky-400 to-primary bg-clip-text transition-all opacity-0 group-hover:opacity-50"
+              className="hidden md:flex absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 text-7xl md:text-8xl whitespace-nowrap -z-10 bg-gradient-to-r text-transparent from-primary-hover to-primary bg-clip-text transition-all opacity-0 group-hover:opacity-50"
               area-hidden="true"
             >
               Projects
@@ -152,7 +154,7 @@ export default function Page() {
                   className={`flex justify-center items-center w-fit lg:w-full p-[2px] rounded-[0.9rem] overflow-hidden transition-all group relative`}
                 >
                   <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-primary to-accent opacity-0 group-hover:opacity-50 transition pointer-events-none "></div>
-                  <div className="flex flex-col max-w-96 md:max-w-xl lg:max-w-none lg:flex-row items-center w-full h-full gap-4 md:gap-6 lg:gap-8 p-6 rounded-xl bg-background z-10">
+                  <div className="flex flex-col max-w-96 md:max-w-xl lg:max-w-none lg:flex-row items-center w-full h-full gap-4 md:gap-6 lg:gap-8 p-6 rounded-xl bg-background-menu z-10">
                     <div className="flex basis-3/5 w-full h-fit aspect-[5/3] relative">
                       <Image
                         src={
@@ -163,7 +165,7 @@ export default function Page() {
                         alt={project.name + ' Thumbnail'}
                         width={9999}
                         height={9999}
-                        className="flex object-cover object-center select-none rounded-xl border border-neutral-200/60"
+                        className="flex object-cover object-center select-none rounded-xl border border-text/10"
                       />
                       <Badge
                         className={`z-50 w-max absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 lg:-left-2 lg:translate-x-0 lowercase ${project.tag.styles}`}
@@ -176,16 +178,15 @@ export default function Page() {
                         <span className="text-xl md:text-2xl lg:text-3xl mr-2">
                           {project.name}
                         </span>
-                        {project.currentWebsite ? (
-                          <span className="text-neutral-400 text-xs lg:text-sm mt-auto mb-2.5 lg:mb-1.5 mr-2">
-                            this website
-                          </span>
-                        ) : null}
                         {project.url && !project.currentWebsite ? (
                           <TooltipProvider>
                             <Tooltip>
-                              <TooltipTrigger>
-                                <Link href={project.url} target="_blank">
+                              <TooltipTrigger tabIndex={-1}>
+                                <Link
+                                  href={project.url}
+                                  className=""
+                                  target="_blank"
+                                >
                                   <LinkIcon className="p-2 w-10 rounded-md h-full aspect-square lg:opacity-0 lg:group-hover:opacity-100 hover:bg-primary/15 hover:text-primary transition" />
                                 </Link>
                               </TooltipTrigger>
@@ -198,8 +199,12 @@ export default function Page() {
                         {project.github ? (
                           <TooltipProvider>
                             <Tooltip>
-                              <TooltipTrigger>
-                                <Link href={project.github} target="_blank">
+                              <TooltipTrigger tabIndex={-1}>
+                                <Link
+                                  href={project.github}
+                                  className=""
+                                  target="_blank"
+                                >
                                   <GithubIcon className="p-2 w-10 rounded-md h-full aspect-square lg:opacity-0 lg:group-hover:opacity-100 hover:bg-primary/15 hover:text-primary transition" />
                                 </Link>
                               </TooltipTrigger>
@@ -219,7 +224,7 @@ export default function Page() {
                         {project.technologies.map((tech, i) => (
                           <TooltipProvider key={i}>
                             <Tooltip>
-                              <TooltipTrigger>
+                              <TooltipTrigger className="h-fit rounded-md ">
                                 <tech.icon className="w-6 md:w-8 h-full aspect-square" />
                               </TooltipTrigger>
                               <TooltipContent>
@@ -230,7 +235,7 @@ export default function Page() {
                         ))}
                         <button
                           onClick={() => toggleProjectExpanded(i)}
-                          className="hidden lg:flex ml-auto mr-4 px-4 py-2 rounded-lg hover:bg-primary/15 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto hover:text-primary transition"
+                          className="hidden lg:flex ml-auto mr-4 px-4 py-2 rounded-lg hover:bg-primary/15 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto hover:text-primary transition "
                         >
                           {isExpanded[i] ? 'Collapse' : 'Expand'}
                         </button>
@@ -241,19 +246,19 @@ export default function Page() {
               ))}
           </div>
         </div>
-        <div className="flex flex-col items-center gap-12">
-          <div className="w-fit relative mt-16 group">
+        <div className="flex flex-col items-center gap-12 pt-12">
+          <div className="w-fit relative group">
             <span className="text-5xl md:text-6xl px-24 pt-8 whitespace-nowrap">
               Contributions
             </span>
             <span
-              className="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 text-7xl md:text-8xl whitespace-nowrap text-neutral-200/50 -z-10 transition-all md:group-hover:opacity-0"
+              className="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 text-7xl md:text-8xl whitespace-nowrap text-neutral-200/50 dark:text-neutral-600/50 -z-10 transition-all md:group-hover:opacity-0"
               area-hidden="true"
             >
               Contributions
             </span>
             <span
-              className="hidden md:flex absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 text-7xl md:text-8xl whitespace-nowrap -z-10 bg-gradient-to-r text-transparent from-sky-400 to-primary bg-clip-text transition-all opacity-0 group-hover:opacity-50"
+              className="hidden md:flex absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 text-7xl md:text-8xl whitespace-nowrap -z-10 bg-gradient-to-r text-transparent from-primary-hover to-primary bg-clip-text transition-all opacity-0 group-hover:opacity-50"
               area-hidden="true"
             >
               Contributions
@@ -266,7 +271,7 @@ export default function Page() {
                 className={`flex justify-center items-center w-fit md:w-full basis-[calc(50%-0.75rem)] p-[2px] rounded-[0.9rem] overflow-hidden transition-all group relative`}
               >
                 <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-primary to-accent opacity-0 group-hover:opacity-50 transition pointer-events-none "></div>
-                <div className="flex flex-col max-w-96 md:max-w-xl lg:max-w-none items-center w-full h-full gap-4 md:gap-6 lg:gap-4 p-6 rounded-xl bg-background z-10">
+                <div className="flex flex-col max-w-96 md:max-w-xl lg:max-w-none items-center w-full h-full gap-4 md:gap-6 lg:gap-4 p-6 rounded-xl bg-background-menu z-10">
                   <div className="flex basis-3/5 w-full h-fit aspect-[5/3] relative">
                     <Image
                       src={
@@ -277,10 +282,10 @@ export default function Page() {
                       alt={contribution.name + ' Thumbnail'}
                       width={9999}
                       height={9999}
-                      className="flex object-cover object-center select-none rounded-xl border border-neutral-200/60"
+                      className="flex object-cover object-center select-none rounded-xl border border-text/10"
                     />
                     <Badge
-                      className={`z-50 w-max absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 lg:-left-2 lg:translate-x-0 lowercase bg-sky-300`}
+                      className={`z-50 w-max absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 lg:-left-2 lg:translate-x-0 lowercase bg-sky-300 dark:bg-sky-600`}
                     >
                       <span>{contribution.role}</span>
                     </Badge>
@@ -293,7 +298,7 @@ export default function Page() {
                       {contribution.url ? (
                         <TooltipProvider>
                           <Tooltip>
-                            <TooltipTrigger>
+                            <TooltipTrigger tabIndex={-1}>
                               <Link href={contribution.url} target="_blank">
                                 <LinkIcon className="p-2 w-10 rounded-md h-full aspect-square lg:opacity-0 lg:group-hover:opacity-100 hover:bg-primary/15 hover:text-primary transition" />
                               </Link>
@@ -307,7 +312,7 @@ export default function Page() {
                       {contribution.github ? (
                         <TooltipProvider>
                           <Tooltip>
-                            <TooltipTrigger>
+                            <TooltipTrigger tabIndex={-1}>
                               <Link href={contribution.github} target="_blank">
                                 <GithubIcon className="p-2 w-10 rounded-md h-full aspect-square lg:opacity-0 lg:group-hover:opacity-100 hover:bg-primary/15 hover:text-primary transition" />
                               </Link>

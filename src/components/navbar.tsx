@@ -16,6 +16,8 @@ import {
 } from '@/components/ui/dropdown-menu'
 import NavLink from '@/components/NavLink'
 import HireMeButton from '@/components/HireMeButton'
+import { useTheme } from 'next-themes'
+import { Moon, Sun } from 'lucide-react'
 
 const items = [
   {
@@ -56,13 +58,18 @@ const items = [
 ]
 
 export default function Navbar() {
+  const { theme, setTheme } = useTheme()
+
   return (
     <nav
-      className={`fixed top-0 left-0 w-full h-fit flex justify-center px-8 py-4 z-50 bg-background`}
+      className={`fixed top-0 left-0 w-full h-fit flex justify-center px-8 py-4 z-50 bg-background select-none`}
     >
       <div className="flex w-full max-w-7xl justify-between">
         <div>
-          <Link href="/" className="text-2xl group">
+          <Link
+            href="/"
+            className="text-2xl group rounded-xl"
+          >
             <span className="text-text group-hover:text-primary transition duration-300">
               dpaulos
             </span>
@@ -74,6 +81,12 @@ export default function Navbar() {
         <div className="flex items-center gap-6 md:gap-6">
           <NavLink items={items} />
           <HireMeButton />
+          <button
+            className="text-text p-2 rounded-xl hover:bg-text/5 transition"
+            onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
+          >
+            {theme === 'light' ? <Moon /> : <Sun />}
+          </button>
           <div className="flex md:hidden">
             <DropdownMenu>
               <DropdownMenuTrigger className="flex justify-center items-center w-9 h-9 text-2xl rounded-xl text-text transition-all ring-0 outline-none border border-transparent hover:text-primary data-[state=open]:text-primary">

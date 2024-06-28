@@ -233,7 +233,7 @@ export default function Page() {
             ))}
         </div>
       </div>
-      <div className="flex flex-col items-center gap-12 pt-12">
+      <div className="flex flex-col items-center gap-12 pt-32">
         <div className="w-fit relative group cursor-default">
           <span className="text-5xl md:text-6xl px-24 pt-8 whitespace-nowrap">
             Contributions

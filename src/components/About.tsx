@@ -171,11 +171,7 @@ export default function Page() {
 
   return (
     <>
-      <Head>
-        <title>Diogo Paulos - Contacts</title>
-      </Head>
-      <main className="flex-1 flex flex-col gap-20 xl:gap-40 items-center text-text overflow-x-hidden">
-        <div className="w-full h-16 pointer-events-none" />
+      <div className="flex-1 flex flex-col gap-20 xl:gap-40 items-center text-text overflow-x-hidden pt-32">
         <div className="w-full max-w-7xl flex flex-col items-center mb-40">
           <div className="w-fit relative mb-32 group cursor-default">
             <span className="text-5xl md:text-6xl px-24 pt-8 whitespace-nowrap">
@@ -497,7 +493,7 @@ export default function Page() {
             </div>
           </div>
         </div>
-      </main>
+      </div>
     </>
   )
 }

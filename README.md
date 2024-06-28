@@ -67,7 +67,7 @@ If you've researched about the errors but it seems to be related with the repo i
 
 This is a special project, as it will reflect my person on a website, but if you have a suggestion or can help me improve something about the website, please see my [contacts](#contacts) and talk directly with me before attempting pull requests.
 
-Alternatively, you can create an issue and include `Contributing:` at the start of the title.
+Alternatively, you can create a pull request and include `Contributing:` at the start of the title.
 
 ## Contacts
 

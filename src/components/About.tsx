@@ -47,7 +47,7 @@ import { z } from 'zod'
 import { useToast } from '@/components/ui/use-toast'
 import { Textarea } from '@/components/ui/textarea'
 import { Input } from '@/components/ui/input'
-import { AlertTriangle, RefreshCwIcon } from 'lucide-react'
+import { AlertTriangle, CornerLeftDown, RefreshCwIcon } from 'lucide-react'
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry'
 
 interface Review {
@@ -177,7 +177,7 @@ export default function Page() {
       <main className="flex-1 flex flex-col gap-20 xl:gap-40 items-center text-text overflow-x-hidden">
         <div className="w-full h-16 pointer-events-none" />
         <div className="w-full max-w-7xl flex flex-col items-center mb-40">
-          <div className="w-fit relative mb-32 group">
+          <div className="w-fit relative mb-32 group cursor-default">
             <span className="text-5xl md:text-6xl px-24 pt-8 whitespace-nowrap">
               Who am I?
             </span>
@@ -196,12 +196,23 @@ export default function Page() {
           </div>
           <div className="flex flex-col items-center lg:flex-row gap-16 w-full px-8 xs:px-12 sm:px-16 md:px-20">
             <div className="flex items-center w-2/3 relative">
+              <div className="absolute -top-12 left-1/2 translate-x-1/3 flex items-center gap-2 z-10">
+                <CornerLeftDown className="w-5 sm:w-6 md:w-7 h-auto aspect-square" />
+                <div className="flex flex-col items-center -space-y-1 sm:-space-y-2 whitespace-nowrap">
+                  <span className="text-sm sm:text-base md:text-lg">
+                    Full-stack
+                  </span>
+                  <span className="text-xs sm:text-sm md:text-base">
+                    Developer
+                  </span>
+                </div>
+              </div>
               <Image
                 src="/dpaulos6_nobg.png"
                 alt="Diogo Paulos"
                 width={9999}
                 height={9999}
-                className="rounded-b-full select-none"
+                className="w-full rounded-b-full select-none"
                 priority
               />
             </div>
@@ -243,8 +254,8 @@ export default function Page() {
             </div>
           </div>
         </div>
-        <div className="w-full max-w-7xl flex flex-col items-center mb-40 px-8">
-          <div className="w-fit relative mb-16 group">
+        <div className="w-full max-w-7xl flex flex-col items-center mb-32 px-8">
+          <div className="w-fit relative mb-16 group cursor-default">
             <span className="text-5xl md:text-6xl px-24 pt-8 whitespace-nowrap">
               Feedback!
             </span>
@@ -366,32 +377,21 @@ export default function Page() {
           </div>
         </div>
         <div className="w-full max-w-7xl flex flex-col items-center mb-16 px-8 xs:px-12 sm:px-16 md:px-20 lg:px-12 xl:px-0">
-          <div className="hidden md:flex w-fit relative mb-32 text-center group">
-            <span className="text-5xl md:text-6xl px-48 pt-10 -mt-10 whitespace-nowrap">
-              What stack do I use?
+          <div className="w-fit relative mb-24 group cursor-default">
+            <span className="text-5xl md:text-6xl px-24 pt-8 whitespace-nowrap">
+              Knowledge
             </span>
             <span
-              className="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 text-7xl md:text-8xl whitespace-nowrap text-neutral-200/50 dark:text-neutral-600/50 -z-10 transition-all group-hover:opacity-0 select-none"
+              className="absolute top-4 -translate-y-1/2 left-1/2 -translate-x-1/2 text-7xl md:text-8xl  whitespace-nowrap text-neutral-200/50 dark:text-neutral-600/50 -z-10 transition-all md:group-hover:opacity-0 select-none h-32"
               area-hidden="true"
             >
-              What stack do I use?
+              Knowledge
             </span>
             <span
-              className="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 text-7xl md:text-8xl whitespace-nowrap -z-10 bg-gradient-to-r text-transparent from-primary-hover to-primary bg-clip-text transition-all opacity-0 group-hover:opacity-50 select-none"
+              className="hidden md:flex absolute top-4 -translate-y-1/2 left-1/2 -translate-x-1/2 text-7xl md:text-8xl whitespace-nowrap -z-10 bg-gradient-to-r text-transparent from-primary-hover to-primary bg-clip-text transition-all opacity-0 group-hover:opacity-50 select-none h-32"
               area-hidden="true"
             >
-              What stack do I use?
-            </span>
-          </div>
-          <div className="flex md:hidden w-fit relative mb-32 text-center">
-            <span className="text-5xl md:text-6xl whitespace-nowrap">
-              What stack?
-            </span>
-            <span
-              className="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 text-7xl md:text-8xl whitespace-nowrap text-neutral-200/50 dark:text-neutral-600/50 -z-10 select-none"
-              area-hidden="true"
-            >
-              What stack?
+              Knowledge
             </span>
           </div>
           <div className="flex flex-wrap gap-y-8 lg:gap-0 lg:flex-nowrap lg:flex-row items-center justify-center lg:justify-between w-full">

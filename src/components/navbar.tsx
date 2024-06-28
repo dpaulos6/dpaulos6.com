@@ -66,10 +66,7 @@ export default function Navbar() {
     >
       <div className="flex w-full max-w-7xl justify-between">
         <div>
-          <Link
-            href="/"
-            className="text-2xl group rounded-xl"
-          >
+          <Link href="/" className="text-2xl group rounded-xl">
             <span className="text-text group-hover:text-primary transition duration-300">
               dpaulos
             </span>
@@ -79,15 +76,15 @@ export default function Navbar() {
           </Link>
         </div>
         <div className="flex items-center gap-6 md:gap-6">
-          <NavLink items={items} />
-          <HireMeButton />
+          {/* <NavLink items={items} /> */}
+          {/* <HireMeButton /> */}
           <button
             className="text-text p-2 rounded-xl hover:bg-text/5 transition"
             onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
           >
             {theme === 'light' ? <Moon /> : <Sun />}
           </button>
-          <div className="flex md:hidden">
+          {/* <div className="flex md:hidden">
             <DropdownMenu>
               <DropdownMenuTrigger className="flex justify-center items-center w-9 h-9 text-2xl rounded-xl text-text transition-all ring-0 outline-none border border-transparent hover:text-primary data-[state=open]:text-primary">
                 <MenuIcon className="w-full h-full" />
@@ -103,7 +100,7 @@ export default function Navbar() {
                 ))}
               </DropdownMenuContent>
             </DropdownMenu>
-          </div>
+          </div> */}
         </div>
       </div>
     </nav>

@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <footer className="bg-background-menu py-6 px-8 z-10 mt-12">
       <div className="container max-w-7xl mx-auto flex flex-col-reverse gap-4 md:flex-row items-center justify-between">
-        <p className="text-sm text-text-subtitle">
+        <p className="text-sm text-text-subtitle text-center">
           dpaulos6 - All rights reserved.
         </p>
         <Contacts />

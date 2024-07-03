@@ -235,23 +235,23 @@ export default function Page() {
       </div>
       <div className="flex flex-col items-center gap-12 pt-32">
         <div className="w-fit relative group cursor-default">
-          <span className="text-5xl md:text-6xl px-24 pt-8 whitespace-nowrap">
+          <span className="text-4xl xs:text-5xl md:text-6xl px-20 pt-6 xs:px-24 xs:pt-8 whitespace-nowrap">
             Contributions
           </span>
           <span
-            className="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 text-7xl md:text-8xl whitespace-nowrap text-neutral-200/50 dark:text-neutral-600/50 -z-10 transition-all md:group-hover:opacity-0"
+            className="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 text-6xl xs:text-7xl md:text-8xl whitespace-nowrap text-neutral-200/50 dark:text-neutral-600/50 -z-10 transition-all md:group-hover:opacity-0"
             area-hidden="true"
           >
             Contributions
           </span>
           <span
-            className="hidden md:flex absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 text-7xl md:text-8xl whitespace-nowrap -z-10 bg-gradient-to-r text-transparent from-primary-hover to-primary bg-clip-text transition-all opacity-0 group-hover:opacity-50"
+            className="hidden md:flex absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 text-6xl xs:text-7xl md:text-8xl whitespace-nowrap -z-10 bg-gradient-to-r text-transparent from-primary-hover to-primary bg-clip-text transition-all opacity-0 group-hover:opacity-50"
             area-hidden="true"
           >
             Contributions
           </span>
         </div>
-        <div className="flex flex-col md:flex-row md:flex-wrap items-center gap-6 w-full max-w-5xl p-8">
+        <div className="flex flex-col md:flex-row md:flex-wrap items-center gap-6 w-fit max-w-5xl p-8">
           {contributions.map((contribution, i) => (
             <div
               key={i}

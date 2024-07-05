@@ -23,7 +23,6 @@ import { useState } from 'react'
 const projects = [
   {
     name: 'Portfolio',
-    link: '/',
     thumbnail: '/thumbnail.png',
     description:
       'This website is an attempt to describe who I am as a person, using a color palette that I enjoy. All of the content included and design of the website is as much unique as my creativity allows, trying to reflect my style and vibe.',
@@ -44,7 +43,6 @@ const projects = [
   },
   {
     name: 'Slotbot Website',
-    link: '/',
     thumbnail: 'https://i.imgur.com/mckEczF.png',
     description:
       'This is the new and modern website for SlotBot, an innovative Discord bot designed for economic simulation and competitive PvP gameplay across multiple servers. The website serves as a central hub for SlotBot users and server administrators, providing a seamless experience for accessing bot features and settings.',
@@ -60,6 +58,25 @@ const projects = [
       styles:
         'border-transparent bg-yellow-300 dark:bg-yellow-500 text-primary-foreground',
       label: 'under development'
+    }
+  },
+  {
+    name: 'Digestify',
+    thumbnail: '/thumbnails/digestify.png',
+    description: `This web application provides a comprehensive set of tools for hashing, encryption, key generation, and more. Whether you're a developer, security enthusiast, or just need to ensure data integrity, Digestify offers a variety of features to meet your needs.`,
+    technologies: [
+      { label: 'NextJS', icon: NextjsIcon },
+      { label: 'Typescript', icon: TypescriptIcon },
+      { label: 'Tailwind CSS', icon: TailwindIcon },
+      { label: 'Shadcn UI', icon: ShadcnIcon },
+      { label: 'Among others', icon: Ellipsis }
+    ],
+    github: 'https://github.com/dpaulos6/digestify',
+    url: '',
+    tag: {
+      styles:
+        'border-transparent bg-yellow-300 dark:bg-yellow-500 text-primary-foreground',
+      label: 'early development'
     }
   }
 ]

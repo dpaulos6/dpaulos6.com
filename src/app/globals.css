@@ -194,3 +194,13 @@ blockquote {
 .masonry > div > div {
   width: auto !important;
 }
+
+.masonry-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.masonry-item {
+  break-inside: avoid;
+}

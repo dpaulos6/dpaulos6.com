@@ -1,3 +1,4 @@
+'use client'
 import '@/app/globals.css'
 import {
   AstroIcon,
@@ -22,13 +23,35 @@ import {
   VscodeIcon
 } from '@/icons'
 import Image from 'next/image'
+import Head from 'next/head'
+import { useEffect, useState } from 'react'
+import ShinyButton from '@/components/ShinyButton'
 import Link from 'next/link'
-import { CornerLeftDown } from 'lucide-react'
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTrigger
+} from '@/components/ui/dialog'
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage
+} from '@/components/ui/form'
+import { zodResolver } from '@hookform/resolvers/zod'
+import { useForm } from 'react-hook-form'
+import { z } from 'zod'
+import { useToast } from '@/components/ui/use-toast'
+import { Textarea } from '@/components/ui/textarea'
+import { Input } from '@/components/ui/input'
+import { AlertTriangle, CornerLeftDown, RefreshCwIcon } from 'lucide-react'
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry'
-import { getReviews } from '@/data/reviews'
-import SubmitReview from './submitReview'
-import { getDob } from '@/utils/dob'
-import ReviewsGrid from './ReviewsGrid'
+import useSWR from 'swr'
+import { fetcher } from '@/utils/swr'
+import { Button } from '../ui/button'
 
 interface Review {
   id: number
@@ -37,9 +60,100 @@ interface Review {
   approved: boolean
 }
 
-export default async function Page() {
-  const age = getDob('2003-05-17')
-  const reviews = await getReviews()
+const formSchema = z.object({
+  name: z.string().min(1, { message: "Name can't be empty!" }),
+  message: z.string().min(1, { message: "Message can't be empty!" })
+})
+
+export default function Page() {
+  const { toast } = useToast()
+  const [age, setAge] = useState(0)
+  const { data: reviews, error, isLoading } = useSWR('/api/getReviews', fetcher)
+
+  const form = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      name: '',
+      message: ''
+    }
+  })
+
+  useEffect(() => {
+    const dobString = '2003-05-17'
+    const dobMilliseconds = Date.parse(dobString)
+    const currentMilliseconds = Date.now()
+    const ageMilliseconds = currentMilliseconds - dobMilliseconds
+    const ageYears = new Date(ageMilliseconds).getUTCFullYear() - 1970
+    setAge(ageYears)
+  }, [])
+
+  async function onSubmit(values: any) {
+    toast({
+      description: 'Preparing your review...'
+    })
+
+    try {
+      const ipResponse = await fetch('https://api.ipify.org?format=json')
+      const ipData = await ipResponse.json()
+      const clientIp = ipData.ip
+
+      const submissionData = { ...values, ip: clientIp }
+
+      const response = await fetch('/api/submitReview', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(submissionData)
+      })
+
+      switch (response.status) {
+        case 200:
+          toast({
+            description: 'Review submitted successfully!',
+            variant: 'success'
+          })
+          break
+        case 400:
+          toast({
+            description: 'You already submitted a review.',
+            variant: 'destructive'
+          })
+          break
+        default:
+          toast({
+            description: 'Your review could not be submitted.',
+            variant: 'destructive'
+          })
+      }
+    } catch (error) {
+      console.error('An unexpected error occurred:', error)
+      toast({
+        description: 'An unexpected error occurred. Please try again later.',
+        variant: 'destructive'
+      })
+    }
+  }
+
+  const [isSmallScreen, setIsSmallScreen] = useState(false)
+
+  const checkScreenSize = () => {
+    if (window.innerWidth < 640) {
+      setIsSmallScreen(true)
+    } else {
+      setIsSmallScreen(false)
+    }
+  }
+
+  useEffect(() => {
+    checkScreenSize()
+
+    window.addEventListener('resize', checkScreenSize)
+
+    return () => {
+      window.removeEventListener('resize', checkScreenSize)
+    }
+  }, [])
 
   return (
     <>
@@ -148,15 +262,110 @@ export default async function Page() {
             </Link>
             !
           </span>
-          <div className="flex flex-col items-center justify-center gap-16 w-full">
-            {reviews!.length > 0 ? (
-              <ReviewsGrid items={reviews} />
+          <div className="flex flex-col items-center justify-center w-full">
+            {reviews ? (
+              <ResponsiveMasonry
+                className="masonry"
+                columnsCountBreakPoints={{ 350: 1, 756: 2, 1024: 3 }}
+              >
+                <Masonry gutter="1.5rem">
+                  {reviews.map((review: Review) => (
+                    <div
+                      key={review.id}
+                      className="rounded-lg border bg-background-menu border-background-border p-6 shadow-sm"
+                    >
+                      <span className="text-lg font-medium leading-relaxed">
+                        &quot;{review.content}&quot;
+                      </span>
+                      <div className="mt-4 flex items-center space-x-3">
+                        <span className="font-medium">{review.name}</span>
+                      </div>
+                    </div>
+                  ))}
+                </Masonry>
+              </ResponsiveMasonry>
+            ) : isLoading ? (
+              <div className="flex items-center justify-center space-x-2">
+                <div className="h-5 w-5 animate-bounce rounded-full bg-primary [animation-delay:-0.3s]"></div>
+                <div className="h-5 w-5 animate-bounce rounded-full bg-primary [animation-delay:-0.13s]"></div>
+                <div className="h-5 w-5 animate-bounce rounded-full bg-primary"></div>
+              </div>
+            ) : error ? (
+              <span className="text-lg text-red-400">
+                Something went wrong.
+              </span>
             ) : (
               <span className="text-lg text-neutral-500">
                 There are no reviews yet.
               </span>
             )}
-            <SubmitReview />
+            <Dialog>
+              <DialogTrigger className="mt-12" tabIndex={-1}>
+                <ShinyButton>Submit yours</ShinyButton>
+              </DialogTrigger>
+              <DialogContent className="w-[90vw] sm:w-full text-text">
+                <DialogHeader>
+                  <span className="text-2xl">Submit your review</span>
+                </DialogHeader>
+                <div className="flex gap-3 items-center mt-2 -mb-2 p-1.5 sm:p-3 border border-red-300 bg-red-200 dark:border-red-600 dark:bg-red-400 rounded-md text-text">
+                  <AlertTriangle className="w-24 sm:min-w-16 h-auto text-red-500" />
+                  <span className="text-sm sm:text-base">
+                    Sensitive information will be collected. See{' '}
+                    <Link
+                      href="/privacy"
+                      className="text-blue-500 hover:underline"
+                    >
+                      privacy policy
+                    </Link>{' '}
+                    before continuing!
+                  </span>
+                </div>
+                <div className="flex gap-3 items-center mb-2 p-1.5 sm:p-3 border border-neutral-300 bg-neutral-200 dark:border-neutral-600 dark:bg-neutral-400 rounded-md text-text">
+                  <span className="text-sm sm:text-base">
+                    Before being public, all the reviews are scanned for
+                    inappropriate content.
+                  </span>
+                </div>
+                <Form {...form}>
+                  <form
+                    onSubmit={form.handleSubmit(onSubmit)}
+                    className="space-y-5 md:space-y-8 w-full transition-all"
+                  >
+                    <FormField
+                      control={form.control}
+                      name="name"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel className="text-base">Your name</FormLabel>
+                          <FormControl>
+                            <Input placeholder="John Doe" {...field} />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                    <FormField
+                      control={form.control}
+                      name="message"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel className="text-base">Message</FormLabel>
+                          <FormControl>
+                            <Textarea
+                              rows={isSmallScreen ? 6 : 10}
+                              placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu sem integer vitae justo eget magna."
+                              {...field}
+                            />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                    <ShinyButton className="flex mx-auto">Submit</ShinyButton>
+                  </form>
+                </Form>
+              </DialogContent>
+            </Dialog>
           </div>
         </div>
         <div className="w-full max-w-7xl flex flex-col items-center mb-16 px-8 xs:px-12 sm:px-16 md:px-20 lg:px-12 xl:px-0">

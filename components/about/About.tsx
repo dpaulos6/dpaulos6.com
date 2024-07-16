@@ -23,7 +23,6 @@ import {
   VscodeIcon
 } from '@/icons'
 import Image from 'next/image'
-import Head from 'next/head'
 import { useEffect, useState } from 'react'
 import ShinyButton from '@/components/ShinyButton'
 import Link from 'next/link'
@@ -47,11 +46,10 @@ import { z } from 'zod'
 import { useToast } from '@/components/ui/use-toast'
 import { Textarea } from '@/components/ui/textarea'
 import { Input } from '@/components/ui/input'
-import { AlertTriangle, CornerLeftDown, RefreshCwIcon } from 'lucide-react'
+import { AlertTriangle, CornerLeftDown } from 'lucide-react'
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry'
 import useSWR from 'swr'
 import { fetcher } from '@/utils/swr'
-import { Button } from '../ui/button'
 
 interface Review {
   id: number

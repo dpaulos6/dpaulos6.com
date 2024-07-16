@@ -23,7 +23,6 @@ import {
   VscodeIcon
 } from '@/icons'
 import Image from 'next/image'
-import Head from 'next/head'
 import { useEffect, useState } from 'react'
 import ShinyButton from '@/components/ShinyButton'
 import Link from 'next/link'
@@ -47,8 +46,10 @@ import { z } from 'zod'
 import { useToast } from '@/components/ui/use-toast'
 import { Textarea } from '@/components/ui/textarea'
 import { Input } from '@/components/ui/input'
-import { AlertTriangle, CornerLeftDown, RefreshCwIcon } from 'lucide-react'
+import { AlertTriangle, CornerLeftDown } from 'lucide-react'
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry'
+import useSWR from 'swr'
+import { fetcher } from '@/utils/swr'
 
 interface Review {
   id: number
@@ -65,24 +66,7 @@ const formSchema = z.object({
 export default function Page() {
   const { toast } = useToast()
   const [age, setAge] = useState(0)
-  const [reviews, setReviews] = useState<Review[]>([])
-  const [forceRefresh, setForceRefresh] = useState(0)
-
-  useEffect(() => {
-    const fetchReviews = async () => {
-      try {
-        const response = await fetch('/api/getReviews', { cache: 'no-store' })
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`)
-        }
-        const data = await response.json()
-        setReviews(data)
-      } catch (error) {
-        console.error('Error fetching reviews:', error)
-      }
-    }
-    fetchReviews()
-  }, [forceRefresh])
+  const { data: reviews, error, isLoading } = useSWR('/api/getReviews', fetcher)
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -276,14 +260,14 @@ export default function Page() {
             </Link>
             !
           </span>
-          <div className="flex flex-col items-center justify-center gap-16 w-full">
-            {reviews.length > 0 ? (
+          <div className="flex flex-col items-center justify-center w-full">
+            {reviews ? (
               <ResponsiveMasonry
                 className="masonry"
                 columnsCountBreakPoints={{ 350: 1, 756: 2, 1024: 3 }}
               >
                 <Masonry gutter="1.5rem">
-                  {reviews.map((review) => (
+                  {reviews.map((review: Review) => (
                     <div
                       key={review.id}
                       className="rounded-lg border bg-background-menu border-background-border p-6 shadow-sm"
@@ -298,13 +282,23 @@ export default function Page() {
                   ))}
                 </Masonry>
               </ResponsiveMasonry>
+            ) : isLoading ? (
+              <div className="flex items-center justify-center space-x-2">
+                <div className="h-5 w-5 animate-bounce rounded-full bg-primary [animation-delay:-0.3s]"></div>
+                <div className="h-5 w-5 animate-bounce rounded-full bg-primary [animation-delay:-0.13s]"></div>
+                <div className="h-5 w-5 animate-bounce rounded-full bg-primary"></div>
+              </div>
+            ) : error ? (
+              <span className="text-lg text-red-400">
+                Something went wrong.
+              </span>
             ) : (
               <span className="text-lg text-neutral-500">
                 There are no reviews yet.
               </span>
             )}
             <Dialog>
-              <DialogTrigger tabIndex={-1}>
+              <DialogTrigger className="mt-12" tabIndex={-1}>
                 <ShinyButton>Submit yours</ShinyButton>
               </DialogTrigger>
               <DialogContent className="w-[90vw] sm:w-full text-text">

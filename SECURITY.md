@@ -9,10 +9,10 @@ If you discover a security vulnerability, please follow the steps below to repor
 1. **Do Not Publicly Disclose**: Do not publicly disclose the vulnerability until it has been addressed.
 2. **Contact Information**: Send an email to [dpaulos6@outlook.com] with the subject "Portfolio Security Vulnerability Report".
 3. **Detail the Vulnerability**: Include as much detail as possible about the vulnerability. Please provide:
-    - A description of the vulnerability.
-    - Steps to reproduce the vulnerability.
-    - Potential impact of the vulnerability.
-    - Any suggested solutions or mitigations.
+   - A description of the vulnerability.
+   - Steps to reproduce the vulnerability.
+   - Potential impact of the vulnerability.
+   - Any suggested solutions or mitigations.
 
 ## Response Process
 

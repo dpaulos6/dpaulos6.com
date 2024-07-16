@@ -1,7 +1,7 @@
 import supabase from '@/helpers/supabaseClient'
 import authenticate from '@/helpers/supabaseAuth'
 
-export const revalidate = 0;
+export const revalidate = 0
 
 export async function GET(request: Request, res: Response) {
   try {
@@ -11,7 +11,7 @@ export async function GET(request: Request, res: Response) {
       .from('reviews')
       .select('id, name, content, approved')
       .eq('approved', true)
-      // .order('name')
+    // .order('name')
 
     if (error) {
       return new Response(JSON.stringify(error), { status: 500 })

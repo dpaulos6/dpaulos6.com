@@ -1,6 +1,6 @@
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry'
 
-export default function ReviewsGrid({ items }: any[]) {
+export default function ReviewsGrid({ items }: any) {
   return (
     <ResponsiveMasonry
       className="masonry"

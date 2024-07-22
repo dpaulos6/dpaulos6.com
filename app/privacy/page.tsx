@@ -1,14 +1,19 @@
-import Head from 'next/head'
+import Metadata from 'next'
+import Footer from '@/components/footer'
+import Navbar from '@/components/navbar'
 import Link from 'next/link'
+
+export const metadata: Metadata = {
+  title: 'Diogo Paulos - Privacy Policy',
+  description: `Diogo Paulos' website privacy policy information and details on how data is stored.`
+}
 
 export default function Privacy() {
   return (
     <>
-      <Head>
-        <title>Diogo Paulos - Privacy Policy</title>
-      </Head>
+      <Navbar />
       <main className="w-full px-8">
-        <div className="max-w-7xl mx-auto w-full mt-28 flex flex-col gap-6 text-text text-base md:text-lg">
+        <div className="max-w-7xl mx-auto w-full mt-16 flex flex-col gap-6 text-text text-base md:text-lg">
           <span className="text-3xl sm:text-4xl md:text-5xl">
             Privacy Notice
           </span>
@@ -30,14 +35,14 @@ export default function Privacy() {
             You can see the implementation{' '}
             <Link
               href="https://github.com/dpaulos6/portfolio"
-              className="text-blue-500 hover:underline"
+              className="text-primary hover:underline"
             >
               here
             </Link>{' '}
             or check the{' '}
             <Link
               href="https://www.npmjs.com/package/bcrypt"
-              className="text-blue-500 hover:underline"
+              className="text-primary hover:underline"
             >
               bcrypt documentation
             </Link>{' '}
@@ -56,7 +61,7 @@ export default function Privacy() {
           </span>
           <span>
             Your name and review content will be publicly displayed on{' '}
-            <Link href="/about" className="text-blue-500 hover:underline">
+            <Link href="/about" className="text-primary hover:underline">
               About Me
             </Link>
             . Your IP address will be stored in a private and secure database,
@@ -65,7 +70,7 @@ export default function Privacy() {
           <span className="text-xl sm:text-2xl md:text-3xl">Your Rights</span>
           <span>
             You can request the removal of your review at any time by{' '}
-            <Link href="/about" className="text-blue-500 hover:underline">
+            <Link href="/about" className="text-primary hover:underline">
               contacting me
             </Link>
             .
@@ -77,6 +82,7 @@ export default function Privacy() {
           </span>
         </div>
       </main>
+      <Footer />
     </>
   )
 }

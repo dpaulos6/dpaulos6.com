@@ -1,5 +1,5 @@
 import './globals.css'
-import Metadata from 'next'
+import type { Metadata } from 'next'
 import { Analytics } from '@vercel/analytics/react'
 import { ThemeProvider } from '@/components/theme-provider'
 import { SpeedInsights } from '@vercel/speed-insights/next'

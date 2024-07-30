@@ -1,6 +1,14 @@
 {
+  "plugins": [
+    "prettier-plugin-tailwindcss",
+    "prettier-plugin-sort-imports",
+    "prettier-plugin-prisma"
+  ],
   "trailingComma": "none",
   "tabWidth": 2,
   "semi": false,
-  "singleQuote": true
+  "singleQuote": true,
+  "singleAttributePerLine": true,
+  "quoteProps": "as-needed",
+  "experimentalTernaries": true
 }

@@ -22,7 +22,6 @@ import {
 } from '@/icons'
 import { CornerLeftDown } from 'lucide-react'
 import { getDob } from '@/utils/dob'
-import Feedback from './feedback'
 import Image from 'next/image'
 import '@/app/globals.css'
 

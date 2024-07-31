@@ -1,5 +1,5 @@
-import supabase from '@/helpers/supabaseClient'
 import authenticate from '@/helpers/supabaseAuth'
+import supabase from '@/helpers/supabaseClient'
 
 export const revalidate = 0
 

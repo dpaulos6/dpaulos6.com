@@ -1,5 +1,5 @@
-import '@/app/globals.css'
 import Link from 'next/link'
+import '@/app/globals.css'
 
 export default function About() {
   return (

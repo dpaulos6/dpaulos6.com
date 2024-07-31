@@ -1,5 +1,5 @@
-import supabase from '@/helpers/supabaseClient'
 import authenticate from '@/helpers/supabaseAuth'
+import supabase from '@/helpers/supabaseClient'
 
 export async function GET(req: Request, res: Response) {
   const { searchParams } = new URL(req.url as string, 'http://localhost')

@@ -1,6 +1,6 @@
-import resend from '@/helpers/resendClient'
-import { render } from '@react-email/render'
 import { HireMeEmail } from '@/emails/HireMeEmail'
+import { render } from '@react-email/render'
+import resend from '@/helpers/resendClient'
 
 const outlook = 'itzframepvp@outlook.com'
 

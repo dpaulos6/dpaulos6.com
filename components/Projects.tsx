@@ -57,7 +57,7 @@ const projects = [
     tag: {
       styles:
         'border-transparent bg-yellow-300 dark:bg-yellow-500 text-primary-foreground',
-      label: 'under development'
+      label: 'almost finished'
     }
   },
   {
@@ -76,7 +76,7 @@ const projects = [
     tag: {
       styles:
         'border-transparent bg-yellow-300 dark:bg-yellow-500 text-primary-foreground',
-      label: 'early development'
+      label: 'under development'
     }
   }
 ]

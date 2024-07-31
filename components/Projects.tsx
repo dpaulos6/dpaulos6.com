@@ -57,7 +57,7 @@ const projects = [
     tag: {
       styles:
         'border-transparent bg-yellow-300 dark:bg-yellow-500 text-primary-foreground',
-      label: 'under development'
+      label: 'almost finished'
     }
   },
   {
@@ -72,11 +72,11 @@ const projects = [
       { label: 'Among others', icon: Ellipsis }
     ],
     github: 'https://github.com/dpaulos6/digestify',
-    url: '',
+    url: 'https://digestify.dev',
     tag: {
       styles:
         'border-transparent bg-yellow-300 dark:bg-yellow-500 text-primary-foreground',
-      label: 'early development'
+      label: 'under development'
     }
   }
 ]

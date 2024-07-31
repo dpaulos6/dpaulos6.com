@@ -38,10 +38,10 @@ export default function RootLayout({
           <GradientBackground />
           <div className="min-h-screen hidden limit:flex flex-col">
             <div className="w-full flex-1 flex flex-col z-10">{children}</div>
-            {/* <AdBanner
-              adClient="ca-pub-XXXXXX"
-              adSlot="XXXXXX"
-            /> */}
+            <AdBanner
+              adClient="ca-pub-4113864436683156"
+              adSlot="4113864436683156"
+            />
             <Toaster />
           </div>
           <div className="w-screen h-screen flex justify-center items-center limit:hidden">

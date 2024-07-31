@@ -1,6 +1,5 @@
-import About from '@/components/about/About'
+import About from '@/components/About'
 import Projects from '@/components/Projects'
-import Footer from '@/components/footer'
 import Navbar from '@/components/navbar'
 import Hire from '@/components/Hire'
 import config from '@/config.json'
@@ -15,7 +14,6 @@ export default function Home() {
         <Projects />
         {config.open_to_hire && <Hire />}
       </div>
-      <Footer />
     </>
   )
 }

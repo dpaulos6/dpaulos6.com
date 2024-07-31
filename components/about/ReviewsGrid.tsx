@@ -1,13 +1,28 @@
+// components/ReviewsGrid.tsx
+'use client'
+
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry'
 
-export default function ReviewsGrid({ items }: any) {
+interface Review {
+  id: number
+  name: string
+  content: string
+  approved: boolean
+  ip: string
+}
+
+interface ReviewsGridProps {
+  reviews: Review[]
+}
+
+const ReviewsGrid = ({ reviews }: ReviewsGridProps) => {
   return (
     <ResponsiveMasonry
       className="masonry"
       columnsCountBreakPoints={{ 350: 1, 756: 2, 1024: 3 }}
     >
       <Masonry gutter="1.5rem">
-        {items!.map((review: any) => (
+        {reviews.map((review) => (
           <div
             key={review.id}
             className="rounded-lg border bg-background-menu border-background-border p-6 shadow-sm"
@@ -24,3 +39,5 @@ export default function ReviewsGrid({ items }: any) {
     </ResponsiveMasonry>
   )
 }
+
+export default ReviewsGrid

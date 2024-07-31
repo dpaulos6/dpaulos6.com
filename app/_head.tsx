@@ -1,19 +1,46 @@
 export default function Head() {
   return (
     <head>
-      <meta name="robots" content="index, follow" />
-      <meta name="theme-color" content="#40A2E3" />
-      <meta name="msapplication-TileColor" content="#40A2E3" />
+      <meta
+        name="robots"
+        content="index, follow"
+      />
+      <meta
+        name="theme-color"
+        content="#40A2E3"
+      />
+      <meta
+        name="msapplication-TileColor"
+        content="#40A2E3"
+      />
       <meta
         name="google-site-verification"
         content="GIEMYYdVuBC-MWItd08APF11prO3MTs2ko1Ifu2jINU"
       />
-      <meta property="og:image" content="/thumbnail.png" />
-      <meta property="og:image:type" content="image/png" />
-      <meta property="og:url" content="https://dpaulos6.xyz/" />
-      <meta property="og:site_name" content="Diogo Paulos' Portfolio" />
-      <meta property="twitter:card" content="summary_large_image" />
-      <meta property="twitter:image" content="0" />
+      <meta
+        property="og:image"
+        content="/thumbnail.png"
+      />
+      <meta
+        property="og:image:type"
+        content="image/png"
+      />
+      <meta
+        property="og:url"
+        content="https://dpaulos6.xyz/"
+      />
+      <meta
+        property="og:site_name"
+        content="Diogo Paulos' Portfolio"
+      />
+      <meta
+        property="twitter:card"
+        content="summary_large_image"
+      />
+      <meta
+        property="twitter:image"
+        content="0"
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -43,6 +70,11 @@ export default function Head() {
         defer
         data-domain="dpaulos6.xyz"
         src="https://stats.wouldyoubot.gg/js/script.js"
+      ></script>
+      <script
+        async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4113864436683156"
+        crossOrigin="anonymous"
       ></script>
     </head>
   )

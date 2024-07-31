@@ -1,13 +1,4 @@
 'use client'
-import { AlertTriangle, Link } from 'lucide-react'
-import { Form, useForm } from 'react-hook-form'
-import ShinyButton from '../ShinyButton'
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTrigger
-} from '../ui/dialog'
 import {
   FormField,
   FormItem,
@@ -15,15 +6,25 @@ import {
   FormControl,
   FormMessage
 } from '../ui/form'
-import { Input } from '../ui/input'
-import { Textarea } from '../ui/textarea'
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTrigger
+} from '../ui/dialog'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { z } from 'zod'
-import { toast } from '../ui/use-toast'
+import { AlertTriangle } from 'lucide-react'
+import Link from 'next/link'
+import { Form, useForm } from 'react-hook-form'
 import { useState, useEffect } from 'react'
-import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry'
-import useSWR from 'swr'
+import { Textarea } from '../ui/textarea'
+import ShinyButton from '../ShinyButton'
+import { toast } from '../ui/use-toast'
+import ReviewsGrid from './ReviewsGrid'
 import { fetcher } from '@/utils/swr'
+import { Input } from '../ui/input'
+import useSWR from 'swr'
+import { z } from 'zod'
 
 interface Review {
   id: number
@@ -137,48 +138,21 @@ export default function Feedback() {
       </div>
       <span className="max-w-7xl w-full text-center mb-16 text-xl px-8">
         If you have submitted a review and would like to update or remove it,{' '}
-        <Link href="/contacts" className="text-primary">
+        <Link
+          href="/contacts"
+          className="text-primary"
+        >
           contact me
         </Link>
         !
       </span>
       <div className="flex flex-col items-center justify-center w-full">
-        {reviews ? (
-          <ResponsiveMasonry
-            className="masonry"
-            columnsCountBreakPoints={{ 350: 1, 756: 2, 1024: 3 }}
-          >
-            <Masonry gutter="1.5rem">
-              {reviews.map((review: Review) => (
-                <div
-                  key={review.id}
-                  className="rounded-lg border bg-background-menu border-background-border p-6 shadow-sm"
-                >
-                  <span className="text-lg font-medium leading-relaxed">
-                    &quot;{review.content}&quot;
-                  </span>
-                  <div className="mt-4 flex items-center space-x-3">
-                    <span className="font-medium">{review.name}</span>
-                  </div>
-                </div>
-              ))}
-            </Masonry>
-          </ResponsiveMasonry>
-        ) : isLoading ? (
-          <div className="flex items-center justify-center space-x-2">
-            <div className="h-5 w-5 animate-bounce rounded-full bg-primary [animation-delay:-0.3s]"></div>
-            <div className="h-5 w-5 animate-bounce rounded-full bg-primary [animation-delay:-0.13s]"></div>
-            <div className="h-5 w-5 animate-bounce rounded-full bg-primary"></div>
-          </div>
-        ) : error ? (
-          <span className="text-lg text-red-400">Something went wrong.</span>
-        ) : (
-          <span className="text-lg text-neutral-500">
-            There are no reviews yet.
-          </span>
-        )}
+        <ReviewsGrid />
         <Dialog>
-          <DialogTrigger className="mt-12" tabIndex={-1}>
+          <DialogTrigger
+            className="mt-12"
+            tabIndex={-1}
+          >
             <ShinyButton>Submit yours</ShinyButton>
           </DialogTrigger>
           <DialogContent className="w-[90vw] sm:w-full text-text">
@@ -189,7 +163,10 @@ export default function Feedback() {
               <AlertTriangle className="w-24 sm:min-w-16 h-auto text-red-500" />
               <span className="text-sm sm:text-base">
                 Sensitive information will be collected. See{' '}
-                <Link href="/privacy" className="text-blue-500 hover:underline">
+                <Link
+                  href="/privacy"
+                  className="text-blue-500 hover:underline"
+                >
                   privacy policy
                 </Link>{' '}
                 before continuing!
@@ -213,7 +190,10 @@ export default function Feedback() {
                     <FormItem>
                       <FormLabel className="text-base">Your name</FormLabel>
                       <FormControl>
-                        <Input placeholder="John Doe" {...field} />
+                        <Input
+                          placeholder="John Doe"
+                          {...field}
+                        />
                       </FormControl>
                       <FormMessage />
                     </FormItem>

@@ -1,4 +1,3 @@
-import '@/app/globals.css'
 import {
   AstroIcon,
   CsharpIcon,
@@ -21,9 +20,11 @@ import {
   ViteIcon,
   VscodeIcon
 } from '@/icons'
-import Image from 'next/image'
 import { CornerLeftDown } from 'lucide-react'
 import { getDob } from '@/utils/dob'
+import Feedback from './feedback'
+import Image from 'next/image'
+import '@/app/globals.css'
 
 export default function Page() {
   const age = getDob('2003-05-17')

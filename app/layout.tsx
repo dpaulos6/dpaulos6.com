@@ -1,13 +1,14 @@
-import './globals.css'
-import type { Metadata } from 'next'
-import { Analytics } from '@vercel/analytics/react'
+import GradientBackground from '@/components/gradient-background'
 import { ThemeProvider } from '@/components/theme-provider'
 import { SpeedInsights } from '@vercel/speed-insights/next'
-import GradientBackground from '@/components/gradient-background'
-import { Poppins } from 'next/font/google'
+import { Analytics } from '@vercel/analytics/react'
 import { Toaster } from '@/components/ui/toaster'
-import Head from './_head'
+import AdBanner from '@/components/AdBanner'
+import { Poppins } from 'next/font/google'
 import { getDob } from '@/utils/dob'
+import type { Metadata } from 'next'
+import Head from './_head'
+import './globals.css'
 
 const font = Poppins({ subsets: ['latin'], weight: '400' })
 
@@ -22,7 +23,10 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={font.className}>
+    <html
+      lang="en"
+      className={font.className}
+    >
       <Head />
       <body>
         <ThemeProvider
@@ -34,6 +38,10 @@ export default function RootLayout({
           <GradientBackground />
           <div className="min-h-screen hidden limit:flex flex-col">
             <div className="w-full flex-1 flex flex-col z-10">{children}</div>
+            {/* <AdBanner
+              adClient="ca-pub-XXXXXX"
+              adSlot="XXXXXX"
+            /> */}
             <Toaster />
           </div>
           <div className="w-screen h-screen flex justify-center items-center limit:hidden">

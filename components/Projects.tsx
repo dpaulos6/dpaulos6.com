@@ -1,5 +1,4 @@
 'use client'
-import '@/app/globals.css'
 import {
   GithubIcon,
   NextjsIcon,
@@ -14,11 +13,12 @@ import {
   TooltipProvider,
   TooltipTrigger
 } from '@/components/ui/tooltip'
-import { Badge } from '@/components/ui/badge'
-import Link from 'next/link'
-import Image from 'next/image'
 import { Ellipsis, LinkIcon } from 'lucide-react'
+import { Badge } from '@/components/ui/badge'
 import { useState } from 'react'
+import Image from 'next/image'
+import Link from 'next/link'
+import '@/app/globals.css'
 
 const projects = [
   {
@@ -162,9 +162,9 @@ export default function Page() {
                   <div className="flex basis-3/5 w-full h-fit aspect-[5/3] relative">
                     <Image
                       src={
-                        project.thumbnail
-                          ? project.thumbnail
-                          : 'https://www.sbrv.org/wp-content/uploads/2019/11/preview.png'
+                        project.thumbnail ?
+                          project.thumbnail
+                        : 'https://www.sbrv.org/wp-content/uploads/2019/11/preview.png'
                       }
                       alt={project.name + ' Thumbnail'}
                       width={9999}
@@ -182,7 +182,7 @@ export default function Page() {
                       <span className="text-xl md:text-2xl lg:text-3xl mr-2">
                         {project.name}
                       </span>
-                      {project.url && !project.currentWebsite ? (
+                      {project.url && !project.currentWebsite ?
                         <TooltipProvider>
                           <Tooltip>
                             <TooltipTrigger tabIndex={-1}>
@@ -199,8 +199,8 @@ export default function Page() {
                             </TooltipContent>
                           </Tooltip>
                         </TooltipProvider>
-                      ) : null}
-                      {project.github ? (
+                      : null}
+                      {project.github ?
                         <TooltipProvider>
                           <Tooltip>
                             <TooltipTrigger tabIndex={-1}>
@@ -217,7 +217,7 @@ export default function Page() {
                             </TooltipContent>
                           </Tooltip>
                         </TooltipProvider>
-                      ) : null}
+                      : null}
                     </div>
                     <span
                       className={`${isExpanded[i] ? 'h-auto line-clamp-none overflow-auto' : 'lg:overflow-ellipsis lg:line-clamp-3'} text-xs md:text-sm lg:text-base leading-[1.75] mb-2`}
@@ -279,9 +279,9 @@ export default function Page() {
                 <div className="flex basis-3/5 w-full h-fit aspect-[5/3] relative">
                   <Image
                     src={
-                      contribution.thumbnail
-                        ? contribution.thumbnail
-                        : 'https://www.sbrv.org/wp-content/uploads/2019/11/preview.png'
+                      contribution.thumbnail ?
+                        contribution.thumbnail
+                      : 'https://www.sbrv.org/wp-content/uploads/2019/11/preview.png'
                     }
                     alt={contribution.name + ' Thumbnail'}
                     width={9999}
@@ -299,11 +299,14 @@ export default function Page() {
                     <span className="text-xl md:text-2xl lg:text-3xl mr-2">
                       {contribution.name}
                     </span>
-                    {contribution.url ? (
+                    {contribution.url ?
                       <TooltipProvider>
                         <Tooltip>
                           <TooltipTrigger tabIndex={-1}>
-                            <Link href={contribution.url} target="_blank">
+                            <Link
+                              href={contribution.url}
+                              target="_blank"
+                            >
                               <LinkIcon className="p-2 w-10 rounded-md h-full aspect-square lg:opacity-0 lg:group-hover:opacity-100 hover:bg-primary/15 hover:text-primary transition" />
                             </Link>
                           </TooltipTrigger>
@@ -312,12 +315,15 @@ export default function Page() {
                           </TooltipContent>
                         </Tooltip>
                       </TooltipProvider>
-                    ) : null}
-                    {contribution.github ? (
+                    : null}
+                    {contribution.github ?
                       <TooltipProvider>
                         <Tooltip>
                           <TooltipTrigger tabIndex={-1}>
-                            <Link href={contribution.github} target="_blank">
+                            <Link
+                              href={contribution.github}
+                              target="_blank"
+                            >
                               <GithubIcon className="p-2 w-10 rounded-md h-full aspect-square lg:opacity-0 lg:group-hover:opacity-100 hover:bg-primary/15 hover:text-primary transition" />
                             </Link>
                           </TooltipTrigger>
@@ -326,7 +332,7 @@ export default function Page() {
                           </TooltipContent>
                         </Tooltip>
                       </TooltipProvider>
-                    ) : null}
+                    : null}
                   </div>
                 </div>
               </div>

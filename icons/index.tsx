@@ -1,5 +1,5 @@
-import React from 'react'
 import type { SVGProps } from 'react'
+import React from 'react'
 
 export function DarkModeIcon(props: SVGProps<SVGSVGElement>) {
   return (
@@ -99,7 +99,10 @@ export function HTMLIcon(props: SVGProps<SVGSVGElement>) {
         fill="#e44f26"
         d="M5.902 27.201L3.655 2h24.69l-2.25 25.197L15.985 30z"
       ></path>
-      <path fill="#f1662a" d="m16 27.858l8.17-2.265l1.922-21.532H16z"></path>
+      <path
+        fill="#f1662a"
+        d="m16 27.858l8.17-2.265l1.922-21.532H16z"
+      ></path>
       <path
         fill="#ebebeb"
         d="M16 13.407h-4.09l-.282-3.165H16V7.151H8.25l.074.83l.759 8.517H16zm0 8.027l-.014.004l-3.442-.929l-.22-2.465H9.221l.433 4.852l6.332 1.758l.014-.004z"
@@ -165,7 +168,13 @@ export function MailIcon(props: SVGProps<SVGSVGElement>) {
         strokeLinejoin="round"
         strokeWidth={2}
       >
-        <rect width={20} height={16} x={2} y={4} rx={2}></rect>
+        <rect
+          width={20}
+          height={16}
+          x={2}
+          y={4}
+          rx={2}
+        ></rect>
         <path d="m22 7l-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
       </g>
     </svg>
@@ -205,7 +214,13 @@ export function MonitorIcon(props: SVGProps<SVGSVGElement>) {
         strokeLinejoin="round"
         strokeWidth={2}
       >
-        <rect width={20} height={14} x={2} y={3} rx={2}></rect>
+        <rect
+          width={20}
+          height={14}
+          x={2}
+          y={3}
+          rx={2}
+        ></rect>
         <path d="M8 21h8m-4-4v4"></path>
       </g>
     </svg>
@@ -327,7 +342,11 @@ export function NextjsIcon(props: SVGProps<SVGSVGElement>) {
       viewBox="0 0 128 128"
       {...props}
     >
-      <circle cx={64} cy={64} r={64}></circle>
+      <circle
+        cx={64}
+        cy={64}
+        r={64}
+      ></circle>
       <path
         fill="url(#deviconNextjs0)"
         d="M106.317 112.014L49.167 38.4H38.4v51.179h8.614v-40.24l52.54 67.884a64.216 64.216 0 0 0 6.763-5.209"
@@ -347,7 +366,11 @@ export function NextjsIcon(props: SVGProps<SVGSVGElement>) {
           gradientUnits="userSpaceOnUse"
         >
           <stop stopColor="#fff"></stop>
-          <stop offset={1} stopColor="#fff" stopOpacity={0}></stop>
+          <stop
+            offset={1}
+            stopColor="#fff"
+            stopOpacity={0}
+          ></stop>
         </linearGradient>
         <linearGradient
           id="deviconNextjs1"
@@ -359,7 +382,11 @@ export function NextjsIcon(props: SVGProps<SVGSVGElement>) {
           gradientUnits="userSpaceOnUse"
         >
           <stop stopColor="#fff"></stop>
-          <stop offset={1} stopColor="#fff" stopOpacity={0}></stop>
+          <stop
+            offset={1}
+            stopColor="#fff"
+            stopOpacity={0}
+          ></stop>
         </linearGradient>
       </defs>
     </svg>
@@ -375,7 +402,10 @@ export function TypescriptIcon(props: SVGProps<SVGSVGElement>) {
       viewBox="0 0 128 128"
       {...props}
     >
-      <path fill="#fff" d="M22.67 47h99.67v73.67H22.67z"></path>
+      <path
+        fill="#fff"
+        d="M22.67 47h99.67v73.67H22.67z"
+      ></path>
       <path
         fill="#007acc"
         d="M1.5 63.91v62.5h125v-125H1.5zm100.73-5a15.56 15.56 0 0 1 7.82 4.5a20.58 20.58 0 0 1 3 4c0 .16-5.4 3.81-8.69 5.85c-.12.08-.6-.44-1.13-1.23a7.09 7.09 0 0 0-5.87-3.53c-3.79-.26-6.23 1.73-6.21 5a4.58 4.58 0 0 0 .54 2.34c.83 1.73 2.38 2.76 7.24 4.86c8.95 3.85 12.78 6.39 15.16 10c2.66 4 3.25 10.46 1.45 15.24c-2 5.2-6.9 8.73-13.83 9.9a38.32 38.32 0 0 1-9.52-.1a23 23 0 0 1-12.72-6.63c-1.15-1.27-3.39-4.58-3.25-4.82a9.34 9.34 0 0 1 1.15-.73L82 101l3.59-2.08l.75 1.11a16.78 16.78 0 0 0 4.74 4.54c4 2.1 9.46 1.81 12.16-.62a5.43 5.43 0 0 0 .69-6.92c-1-1.39-3-2.56-8.59-5c-6.45-2.78-9.23-4.5-11.77-7.24a16.48 16.48 0 0 1-3.43-6.25a25 25 0 0 1-.22-8c1.33-6.23 6-10.58 12.82-11.87a31.66 31.66 0 0 1 9.49.26zm-29.34 5.24v5.12H56.66v46.23H45.15V69.26H28.88v-5a49.19 49.19 0 0 1 .12-5.17C29.08 59 39 59 51 59h21.83z"
@@ -603,7 +633,12 @@ export function PrettierIcon(props: SVGProps<SVGSVGElement>) {
         fill="#f7ba3e"
         rx={5}
       ></rect>
-      <rect width={158.476} height={12.19} fill="#56b3b4" rx={5}></rect>
+      <rect
+        width={158.476}
+        height={12.19}
+        fill="#56b3b4"
+        rx={5}
+      ></rect>
       <rect
         width={85.333}
         height={12.19}
@@ -909,8 +944,14 @@ export function SupabaseIcon(props: SVGProps<SVGSVGElement>) {
           gradientTransform="translate(29.387 60.096)scale(1.1436)"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset={0} stopColor="#249361"></stop>
-          <stop offset={1} stopColor="#3ecf8e"></stop>
+          <stop
+            offset={0}
+            stopColor="#249361"
+          ></stop>
+          <stop
+            offset={1}
+            stopColor="#3ecf8e"
+          ></stop>
         </linearGradient>
         <linearGradient
           id="deviconSupabase1"
@@ -922,7 +963,10 @@ export function SupabaseIcon(props: SVGProps<SVGSVGElement>) {
           gradientUnits="userSpaceOnUse"
         >
           <stop offset={0}></stop>
-          <stop offset={1} stopOpacity={0}></stop>
+          <stop
+            offset={1}
+            stopOpacity={0}
+          ></stop>
         </linearGradient>
       </defs>
       <path
@@ -953,7 +997,10 @@ export function JavascriptIcon(props: SVGProps<SVGSVGElement>) {
       viewBox="0 0 128 128"
       {...props}
     >
-      <path fill="#f0db4f" d="M1.408 1.408h125.184v125.185H1.408z"></path>
+      <path
+        fill="#f0db4f"
+        d="M1.408 1.408h125.184v125.185H1.408z"
+      ></path>
       <path
         fill="#323330"
         d="M116.347 96.736c-.917-5.711-4.641-10.508-15.672-14.981c-3.832-1.761-8.104-3.022-9.377-5.926c-.452-1.69-.512-2.642-.226-3.665c.821-3.32 4.784-4.355 7.925-3.403c2.023.678 3.938 2.237 5.093 4.724c5.402-3.498 5.391-3.475 9.163-5.879c-1.381-2.141-2.118-3.129-3.022-4.045c-3.249-3.629-7.676-5.498-14.756-5.355l-3.688.477c-3.534.893-6.902 2.748-8.877 5.235c-5.926 6.724-4.236 18.492 2.975 23.335c7.104 5.332 17.54 6.545 18.873 11.531c1.297 6.104-4.486 8.08-10.234 7.378c-4.236-.881-6.592-3.034-9.139-6.949c-4.688 2.713-4.688 2.713-9.508 5.485c1.143 2.499 2.344 3.63 4.26 5.795c9.068 9.198 31.76 8.746 35.83-5.176c.165-.478 1.261-3.666.38-8.581M69.462 58.943H57.753l-.048 30.272c0 6.438.333 12.34-.714 14.149c-1.713 3.558-6.152 3.117-8.175 2.427c-2.059-1.012-3.106-2.451-4.319-4.485c-.333-.584-.583-1.036-.667-1.071l-9.52 5.83c1.583 3.249 3.915 6.069 6.902 7.901c4.462 2.678 10.459 3.499 16.731 2.059c4.082-1.189 7.604-3.652 9.448-7.401c2.666-4.915 2.094-10.864 2.07-17.444c.06-10.735.001-21.468.001-32.237"
@@ -1004,9 +1051,18 @@ export function PhpIcon(props: SVGProps<SVGSVGElement>) {
           gradientUnits="userSpaceOnUse"
         >
           <stop stopColor="#aeb2d5"></stop>
-          <stop offset={0.3} stopColor="#aeb2d5"></stop>
-          <stop offset={0.75} stopColor="#484c89"></stop>
-          <stop offset={1} stopColor="#484c89"></stop>
+          <stop
+            offset={0.3}
+            stopColor="#aeb2d5"
+          ></stop>
+          <stop
+            offset={0.75}
+            stopColor="#484c89"
+          ></stop>
+          <stop
+            offset={1}
+            stopColor="#484c89"
+          ></stop>
         </radialGradient>
       </defs>
     </svg>
@@ -1065,9 +1121,18 @@ export function KotlinIcon(props: SVGProps<SVGSVGElement>) {
           gradientTransform="translate(15.534 -96.774)scale(.1939)"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset={0.003} stopColor="#e44857"></stop>
-          <stop offset={0.469} stopColor="#c711e1"></stop>
-          <stop offset={1} stopColor="#7f52ff"></stop>
+          <stop
+            offset={0.003}
+            stopColor="#e44857"
+          ></stop>
+          <stop
+            offset={0.469}
+            stopColor="#c711e1"
+          ></stop>
+          <stop
+            offset={1}
+            stopColor="#7f52ff"
+          ></stop>
         </linearGradient>
       </defs>
       <path
@@ -1121,8 +1186,14 @@ export function PythonIcon(props: SVGProps<SVGSVGElement>) {
         gradientTransform="matrix(.563 0 0 -.568 -29.215 707.817)"
         gradientUnits="userSpaceOnUse"
       >
-        <stop offset={0} stopColor="#5a9fd4"></stop>
-        <stop offset={1} stopColor="#306998"></stop>
+        <stop
+          offset={0}
+          stopColor="#5a9fd4"
+        ></stop>
+        <stop
+          offset={1}
+          stopColor="#306998"
+        ></stop>
       </linearGradient>
       <linearGradient
         id="deviconPython1"
@@ -1133,8 +1204,14 @@ export function PythonIcon(props: SVGProps<SVGSVGElement>) {
         gradientTransform="matrix(.563 0 0 -.568 -29.215 707.817)"
         gradientUnits="userSpaceOnUse"
       >
-        <stop offset={0} stopColor="#ffd43b"></stop>
-        <stop offset={1} stopColor="#ffe873"></stop>
+        <stop
+          offset={0}
+          stopColor="#ffd43b"
+        ></stop>
+        <stop
+          offset={1}
+          stopColor="#ffe873"
+        ></stop>
       </linearGradient>
       <path
         fill="url(#deviconPython0)"
@@ -1154,8 +1231,16 @@ export function PythonIcon(props: SVGProps<SVGSVGElement>) {
         gradientTransform="matrix(0 -.24 -1.055 0 532.979 557.576)"
         gradientUnits="userSpaceOnUse"
       >
-        <stop offset={0} stopColor="#b8b8b8" stopOpacity={0.498}></stop>
-        <stop offset={1} stopColor="#7f7f7f" stopOpacity={0}></stop>
+        <stop
+          offset={0}
+          stopColor="#b8b8b8"
+          stopOpacity={0.498}
+        ></stop>
+        <stop
+          offset={1}
+          stopColor="#7f7f7f"
+          stopOpacity={0}
+        ></stop>
       </radialGradient>
       <path
         fill="url(#deviconPython2)"
@@ -1176,7 +1261,10 @@ export function GoIcon(props: SVGProps<SVGSVGElement>) {
       {...props}
     >
       <defs>
-        <path id="deviconGo0" d="M18.8 1h90.5v126H18.8z"></path>
+        <path
+          id="deviconGo0"
+          d="M18.8 1h90.5v126H18.8z"
+        ></path>
       </defs>
       <clipPath id="deviconGo1">
         <use href="#deviconGo0"></use>
@@ -1494,7 +1582,10 @@ export function VscodeIcon(props: SVGProps<SVGSVGElement>) {
           colorInterpolationFilters="sRGB"
           filterUnits="userSpaceOnUse"
         >
-          <feFlood floodOpacity="0" result="BackgroundImageFix" />
+          <feFlood
+            floodOpacity="0"
+            result="BackgroundImageFix"
+          />
           <feColorMatrix
             in="SourceAlpha"
             result="hardAlpha"
@@ -1523,7 +1614,10 @@ export function VscodeIcon(props: SVGProps<SVGSVGElement>) {
           colorInterpolationFilters="sRGB"
           filterUnits="userSpaceOnUse"
         >
-          <feFlood floodOpacity="0" result="BackgroundImageFix" />
+          <feFlood
+            floodOpacity="0"
+            result="BackgroundImageFix"
+          />
           <feColorMatrix
             in="SourceAlpha"
             result="hardAlpha"
@@ -1552,7 +1646,11 @@ export function VscodeIcon(props: SVGProps<SVGSVGElement>) {
           gradientUnits="userSpaceOnUse"
         >
           <stop stopColor="#fff" />
-          <stop offset="1" stopColor="#fff" stopOpacity="0" />
+          <stop
+            offset="1"
+            stopColor="#fff"
+            stopOpacity="0"
+          />
         </linearGradient>
       </defs>
     </svg>
@@ -1610,7 +1708,11 @@ export function ShadcnIcon(props: SVGProps<SVGSVGElement>) {
       viewBox="0 0 256 256"
       {...props}
     >
-      <rect width="256" height="256" fill="none" />
+      <rect
+        width="256"
+        height="256"
+        fill="none"
+      />
       <line
         x1="208"
         y1="128"
@@ -1674,7 +1776,11 @@ export function ReactIcon(props: SVGProps<SVGSVGElement>) {
       {...props}
     >
       <g fill="#61dafb">
-        <circle cx={64} cy={64} r={11.4}></circle>
+        <circle
+          cx={64}
+          cy={64}
+          r={11.4}
+        ></circle>
         <path d="M107.3 45.2c-2.2-.8-4.5-1.6-6.9-2.3c.6-2.4 1.1-4.8 1.5-7.1c2.1-13.2-.2-22.5-6.6-26.1c-1.9-1.1-4-1.6-6.4-1.6c-7 0-15.9 5.2-24.9 13.9c-9-8.7-17.9-13.9-24.9-13.9c-2.4 0-4.5.5-6.4 1.6c-6.4 3.7-8.7 13-6.6 26.1c.4 2.3.9 4.7 1.5 7.1c-2.4.7-4.7 1.4-6.9 2.3C8.2 50 1.4 56.6 1.4 64s6.9 14 19.3 18.8c2.2.8 4.5 1.6 6.9 2.3c-.6 2.4-1.1 4.8-1.5 7.1c-2.1 13.2.2 22.5 6.6 26.1c1.9 1.1 4 1.6 6.4 1.6c7.1 0 16-5.2 24.9-13.9c9 8.7 17.9 13.9 24.9 13.9c2.4 0 4.5-.5 6.4-1.6c6.4-3.7 8.7-13 6.6-26.1c-.4-2.3-.9-4.7-1.5-7.1c2.4-.7 4.7-1.4 6.9-2.3c12.5-4.8 19.3-11.4 19.3-18.8s-6.8-14-19.3-18.8M92.5 14.7c4.1 2.4 5.5 9.8 3.8 20.3c-.3 2.1-.8 4.3-1.4 6.6c-5.2-1.2-10.7-2-16.5-2.5c-3.4-4.8-6.9-9.1-10.4-13c7.4-7.3 14.9-12.3 21-12.3c1.3 0 2.5.3 3.5.9M81.3 74c-1.8 3.2-3.9 6.4-6.1 9.6c-3.7.3-7.4.4-11.2.4c-3.9 0-7.6-.1-11.2-.4q-3.3-4.8-6-9.6c-1.9-3.3-3.7-6.7-5.3-10c1.6-3.3 3.4-6.7 5.3-10c1.8-3.2 3.9-6.4 6.1-9.6c3.7-.3 7.4-.4 11.2-.4c3.9 0 7.6.1 11.2.4q3.3 4.8 6 9.6c1.9 3.3 3.7 6.7 5.3 10c-1.7 3.3-3.4 6.6-5.3 10m8.3-3.3c1.5 3.5 2.7 6.9 3.8 10.3c-3.4.8-7 1.4-10.8 1.9c1.2-1.9 2.5-3.9 3.6-6c1.2-2.1 2.3-4.2 3.4-6.2M64 97.8c-2.4-2.6-4.7-5.4-6.9-8.3c2.3.1 4.6.2 6.9.2s4.6-.1 6.9-.2c-2.2 2.9-4.5 5.7-6.9 8.3m-18.6-15c-3.8-.5-7.4-1.1-10.8-1.9c1.1-3.3 2.3-6.8 3.8-10.3c1.1 2 2.2 4.1 3.4 6.1c1.2 2.2 2.4 4.1 3.6 6.1m-7-25.5c-1.5-3.5-2.7-6.9-3.8-10.3c3.4-.8 7-1.4 10.8-1.9c-1.2 1.9-2.5 3.9-3.6 6c-1.2 2.1-2.3 4.2-3.4 6.2M64 30.2c2.4 2.6 4.7 5.4 6.9 8.3c-2.3-.1-4.6-.2-6.9-.2s-4.6.1-6.9.2c2.2-2.9 4.5-5.7 6.9-8.3m22.2 21l-3.6-6c3.8.5 7.4 1.1 10.8 1.9c-1.1 3.3-2.3 6.8-3.8 10.3c-1.1-2.1-2.2-4.2-3.4-6.2M31.7 35c-1.7-10.5-.3-17.9 3.8-20.3c1-.6 2.2-.9 3.5-.9c6 0 13.5 4.9 21 12.3c-3.5 3.8-7 8.2-10.4 13c-5.8.5-11.3 1.4-16.5 2.5c-.6-2.3-1-4.5-1.4-6.6M7 64c0-4.7 5.7-9.7 15.7-13.4c2-.8 4.2-1.5 6.4-2.1c1.6 5 3.6 10.3 6 15.6c-2.4 5.3-4.5 10.5-6 15.5C15.3 75.6 7 69.6 7 64m28.5 49.3c-4.1-2.4-5.5-9.8-3.8-20.3c.3-2.1.8-4.3 1.4-6.6c5.2 1.2 10.7 2 16.5 2.5c3.4 4.8 6.9 9.1 10.4 13c-7.4 7.3-14.9 12.3-21 12.3c-1.3 0-2.5-.3-3.5-.9M96.3 93c1.7 10.5.3 17.9-3.8 20.3c-1 .6-2.2.9-3.5.9c-6 0-13.5-4.9-21-12.3c3.5-3.8 7-8.2 10.4-13c5.8-.5 11.3-1.4 16.5-2.5c.6 2.3 1 4.5 1.4 6.6m9-15.6c-2 .8-4.2 1.5-6.4 2.1c-1.6-5-3.6-10.3-6-15.6c2.4-5.3 4.5-10.5 6-15.5c13.8 4 22.1 10 22.1 15.6c0 4.7-5.8 9.7-15.7 13.4"></path>
       </g>
     </svg>
@@ -1700,8 +1806,14 @@ export function AstroIcon(props: SVGProps<SVGSVGElement>) {
           gradientTransform="scale(.1)"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset={0} stopColor="#000014"></stop>
-          <stop offset={1} stopColor="#150426"></stop>
+          <stop
+            offset={0}
+            stopColor="#000014"
+          ></stop>
+          <stop
+            offset={1}
+            stopColor="#150426"
+          ></stop>
         </linearGradient>
         <linearGradient
           id="deviconAstro1"
@@ -1712,8 +1824,15 @@ export function AstroIcon(props: SVGProps<SVGSVGElement>) {
           gradientTransform="scale(.1)"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset={0} stopColor="#ff1639"></stop>
-          <stop offset={1} stopColor="#ff1639" stopOpacity={0}></stop>
+          <stop
+            offset={0}
+            stopColor="#ff1639"
+          ></stop>
+          <stop
+            offset={1}
+            stopColor="#ff1639"
+            stopOpacity={0}
+          ></stop>
         </linearGradient>
       </defs>
       <path
@@ -1751,8 +1870,14 @@ export function ViteIcon(props: SVGProps<SVGSVGElement>) {
           gradientTransform="translate(0 .937)scale(.3122)"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset={0} stopColor="#41d1ff"></stop>
-          <stop offset={1} stopColor="#bd34fe"></stop>
+          <stop
+            offset={0}
+            stopColor="#41d1ff"
+          ></stop>
+          <stop
+            offset={1}
+            stopColor="#bd34fe"
+          ></stop>
         </linearGradient>
         <linearGradient
           id="deviconVitejs1"
@@ -1763,9 +1888,18 @@ export function ViteIcon(props: SVGProps<SVGSVGElement>) {
           gradientTransform="translate(0 .937)scale(.3122)"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset={0} stopColor="#ffea83"></stop>
-          <stop offset={0.083} stopColor="#ffdd35"></stop>
-          <stop offset={1} stopColor="#ffa800"></stop>
+          <stop
+            offset={0}
+            stopColor="#ffea83"
+          ></stop>
+          <stop
+            offset={0.083}
+            stopColor="#ffdd35"
+          ></stop>
+          <stop
+            offset={1}
+            stopColor="#ffa800"
+          ></stop>
         </linearGradient>
       </defs>
       <path
@@ -1953,10 +2087,22 @@ export function NodejsIcon(props: SVGProps<SVGSVGElement>) {
           gradientUnits="userSpaceOnUse"
         >
           <stop stopColor="#3f873f"></stop>
-          <stop offset={0.33} stopColor="#3f8b3d"></stop>
-          <stop offset={0.637} stopColor="#3e9638"></stop>
-          <stop offset={0.934} stopColor="#3da92e"></stop>
-          <stop offset={1} stopColor="#3dae2b"></stop>
+          <stop
+            offset={0.33}
+            stopColor="#3f8b3d"
+          ></stop>
+          <stop
+            offset={0.637}
+            stopColor="#3e9638"
+          ></stop>
+          <stop
+            offset={0.934}
+            stopColor="#3da92e"
+          ></stop>
+          <stop
+            offset={1}
+            stopColor="#3dae2b"
+          ></stop>
         </linearGradient>
         <linearGradient
           id="deviconNodejs1"
@@ -1967,10 +2113,22 @@ export function NodejsIcon(props: SVGProps<SVGSVGElement>) {
           gradientTransform="translate(-129.242 -73.715)scale(6.18523)"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset={0.138} stopColor="#3f873f"></stop>
-          <stop offset={0.402} stopColor="#52a044"></stop>
-          <stop offset={0.713} stopColor="#64b749"></stop>
-          <stop offset={0.908} stopColor="#6abf4b"></stop>
+          <stop
+            offset={0.138}
+            stopColor="#3f873f"
+          ></stop>
+          <stop
+            offset={0.402}
+            stopColor="#52a044"
+          ></stop>
+          <stop
+            offset={0.713}
+            stopColor="#64b749"
+          ></stop>
+          <stop
+            offset={0.908}
+            stopColor="#6abf4b"
+          ></stop>
         </linearGradient>
         <linearGradient
           id="deviconNodejs2"
@@ -1981,10 +2139,22 @@ export function NodejsIcon(props: SVGProps<SVGSVGElement>) {
           gradientTransform="translate(-129.242 -73.715)scale(6.18523)"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset={0.092} stopColor="#6abf4b"></stop>
-          <stop offset={0.287} stopColor="#64b749"></stop>
-          <stop offset={0.598} stopColor="#52a044"></stop>
-          <stop offset={0.862} stopColor="#3f873f"></stop>
+          <stop
+            offset={0.092}
+            stopColor="#6abf4b"
+          ></stop>
+          <stop
+            offset={0.287}
+            stopColor="#64b749"
+          ></stop>
+          <stop
+            offset={0.598}
+            stopColor="#52a044"
+          ></stop>
+          <stop
+            offset={0.862}
+            stopColor="#3f873f"
+          ></stop>
         </linearGradient>
       </defs>
     </svg>

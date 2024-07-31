@@ -1,5 +1,4 @@
 'use client'
-import '@/app/globals.css'
 import {
   Form,
   FormControl,
@@ -8,13 +7,14 @@ import {
   FormLabel,
   FormMessage
 } from '@/components/ui/form'
-import { Input } from '@/components/ui/input'
-import { Textarea } from '@/components/ui/textarea'
-import { useToast } from '@/components/ui/use-toast'
-import { zodResolver } from '@hookform/resolvers/zod'
-import { useForm } from 'react-hook-form'
-import { z } from 'zod'
 import ShinyButton from '@/components/ShinyButton.jsx'
+import { zodResolver } from '@hookform/resolvers/zod'
+import { useToast } from '@/components/ui/use-toast'
+import { Textarea } from '@/components/ui/textarea'
+import { Input } from '@/components/ui/input'
+import { useForm } from 'react-hook-form'
+import '@/app/globals.css'
+import { z } from 'zod'
 
 const formSchema = z.object({
   email: z.string().email({ message: 'Email must be valid!' }).min(1),
@@ -90,7 +90,10 @@ export default function Hire() {
   }
 
   return (
-    <div id="hire" className="w-full mt-52 mb-12 scroll-mt-28 px-8">
+    <div
+      id="hire"
+      className="w-full mt-52 mb-12 scroll-mt-28 px-8"
+    >
       <div className="h-full flex flex-col gap-2 items-center justify-center text-text">
         <div className="w-fit relative mb-8 group cursor-default">
           <span className="text-5xl md:text-6xl px-24 pt-8 whitespace-nowrap">
@@ -129,7 +132,10 @@ export default function Hire() {
                 <FormItem>
                   <FormLabel>Email</FormLabel>
                   <FormControl>
-                    <Input placeholder="dpaulos6@outlook.com" {...field} />
+                    <Input
+                      placeholder="dpaulos6@outlook.com"
+                      {...field}
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>

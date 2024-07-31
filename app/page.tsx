@@ -1,10 +1,10 @@
-import './globals.css'
 import About from '@/components/about/About'
 import Projects from '@/components/Projects'
-import Hire from '@/components/Hire'
 import Footer from '@/components/footer'
 import Navbar from '@/components/navbar'
+import Hire from '@/components/Hire'
 import config from '@/config.json'
+import './globals.css'
 
 export default function Home() {
   return (

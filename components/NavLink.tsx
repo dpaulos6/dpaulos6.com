@@ -1,7 +1,7 @@
 'use client'
 import { usePathname } from 'next/navigation'
-import Link from 'next/link'
 import { useRef, useState } from 'react'
+import Link from 'next/link'
 
 interface NavLinkProps {
   items: {
@@ -61,7 +61,7 @@ function NavLink({ items }: NavLinkProps) {
         style={highlightStyles}
       ></div>
       {items.map((item, index) =>
-        item.mobileOnly === false ? (
+        item.mobileOnly === false ?
           <Link
             key={index}
             href={item.href}
@@ -71,7 +71,7 @@ function NavLink({ items }: NavLinkProps) {
           >
             {item.label}
           </Link>
-        ) : null
+        : null
       )}
     </div>
   )

@@ -1,6 +1,6 @@
-import type { Metadata } from 'next'
 import Footer from '@/components/footer'
 import Navbar from '@/components/navbar'
+import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
@@ -61,7 +61,10 @@ export default function Privacy() {
           </span>
           <span>
             Your name and review content will be publicly displayed on{' '}
-            <Link href="/about" className="text-primary hover:underline">
+            <Link
+              href="/about"
+              className="text-primary hover:underline"
+            >
               About Me
             </Link>
             . Your IP address will be stored in a private and secure database,
@@ -70,7 +73,10 @@ export default function Privacy() {
           <span className="text-xl sm:text-2xl md:text-3xl">Your Rights</span>
           <span>
             You can request the removal of your review at any time by{' '}
-            <Link href="/about" className="text-primary hover:underline">
+            <Link
+              href="/about"
+              className="text-primary hover:underline"
+            >
               contacting me
             </Link>
             .

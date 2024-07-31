@@ -1,5 +1,5 @@
-import Link from 'next/link'
 import Contacts from './Contacts'
+import Link from 'next/link'
 
 export default function Footer() {
   return (

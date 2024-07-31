@@ -1,4 +1,3 @@
-import '@/app/globals.css'
 import {
   InstagramIcon,
   GithubIcon,
@@ -7,6 +6,7 @@ import {
   LinkedinIcon
 } from '@/icons'
 import Link from 'next/link'
+import '@/app/globals.css'
 
 const socials = [
   {

@@ -1,10 +1,10 @@
 'use client'
 
-import Link from 'next/link'
-import { useTheme } from 'next-themes'
-import { Moon, Sun } from 'lucide-react'
 import HireMeButton from '@/components/HireMeButton'
+import { Moon, Sun } from 'lucide-react'
+import { useTheme } from 'next-themes'
 import config from '@/config.json'
+import Link from 'next/link'
 
 export default function Navbar() {
   const { theme, setTheme } = useTheme()
@@ -13,7 +13,10 @@ export default function Navbar() {
     <nav className="w-full h-fit flex justify-center px-8 py-4 z-50 select-none">
       <div className="flex w-full max-w-7xl justify-between">
         <div>
-          <Link href="/" className="text-2xl group rounded-xl">
+          <Link
+            href="/"
+            className="text-2xl group rounded-xl"
+          >
             <span className="text-text group-hover:text-primary transition duration-300">
               dpaulos
             </span>
@@ -28,7 +31,9 @@ export default function Navbar() {
             className="text-text p-2 rounded-xl hover:bg-text/5 transition"
             onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
           >
-            {theme === 'light' ? <Moon /> : <Sun />}
+            {theme === 'light' ?
+              <Moon />
+            : <Sun />}
           </button>
         </div>
       </div>

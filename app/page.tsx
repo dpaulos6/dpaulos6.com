@@ -1,4 +1,4 @@
-import About from '@/components/about/About'
+import About from '@/components/About'
 import Projects from '@/components/Projects'
 import Navbar from '@/components/navbar'
 import Hire from '@/components/Hire'

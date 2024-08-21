@@ -71,11 +71,12 @@ export default function Head() {
         data-domain="dpaulos6.xyz"
         src="https://stats.wouldyoubot.gg/js/script.js"
       ></script>
-      <script
+
+      {/* <script
         async
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4113864436683156"
         crossOrigin="anonymous"
-      ></script>
+      ></script> */}
     </head>
   )
 }

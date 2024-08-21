@@ -5,6 +5,8 @@ import Hire from '@/components/Hire'
 import config from '@/config.json'
 import './globals.css'
 
+// viewport
+
 export default function Home() {
   return (
     <>

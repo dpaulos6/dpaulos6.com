@@ -10,5 +10,7 @@
   "singleQuote": true,
   "singleAttributePerLine": true,
   "quoteProps": "as-needed",
-  "experimentalTernaries": true
+  "experimentalTernaries": true,
+  "tailwindFunctions": ["clsx"],
+  "tailwindConfig": "./tailwind.config.ts"
 }

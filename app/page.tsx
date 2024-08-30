@@ -1,6 +1,6 @@
-import About from '@/components/About'
 import Projects from '@/components/Projects'
 import Navbar from '@/components/navbar'
+import About from '@/components/About'
 import Hire from '@/components/Hire'
 import config from '@/config.json'
 import './globals.css'

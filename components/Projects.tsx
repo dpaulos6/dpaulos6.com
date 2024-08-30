@@ -129,7 +129,7 @@ export default function Page() {
   }
 
   return (
-    <div className="w-screen h-auto flex flex-col gap-20 items-center text-text pt-32">
+    <div className="w-screen h-auto flex flex-col gap-20 items-center text-text pt-32 pb-12">
       <div className="flex flex-col items-center gap-12 pt-12">
         <div className="w-fit relative group cursor-default">
           <span className="text-5xl md:text-6xl px-24 pt-8 whitespace-nowrap">

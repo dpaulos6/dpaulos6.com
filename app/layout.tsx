@@ -11,6 +11,7 @@ import { Poppins } from 'next/font/google'
 import { set } from 'react-hook-form'
 import { getDob } from '@/utils/dob'
 import type { Metadata } from 'next'
+import { cn } from '@/lib/utils'
 import Head from './_head'
 import './globals.css'
 
@@ -33,9 +34,7 @@ export default function RootLayout({
 
   useEffect(() => {
     const handleLoad = () => {
-      setTimeout(() => {
-        setActive(false)
-      }, 1000)
+      setActive(false)
     }
     window.addEventListener('load', handleLoad)
     return () => window.removeEventListener('load', handleLoad)
@@ -47,30 +46,24 @@ export default function RootLayout({
       className={font.className}
     >
       <Head />
-      <body>
+      <body className={cn(active ? 'overflow-hidden' : 'overflow-y-auto')}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
-          {active ?
-            <Preloader />
-          : <>
-              {/* <GradientBackground /> */}
-              <div className="min-h-screen hidden limit:flex flex-col">
-                <div className="w-full flex-1 flex flex-col z-10">
-                  {children}
-                </div>
-                <Toaster />
-              </div>
-              <div className="w-screen h-screen flex justify-center items-center limit:hidden">
-                <span className="flex text-text text-base text-center px-4">
-                  Your device&apos;s screen is too small to render this website.
-                </span>
-              </div>
-            </>
-          }
+          {active && <Preloader />}
+          {/* <GradientBackground /> */}
+          <div className="min-h-screen hidden limit:flex flex-col">
+            <div className="w-full flex-1 flex flex-col z-10">{children}</div>
+            <Toaster />
+          </div>
+          <div className="w-screen h-screen flex justify-center items-center limit:hidden">
+            <span className="flex text-text text-base text-center px-4">
+              Your device&apos;s screen is too small to render this website.
+            </span>
+          </div>
         </ThemeProvider>
         <SpeedInsights />
         <Analytics />

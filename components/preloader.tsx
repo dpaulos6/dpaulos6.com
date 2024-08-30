@@ -2,7 +2,7 @@ import '@/app/preloader.css'
 
 export function Preloader() {
   return (
-    <div className="absolute top-0 left-0 bg-background w-full h-screen flex justify-center items-center z-[9999] overflow-hidden">
+    <div className="fixed top-0 left-0 bg-background w-full h-screen flex justify-center items-center z-[9999] overflow-hidden">
       <div className="jelly"></div>
       <svg
         width="0"

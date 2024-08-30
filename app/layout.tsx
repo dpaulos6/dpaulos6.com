@@ -54,7 +54,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           {active && <Preloader />}
-          {/* <GradientBackground /> */}
+          <GradientBackground />
           <div className="min-h-screen hidden limit:flex flex-col">
             <div className="w-full flex-1 flex flex-col z-10">{children}</div>
             <Toaster />

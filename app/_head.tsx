@@ -1,3 +1,11 @@
+import { getDob } from '@/utils/dob'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Diogo Paulos',
+  description: `I'm Diogo Paulos, and I'm currently ${getDob('2003-05-17')} years old, living in the beauty of Portugal.`
+}
+
 export default function Head() {
   return (
     <head>

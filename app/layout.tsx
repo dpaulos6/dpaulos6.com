@@ -20,11 +20,6 @@ const font = Poppins({
   weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900']
 })
 
-// export const metadata: Metadata = {
-//   title: 'Diogo Paulos',
-//   description: `I'm Diogo Paulos, and I'm currently ${getDob('2003-05-17')} years old, living in the beauty of Portugal.`
-// }
-
 export default function RootLayout({
   children
 }: Readonly<{
@@ -33,6 +28,11 @@ export default function RootLayout({
   const [active, setActive] = useState(true)
 
   useEffect(() => {
+    if (process.env.NODE_ENV !== 'production') {
+      setActive(false)
+      return
+    }
+
     const handleLoad = () => {
       setActive(false)
     }

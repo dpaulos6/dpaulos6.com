@@ -5,7 +5,7 @@ import {
   KnowledgeListItem,
   KnowledgeTitle
 } from '@/components/knowledge'
-import { Title } from '@/components/ui/title'
+import { Title } from '@/components/title'
 import { knowledge } from '@/data'
 
 export function KnowledgeSection() {

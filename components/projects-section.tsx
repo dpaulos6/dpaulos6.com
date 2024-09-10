@@ -8,7 +8,7 @@ import {
 } from '@/components/ui/tooltip'
 import { projects, contributions } from '@/data'
 import { Badge } from '@/components/ui/badge'
-import { Title } from '@/components/ui/title'
+import { Title } from '@/components/title'
 import { LinkIcon } from 'lucide-react'
 import { GithubIcon } from '@/icons'
 import { useState } from 'react'

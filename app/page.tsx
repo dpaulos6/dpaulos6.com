@@ -1,20 +1,19 @@
-import Projects from '@/components/Projects'
-import Navbar from '@/components/navbar'
-import About from '@/components/About'
-import Hire from '@/components/Hire'
-import config from '@/config.json'
+import { KnowledgeSection } from '@/components/knowledge-section'
+import { ProjectsSection } from '@/components/projects-section'
+import { AboutSection } from '@/components/about-section'
+import { Navbar } from '@/components/navbar'
 import './globals.css'
-
-// viewport
 
 export default function Home() {
   return (
     <>
       <Navbar />
       <div className="w-full flex flex-col overflow-x-hidden">
-        <About />
-        <Projects />
-        {config.open_to_hire && <Hire />}
+        <div className="flex-1 flex flex-col gap-20 xl:gap-40 items-center text-text overflow-x-hidden pt-32">
+          <AboutSection />
+          <KnowledgeSection />
+          <ProjectsSection />
+        </div>
       </div>
     </>
   )

@@ -1,12 +1,10 @@
 'use client'
 
-import HireMeButton from '@/components/HireMeButton'
 import { Moon, Sun } from 'lucide-react'
 import { useTheme } from 'next-themes'
-import config from '@/config.json'
 import Link from 'next/link'
 
-export default function Navbar() {
+export function Navbar() {
   const { theme, setTheme } = useTheme()
 
   return (
@@ -26,7 +24,6 @@ export default function Navbar() {
           </Link>
         </div>
         <div className="flex items-center gap-6 md:gap-6">
-          {config.open_to_hire && <HireMeButton />}
           <button
             className="text-text p-2 rounded-xl hover:bg-text/5 transition"
             onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}

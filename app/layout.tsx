@@ -6,14 +6,12 @@ import { SpeedInsights } from '@vercel/speed-insights/next'
 import { Analytics } from '@vercel/analytics/react'
 import { Preloader } from '@/components/preloader'
 import { Toaster } from '@/components/ui/toaster'
-import { use, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Poppins } from 'next/font/google'
-import { set } from 'react-hook-form'
-import { getDob } from '@/utils/dob'
-import type { Metadata } from 'next'
+
 import { cn } from '@/lib/utils'
+import '@/app/globals.css'
 import Head from './_head'
-import './globals.css'
 
 const font = Poppins({
   subsets: ['latin'],
@@ -38,7 +36,7 @@ export default function RootLayout({
     }
     window.addEventListener('load', handleLoad)
     return () => window.removeEventListener('load', handleLoad)
-  })
+  }, [])
 
   return (
     <html

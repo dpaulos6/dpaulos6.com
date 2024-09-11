@@ -34,7 +34,7 @@ export function ProjectsSection() {
 
   return (
     <div className="w-screen h-auto flex flex-col gap-20 items-center text-text py-12">
-      <div className="flex flex-col items-center gap-12 pt-12">
+      <div className="flex flex-col items-center gap-12 pt-12 w-full">
         <Title title="Projects" />
         <div className="flex flex-col items-center gap-6 w-full max-w-5xl p-8">
           <TooltipProvider delayDuration={0}>
@@ -134,7 +134,7 @@ export function ProjectsSection() {
           </TooltipProvider>
         </div>
       </div>
-      <div className="flex flex-col items-center gap-12 pt-32">
+      <div className="flex flex-col items-center gap-12 pt-32 w-full">
         <Title title="Contributions" />
         <div className="flex flex-col md:flex-row md:flex-wrap items-center gap-6 w-fit max-w-5xl p-8">
           <TooltipProvider delayDuration={0}>

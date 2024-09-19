@@ -1,16 +1,20 @@
 import {
   AstroIcon,
   CsharpIcon,
+  DotnetIcon,
   EslintIcon,
+  GithubIcon,
   GitIcon,
   JavascriptIcon,
   KotlinIcon,
+  LinearIcon,
   LucideIcon,
   NextjsIcon,
   PhpIcon,
   PnpmIcon,
   PostmanIcon,
   PrettierIcon,
+  PythonIcon,
   ReactIcon,
   ShadcnIcon,
   SvelteIcon,
@@ -45,6 +49,10 @@ export const knowledge: Knowledge[] = [
       {
         label: 'Svelte',
         icon: SvelteIcon
+      },
+      {
+        label: 'DOTNET',
+        icon: DotnetIcon
       }
     ]
   },
@@ -70,6 +78,10 @@ export const knowledge: Knowledge[] = [
       {
         label: 'C#',
         icon: CsharpIcon
+      },
+      {
+        label: 'Python',
+        icon: PythonIcon
       }
     ]
   },
@@ -79,6 +91,10 @@ export const knowledge: Knowledge[] = [
       {
         label: 'VSCode',
         icon: VscodeIcon
+      },
+      {
+        label: 'GitHub',
+        icon: GithubIcon
       },
       {
         label: 'Git',
@@ -95,6 +111,10 @@ export const knowledge: Knowledge[] = [
       {
         label: 'Pnpm',
         icon: PnpmIcon
+      },
+      {
+        label: 'Linear',
+        icon: LinearIcon
       }
     ]
   },

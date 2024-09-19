@@ -12,7 +12,7 @@ export function Knowledge({
   return (
     <div
       className={cn(
-        'flex flex-wrap gap-y-8 lg:gap-0 lg:flex-nowrap lg:flex-row items-center justify-center lg:justify-between w-full',
+        'flex flex-wrap gap-y-8 lg:gap-0 lg:flex-nowrap lg:flex-row items-start justify-center lg:justify-between w-full',
         className
       )}
     >

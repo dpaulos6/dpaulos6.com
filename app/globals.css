@@ -31,6 +31,9 @@
   --hover: rgba(0, 0, 0, 0.098);
   --hire-hover: rgba(255, 255, 255, 0.65);
   --code: rgba(0, 0, 0, 0.102);
+
+  --dp-primary: 0 0% 0%;
+  --dp-accent: 205 72% 58%;
 }
 
 .dark {
@@ -53,6 +56,9 @@
   --hire-hover: rgba(0, 0, 0, 0.75);
   --code: rgba(255, 255, 255, 0.063);
   --grid: 255 255 255;
+
+  --dp-primary: 0 0% 100%;
+  --dp-accent: 205 72% 58%;
 }
 
 html,
@@ -204,4 +210,18 @@ blockquote {
 
 .masonry-item {
   break-inside: avoid;
+}
+
+.logo-hover * {
+  transition: all 300ms ease-in-out;
+}
+
+.dark .logo-hover:hover {
+  --dp-primary: 205 72% 58%;
+  --dp-accent: 0 0% 100%;
+}
+
+.logo-hover:hover {
+  --dp-primary: 205 72% 58%;
+  --dp-accent: 0 0% 0%;
 }

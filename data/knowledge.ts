@@ -1,12 +1,16 @@
 import {
   AstroIcon,
+  AtomIcon,
   CsharpIcon,
   DotnetIcon,
   EslintIcon,
   GithubIcon,
   GitIcon,
+  IntellijIcon,
+  JavaIcon,
   JavascriptIcon,
   KotlinIcon,
+  LaravelIcon,
   LinearIcon,
   LucideIcon,
   NextjsIcon,
@@ -14,13 +18,16 @@ import {
   PnpmIcon,
   PostmanIcon,
   PrettierIcon,
+  PrismaIcon,
   PythonIcon,
   ReactIcon,
+  RiderIcon,
   ShadcnIcon,
   SvelteIcon,
   TailwindIcon,
   TypescriptIcon,
   VercelIcon,
+  VisualStudioIcon,
   ViteIcon,
   VscodeIcon
 } from '@/icons'
@@ -53,6 +60,10 @@ export const knowledge: Knowledge[] = [
       {
         label: 'DOTNET',
         icon: DotnetIcon
+      },
+      {
+        label: 'Lavarel',
+        icon: LaravelIcon
       }
     ]
   },
@@ -72,6 +83,10 @@ export const knowledge: Knowledge[] = [
         icon: PhpIcon
       },
       {
+        label: 'Java',
+        icon: JavaIcon
+      },
+      {
         label: 'Kotlin',
         icon: KotlinIcon
       },
@@ -88,10 +103,6 @@ export const knowledge: Knowledge[] = [
   {
     title: 'Tools',
     items: [
-      {
-        label: 'VSCode',
-        icon: VscodeIcon
-      },
       {
         label: 'GitHub',
         icon: GithubIcon
@@ -134,12 +145,41 @@ export const knowledge: Knowledge[] = [
         icon: LucideIcon
       },
       {
+        label: 'Prisma',
+        icon: PrismaIcon
+      },
+      {
         label: 'Prettier',
         icon: PrettierIcon
       },
       {
         label: 'Eslint',
         icon: EslintIcon
+      }
+    ]
+  },
+  {
+    title: 'IDEs',
+    items: [
+      {
+        label: 'VSCode',
+        icon: VscodeIcon
+      },
+      {
+        label: 'Rider',
+        icon: RiderIcon
+      },
+      {
+        label: 'IntelliJ',
+        icon: IntellijIcon
+      },
+      {
+        label: 'Visual Studio',
+        icon: VisualStudioIcon
+      },
+      {
+        label: 'Atom',
+        icon: AtomIcon
       }
     ]
   }

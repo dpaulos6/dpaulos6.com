@@ -12,7 +12,7 @@ export function Knowledge({
   return (
     <div
       className={cn(
-        'flex flex-wrap gap-y-8 lg:gap-0 lg:flex-nowrap lg:flex-row items-start justify-center lg:justify-between w-full',
+        'flex flex-wrap gap-8 lg:gap-16 items-start justify-center w-full',
         className
       )}
     >
@@ -49,7 +49,9 @@ export function KnowledgeTitle({
   children: ReactNode
   className?: string
 }) {
-  return <span className={cn('text-3xl', className)}>{children}</span>
+  return (
+    <span className={cn('text-3xl text-center', className)}>{children}</span>
+  )
 }
 KnowledgeTitle.displayName = 'KnowledgeTitle'
 
@@ -80,7 +82,7 @@ export function KnowledgeListItem({
         className
       )}
     >
-      <Icon className="w-7 h-7 aspect-square" />
+      <Icon className="w-7 h-7 aspect-square text-foreground" />
       {label}
     </span>
   )

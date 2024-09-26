@@ -43,8 +43,7 @@ export const projects: Project[] = [
     github: '',
     url: '',
     tag: {
-      styles:
-        'border-transparent bg-yellow-300 dark:bg-yellow-500 text-primary-foreground',
+      styles: 'border-transparent bg-yellow-300 dark:bg-yellow-500 text-black',
       label: 'almost finished'
     },
     currentWebsite: false
@@ -63,8 +62,7 @@ export const projects: Project[] = [
     github: 'https://github.com/dpaulos6/digestify',
     url: 'https://digestify.dev',
     tag: {
-      styles:
-        'border-transparent bg-yellow-300 dark:bg-yellow-500 text-primary-foreground',
+      styles: 'border-transparent bg-yellow-300 dark:bg-yellow-500 text-black',
       label: 'under development'
     },
     currentWebsite: false

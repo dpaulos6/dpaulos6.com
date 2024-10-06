@@ -52,7 +52,6 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {active && <Preloader />}
           <div className="min-h-screen hidden limit:flex flex-col z-10 relative">
             <Navbar />
             {children}

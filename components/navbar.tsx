@@ -20,7 +20,7 @@ export function Navbar() {
         <div className="flex gap-2">
           <a
             href="/downloads/dpauloscv.pdf"
-            className="hidden h-10 md:h-12 flex gap-2 items-center justify-center text-text p-2 rounded-xl hover:bg-text/5 hover:text-primary transition whitespace-nowrap"
+            className="h-10 md:h-12 flex gap-2 items-center justify-center text-text p-2 rounded-xl hover:bg-text/5 hover:text-primary transition whitespace-nowrap"
             download
           >
             <Download className="w-7 h-7" />

@@ -113,7 +113,7 @@ export function ProjectsSection() {
                       >
                         {project.description}
                       </span>
-                      <div className="flex flex-wrap w-full gap-4 mt-auto select-none">
+                      <div className="flex flex-wrap w-full gap-4 mt-auto select-none ">
                         {project.technologies.map((tech, i) => (
                           <Tooltip key={i}>
                             <TooltipTrigger className="h-fit rounded-md ">
@@ -127,7 +127,7 @@ export function ProjectsSection() {
                         {project.description.length > 200 && (
                           <button
                             onClick={() => toggleProjectExpanded(i)}
-                            className="hidden lg:flex ml-auto mr-4 px-4 py-2 rounded-lg hover:bg-primary/15 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto hover:text-primary transition "
+                            className="hidden lg:flex ml-auto mr-4 px-4 py-2 rounded-lg hover:bg-primary/15 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto hover:text-primary transition"
                           >
                             {isExpanded[i] ? 'Collapse' : 'Expand'}
                           </button>

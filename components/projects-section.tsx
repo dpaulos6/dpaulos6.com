@@ -11,6 +11,7 @@ import { Badge } from '@/components/ui/badge'
 import { Title } from '@/components/title'
 import { LinkIcon } from 'lucide-react'
 import { GithubIcon } from '@/icons'
+import { cn } from '@/lib/utils'
 import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -61,7 +62,10 @@ export function ProjectsSection() {
                         className="flex object-cover object-center select-none rounded-xl border border-text/10"
                       />
                       <Badge
-                        className={`z-50 w-max absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 lg:-left-2 lg:translate-x-0 lowercase ${project.tag.styles}`}
+                        className={cn(
+                          'z-50 w-max absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 lg:-left-2 lg:translate-x-0 lowercase',
+                          project.tag.styles
+                        )}
                       >
                         <span>{project.tag.label}</span>
                       </Badge>
@@ -120,12 +124,14 @@ export function ProjectsSection() {
                             </TooltipContent>
                           </Tooltip>
                         ))}
-                        <button
-                          onClick={() => toggleProjectExpanded(i)}
-                          className="hidden lg:flex ml-auto mr-4 px-4 py-2 rounded-lg hover:bg-primary/15 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto hover:text-primary transition "
-                        >
-                          {isExpanded[i] ? 'Collapse' : 'Expand'}
-                        </button>
+                        {project.description.length > 200 && (
+                          <button
+                            onClick={() => toggleProjectExpanded(i)}
+                            className="hidden lg:flex ml-auto mr-4 px-4 py-2 rounded-lg hover:bg-primary/15 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto hover:text-primary transition "
+                          >
+                            {isExpanded[i] ? 'Collapse' : 'Expand'}
+                          </button>
+                        )}
                       </div>
                     </div>
                   </div>

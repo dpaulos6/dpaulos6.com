@@ -5,10 +5,10 @@ export interface Project {
   thumbnail: string
   description: string
   technologies: TechnologiesList[]
-  github: string
-  url: string
+  github?: string
+  url?: string
   tag: Tag
-  currentWebsite: boolean
+  currentWebsite?: boolean
 }
 
 interface TechnologiesList {

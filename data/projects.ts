@@ -18,8 +18,7 @@ export const projects: Project[] = [
       { label: 'NextJS', icon: NextjsIcon },
       { label: 'Typescript', icon: TypescriptIcon },
       { label: 'Tailwind CSS', icon: TailwindIcon },
-      { label: 'Shadcn UI', icon: ShadcnIcon },
-      { label: 'Resend', icon: ResendIcon }
+      { label: 'Shadcn UI', icon: ShadcnIcon }
     ],
     github: 'https://github.com/dpaulos6/portfolio',
     url: 'https://dpaulos6.xyz/',
@@ -40,13 +39,10 @@ export const projects: Project[] = [
       { label: 'Tailwind CSS', icon: TailwindIcon },
       { label: 'Among others', icon: Ellipsis }
     ],
-    github: '',
-    url: '',
     tag: {
       styles: 'border-transparent bg-yellow-300 dark:bg-yellow-500 text-black',
       label: 'almost finished'
-    },
-    currentWebsite: false
+    }
   },
   {
     name: 'Digestify',
@@ -66,6 +62,40 @@ export const projects: Project[] = [
       label: 'under development'
     },
     currentWebsite: false
+  },
+  {
+    name: 'Would You Bot',
+    thumbnail: 'https://i.imgur.com/BsWSxze.png',
+    description:
+      'Play fun and entertaining games with Would You, featuring user polls and customization. Play Would You Rather, Never Have I Ever, Higher or Lower, and What Would You Do!',
+    technologies: [
+      { label: 'NextJS', icon: NextjsIcon },
+      { label: 'Typescript', icon: TypescriptIcon },
+      { label: 'Tailwind CSS', icon: TailwindIcon },
+      { label: 'Shadcn UI', icon: ShadcnIcon },
+      { label: 'Among others', icon: Ellipsis }
+    ],
+    github: 'https://github.com/Would-You-Bot/website-app',
+    url: 'https://wouldyoubot.gg/',
+    tag: {
+      styles: 'border-transparent bg-primary-hover text-primary-foreground',
+      label: 'web developer'
+    }
+  },
+  {
+    name: 'FishWiki',
+    thumbnail: '/thumbnails/fishwiki.png',
+    description: 'Aquatic Encyclopedia on Discord.',
+    technologies: [
+      { label: 'NextJS', icon: NextjsIcon },
+      { label: 'Typescript', icon: TypescriptIcon },
+      { label: 'Tailwind CSS', icon: TailwindIcon }
+    ],
+    url: 'https://fishwiki.app/',
+    tag: {
+      styles: 'border-transparent bg-green-300 dark:bg-green-500 text-black',
+      label: 'finished'
+    }
   }
 ]
 
@@ -87,14 +117,5 @@ export const contributions: Contribution[] = [
     description:
       'Nizzyabi.com is a Programming Course Platform for self-taught developers who want to improve their web development skills.',
     role: 'Styling and documentation'
-  },
-  {
-    name: 'Would You Bot',
-    url: 'https://wouldyoubot.gg/',
-    github: 'https://github.com/Would-You-Bot/website',
-    thumbnail: 'https://i.imgur.com/BsWSxze.png',
-    description:
-      'Play fun and entertaining games with Would You, featuring user polls and customization. Play Would You Rather, Never Have I Ever, Higher or Lower, and What Would You Do!',
-    role: 'Web Developer'
   }
 ]

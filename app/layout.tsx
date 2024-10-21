@@ -24,28 +24,13 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
-  const [active, setActive] = useState(true)
-
-  useEffect(() => {
-    if (process.env.NODE_ENV !== 'production') {
-      setActive(false)
-      return
-    }
-
-    const handleLoad = () => {
-      setActive(false)
-    }
-    window.addEventListener('load', handleLoad)
-    return () => window.removeEventListener('load', handleLoad)
-  }, [])
-
   return (
     <html
       lang="en"
       className={font.className}
     >
       <Head />
-      <body className={cn(active ? 'overflow-hidden' : 'overflow-y-auto')}>
+      <body className="overflow-y-auto">
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

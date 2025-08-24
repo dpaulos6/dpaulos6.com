@@ -1,11 +1,13 @@
 import {
   AstroIcon,
   AtomIcon,
+  AzureIcon,
+  BetterauthIcon,
+  BiomeIcon,
   CsharpIcon,
   DotnetIcon,
-  EslintIcon,
-  GithubIcon,
   GitIcon,
+  GithubIcon,
   IntellijIcon,
   JavaIcon,
   JavascriptIcon,
@@ -17,9 +19,9 @@ import {
   PhpIcon,
   PnpmIcon,
   PostmanIcon,
-  PrettierIcon,
   PrismaIcon,
   PythonIcon,
+  RazorIcon,
   ReactIcon,
   RiderIcon,
   ShadcnIcon,
@@ -46,6 +48,10 @@ export const knowledge: Knowledge[] = [
         icon: ReactIcon
       },
       {
+        label: 'DOTNET',
+        icon: DotnetIcon
+      },
+      {
         label: 'Astro',
         icon: AstroIcon
       },
@@ -56,10 +62,6 @@ export const knowledge: Knowledge[] = [
       {
         label: 'Svelte',
         icon: SvelteIcon
-      },
-      {
-        label: 'DOTNET',
-        icon: DotnetIcon
       },
       {
         label: 'Lavarel',
@@ -79,6 +81,14 @@ export const knowledge: Knowledge[] = [
         icon: JavascriptIcon
       },
       {
+        label: 'C#',
+        icon: CsharpIcon
+      },
+      {
+        label: 'Razor',
+        icon: RazorIcon
+      },
+      {
         label: 'Php',
         icon: PhpIcon
       },
@@ -89,10 +99,6 @@ export const knowledge: Knowledge[] = [
       {
         label: 'Kotlin',
         icon: KotlinIcon
-      },
-      {
-        label: 'C#',
-        icon: CsharpIcon
       },
       {
         label: 'Python',
@@ -110,6 +116,10 @@ export const knowledge: Knowledge[] = [
       {
         label: 'Git',
         icon: GitIcon
+      },
+      {
+        label: 'Azure',
+        icon: AzureIcon
       },
       {
         label: 'Postman',
@@ -149,12 +159,12 @@ export const knowledge: Knowledge[] = [
         icon: PrismaIcon
       },
       {
-        label: 'Prettier',
-        icon: PrettierIcon
+        label: 'Biome',
+        icon: BiomeIcon
       },
       {
-        label: 'Eslint',
-        icon: EslintIcon
+        label: 'BetterAuth',
+        icon: BetterauthIcon
       }
     ]
   },

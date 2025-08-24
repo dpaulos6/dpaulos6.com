@@ -1,6 +1,5 @@
-import { ElementType, ReactElement, ReactNode, SVGProps } from 'react'
+import type { ElementType, ReactNode, SVGProps } from 'react'
 import { cn } from '@/lib/utils'
-import React from 'react'
 
 export function Knowledge({
   children,
@@ -12,7 +11,7 @@ export function Knowledge({
   return (
     <div
       className={cn(
-        'flex flex-wrap gap-8 lg:gap-16 items-start justify-center w-full',
+        'flex w-full flex-wrap items-start justify-center gap-8 lg:gap-16',
         className
       )}
     >
@@ -32,7 +31,7 @@ export function KnowledgeItem({
   return (
     <div
       className={cn(
-        'flex flex-col justify-between items-center lg:items-start lg:justify-start gap-6 basis-full sm:basis-1/2 lg:basis-auto',
+        'flex basis-full flex-col items-center justify-between gap-6 sm:basis-1/2 lg:basis-auto lg:items-start lg:justify-start',
         className
       )}
     >
@@ -50,7 +49,7 @@ export function KnowledgeTitle({
   className?: string
 }) {
   return (
-    <span className={cn('text-3xl text-center', className)}>{children}</span>
+    <span className={cn('text-center text-3xl', className)}>{children}</span>
   )
 }
 KnowledgeTitle.displayName = 'KnowledgeTitle'
@@ -62,7 +61,7 @@ export function KnowledgeList({
   children: ReactNode
   className?: string
 }) {
-  return <div className={cn('w-fit flex flex-col', className)}>{children}</div>
+  return <div className={cn('flex w-fit flex-col', className)}>{children}</div>
 }
 KnowledgeList.displayName = 'KnowledgeList'
 
@@ -78,11 +77,11 @@ export function KnowledgeListItem({
   return (
     <span
       className={cn(
-        'w-full flex items-center gap-4 text-2xl px-4 py-2 rounded-lg hover:bg-background-hover/40 transition cursor-default',
+        'flex w-full cursor-default items-center gap-4 rounded-lg px-4 py-2 text-2xl transition hover:bg-background-hover/40',
         className
       )}
     >
-      <Icon className="w-7 h-7 aspect-square text-foreground" />
+      <Icon className='aspect-square h-7 w-7 text-foreground' />
       {label}
     </span>
   )

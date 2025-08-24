@@ -1,11 +1,10 @@
 import {
   NextjsIcon,
-  ResendIcon,
   ShadcnIcon,
   TailwindIcon,
   TypescriptIcon
 } from '@/icons'
-import { Contribution, Project } from '@/interfaces'
+import type { Contribution, Project } from '@/interfaces'
 import { Ellipsis } from 'lucide-react'
 
 export const projects: Project[] = [

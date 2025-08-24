@@ -31,7 +31,7 @@ import {
   ViteIcon,
   VscodeIcon
 } from '@/icons'
-import { Knowledge } from '@/interfaces'
+import type { Knowledge } from '@/interfaces'
 
 export const knowledge: Knowledge[] = [
   {

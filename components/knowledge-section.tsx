@@ -10,7 +10,7 @@ import { knowledge } from '@/data'
 
 export function KnowledgeSection() {
   return (
-    <div className="w-full max-w-7xl flex flex-col items-center mb-16 px-8 xs:px-12 sm:px-16 md:px-20 lg:px-12 xl:px-0">
+    <div className='mb-16 flex w-full max-w-7xl flex-col items-center px-8 xs:px-12 sm:px-16 md:px-20 lg:px-12 xl:px-0'>
       <Title
         title="Knowledge"
         className="mb-24"

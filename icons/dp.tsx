@@ -1,5 +1,4 @@
-import { SVGProps } from 'react'
-import React from 'react'
+import type { SVGProps } from 'react'
 
 export function DPLogo(props: SVGProps<SVGSVGElement>) {
   return (

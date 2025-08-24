@@ -3,16 +3,16 @@ import Link from 'next/link'
 
 export default function ContactsList() {
   return (
-    <div className="flex flex-wrap gap-1 md:flex-nowrap px-8 items-center justify-center w-fit mx-auto">
+    <div className='mx-auto flex w-fit flex-wrap items-center justify-center gap-1 px-8 md:flex-nowrap'>
       {contacts.map((contact, i) => (
         <Link
           key={i}
           href={contact.href}
           target="_blank"
-          className="w-fit flex gap-1.5 items-center p-1.5 rounded-xl hover:bg-primary/10 hover:text-primary transition select-none"
+          className='flex w-fit select-none items-center gap-1.5 rounded-xl p-1.5 transition hover:bg-primary/10 hover:text-primary'
         >
           <contact.icon className="text-2xl md:text-3xl" />
-          <span className="text-xl md:text-2xl sr-only">{contact.label}</span>
+          <span className='sr-only text-xl md:text-2xl'>{contact.label}</span>
         </Link>
       ))}
     </div>

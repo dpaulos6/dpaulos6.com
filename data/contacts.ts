@@ -5,7 +5,7 @@ import {
   LinkedinIcon,
   MailIcon
 } from '@/icons'
-import { Contact } from '@/interfaces'
+import type { Contact } from '@/interfaces'
 
 export const contacts: Contact[] = [
   {

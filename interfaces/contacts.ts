@@ -1,4 +1,4 @@
-import { ElementType, SVGProps } from 'react'
+import type { ElementType, SVGProps } from 'react'
 
 export interface Contact {
   label: string

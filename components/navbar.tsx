@@ -9,31 +9,33 @@ export function Navbar() {
   const { theme, setTheme } = useTheme()
 
   return (
-    <nav className="w-full h-fit flex justify-center p-8 z-50 select-none ">
-      <div className="flex w-full max-w-7xl justify-between items-center">
+    <nav className='z-50 flex h-fit w-full select-none justify-center p-8 '>
+      <div className='flex w-full max-w-7xl items-center justify-between'>
         <Link
           href="/"
-          className="text-2xl group rounded-xl"
+          className='group rounded-xl text-2xl'
         >
-          <DPLogo className="logo-hover w-10 md:w-12 h-auto" />
+          <DPLogo className='logo-hover h-auto w-10 md:w-12' />
         </Link>
         <div className="flex gap-2">
           <a
             href="/downloads/dpaulos6cv.pdf"
-            className="h-10 md:h-12 flex gap-2 items-center justify-center text-text p-2 rounded-xl hover:bg-text/5 hover:text-primary transition whitespace-nowrap"
+            className='flex h-10 items-center justify-center gap-2 whitespace-nowrap rounded-xl p-2 text-text transition hover:bg-text/5 hover:text-primary md:h-12'
             download
           >
-            <Download className="w-7 h-7" />
-            <span className="text-lg md:block hidden">Download CV</span>
+            <Download className='h-7 w-7' />
+            <span className='hidden text-lg md:block'>Download CV</span>
             <span className="text-lg md:hidden">CV</span>
           </a>
           <button
-            className="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center text-text p-2 rounded-xl hover:bg-text/5 hover:text-primary transition"
+            className='flex h-10 w-10 items-center justify-center rounded-xl p-2 text-text transition hover:bg-text/5 hover:text-primary md:h-12 md:w-12'
             onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
           >
-            {theme === 'light' ?
-              <Moon className="w-7 h-7" />
-            : <Sun className="w-7 h-7" />}
+            {theme === 'light' ? (
+              <Moon className='h-7 w-7' />
+            ) : (
+              <Sun className='h-7 w-7' />
+            )}
           </button>
         </div>
       </div>

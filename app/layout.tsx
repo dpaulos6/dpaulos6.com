@@ -4,13 +4,10 @@ import GradientBackground from '@/components/gradient-background'
 import { ThemeProvider } from '@/components/theme-provider'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { Analytics } from '@vercel/analytics/react'
-import { Preloader } from '@/components/preloader'
-import { useEffect, useState } from 'react'
 import { Poppins } from 'next/font/google'
 
 import { Navbar } from '@/components/navbar'
 import { Footer } from '@/components/footer'
-import { cn } from '@/lib/utils'
 import '@/app/globals.css'
 import Head from './_head'
 
@@ -37,13 +34,13 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="min-h-screen hidden limit:flex flex-col z-10 relative">
+          <div className='relative z-10 limit:flex hidden min-h-screen flex-col'>
             <Navbar />
             {children}
             <Footer />
           </div>
-          <div className="w-screen h-screen flex justify-center items-center limit:hidden">
-            <span className="flex text-text text-base text-center px-4">
+          <div className='flex limit:hidden h-screen w-screen items-center justify-center'>
+            <span className='flex px-4 text-center text-base text-text'>
               Your device&apos;s screen is too small to render this website.
             </span>
           </div>

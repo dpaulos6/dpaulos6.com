@@ -1,5 +1,6 @@
 import { getDob } from '@/utils/dob'
-import { Metadata } from 'next'
+import type { Metadata } from 'next'
+import Script from 'next/script'
 
 export const metadata: Metadata = {
   title: 'Diogo Paulos',
@@ -49,10 +50,9 @@ export default function Head() {
         property="twitter:image"
         content="0"
       />
-      <script
+      <Script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: `
+        content={`
             {
               "@context": "https://schema.org/",
               "@type": "Person",
@@ -71,14 +71,13 @@ export default function Head() {
                 "name": "Bomsite"
               }
             }
-            `
-        }}
-      ></script>
+            `}
+      />
       <script
         defer
         data-domain="dpaulos6.xyz"
         src="https://stats.wouldyoubot.gg/js/script.js"
-      ></script>
+      />
 
       {/* <script
         async

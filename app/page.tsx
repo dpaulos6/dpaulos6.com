@@ -5,7 +5,7 @@ import './globals.css'
 
 export default function Home() {
   return (
-    <main className="flex-1 flex flex-col gap-20 xl:gap-40 items-center text-text overflow-x-hidden pt-32">
+    <main className='flex flex-1 flex-col items-center gap-20 overflow-x-hidden pt-32 text-text xl:gap-40'>
       <AboutSection />
       <KnowledgeSection />
       <ProjectsSection />

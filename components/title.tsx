@@ -8,20 +8,20 @@ interface CustomTitleProps extends React.HTMLAttributes<HTMLDivElement> {
 export function Title({ title, className, ...props }: CustomTitleProps) {
   return (
     <div
-      className={cn('w-fit relative group cursor-default', className)}
+      className={cn('group relative w-fit cursor-default', className)}
       {...props}
     >
-      <span className="text-5xl md:text-6xl px-24 pt-8 whitespace-nowrap">
+      <span className='whitespace-nowrap px-24 pt-8 text-5xl md:text-6xl'>
         {title}
       </span>
       <span
-        className="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 text-7xl md:text-8xl whitespace-nowrap text-neutral-200/50 dark:text-neutral-600/50 -z-10 transition-all md:group-hover:opacity-0 select-none"
+        className='-translate-y-1/2 -translate-x-1/2 -z-10 absolute top-0 left-1/2 select-none whitespace-nowrap text-7xl text-neutral-200/50 transition-all md:text-8xl md:group-hover:opacity-0 dark:text-neutral-600/50'
         area-hidden="true"
       >
         {title}
       </span>
       <span
-        className="hidden md:flex absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 text-7xl md:text-8xl whitespace-nowrap -z-10 bg-gradient-to-r text-transparent from-primary-hover to-primary bg-clip-text transition-all opacity-0 group-hover:opacity-50 select-none"
+        className='-translate-y-1/2 -translate-x-1/2 -z-10 absolute top-0 left-1/2 hidden select-none whitespace-nowrap bg-gradient-to-r from-primary-hover to-primary bg-clip-text text-7xl text-transparent opacity-0 transition-all group-hover:opacity-50 md:flex md:text-8xl'
         area-hidden="true"
       >
         {title}
